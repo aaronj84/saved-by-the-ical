@@ -1,0 +1,35 @@
+name: Build feeds
+
+on:
+  push:
+    branches: [main]
+    paths: ["data/**", "src/**", "README.md", ".github/workflows/build-feeds.yml"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e '.[dev]'
+      - run: pytest -q
+      - run: sbtical check data/schools/*.yaml
+      - run: sbtical build data/schools/*.yaml
+      - run: sbtical readme data/schools/*.yaml
+      - name: Fail PRs whose committed feeds are stale
+        if: github.event_name == 'pull_request'
+        run: git diff --exit-code -- feeds README.md
+      - name: Commit regenerated feeds
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add feeds README.md
+          if ! git diff --cached --quiet; then git commit -m "Rebuild feeds" && git push; fi

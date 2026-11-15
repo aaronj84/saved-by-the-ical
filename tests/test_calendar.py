@@ -8,7 +8,7 @@ from sbtical.ical import build_feed, build_student_feed
 from sbtical.model import CalendarError, load_school, parse_school
 from sbtical.resolve import resolve_days
 
-EXAMPLE = Path(__file__).parent.parent / "data/schools/example-high.yaml"
+EXAMPLE = Path(__file__).parent.parent / "examples/example-high.yaml"
 STAMP = dt.datetime(2026, 1, 1, tzinfo=dt.timezone.utc)
 
 
@@ -151,3 +151,41 @@ def test_example_school_builds_every_feed():
         assert roundtrip(build_feed(s, f, STAMP)).walk("VEVENT"), f.id
     for st in s.students:
         assert roundtrip(build_student_feed(s, st, STAMP)).walk("VEVENT")
+
+
+DATA = Path(__file__).parent.parent / "data/schools"
+
+
+def test_jordan_rotation_matches_original_icloud_calendar():
+    fixture = Path(__file__).parent / "fixtures/jordan-ab-2026-27.txt"
+    expected = {}
+    for line in fixture.read_text().splitlines():
+        if line and not line.startswith("#"):
+            d, label = line.split()
+            expected[dt.date.fromisoformat(d)] = label
+    days = resolve_days(load_school(DATA / "jordan.yaml"))
+    actual = {d.date: d.rotation for d in days if d.in_session}
+    assert actual == expected
+
+
+def test_all_real_schools_build():
+    for path in sorted(DATA.glob("*.yaml")):
+        s = load_school(path)
+        for f in s.feeds:
+            build_feed(s, f).to_ical()
+
+
+def test_extends_merges_district_days_before_school_days(tmp_path):
+    (tmp_path / "d.yaml").write_text(
+        "school: {timezone: America/Denver}\n"
+        "year: {first_day: 2026-09-07, last_day: 2026-09-11}\n"
+        "days: [{start: 2026-09-07, end: 2026-09-11, no_school: true}]\n"
+    )
+    (tmp_path / "s.yaml").write_text(
+        "extends: d.yaml\nschool: {id: s, name: S}\n"
+        "bell_schedules: {r: {periods: []}}\nweekly: {mon: r, tue: r, wed: r}\n"
+        "days: [{date: 2026-09-09, schedule: r}]\n"
+    )
+    s = load_school(tmp_path / "s.yaml")
+    assert s.timezone.key == "America/Denver"
+    assert [d.date.day for d in resolve_days(s) if d.in_session] == [9]

@@ -1,0 +1,27 @@
+# Canyons School District 2026-27 — shared by every Canyons school file.
+#
+# SOURCE: derived from the "Jordan - A/B Day" entries in the family iCloud
+# calendar (every weekday without an A/B entry = no school). Dates match the
+# commonly published last day (May 27, 2027).
+# TODO: verify against the official district calendar PDF and fill in the
+# exact names for the days marked "No School".
+school:
+  timezone: America/Denver
+
+year:
+  first_day: 2026-08-17
+  last_day: 2027-05-27
+
+days:
+  - { date: 2026-09-07, no_school: true, title: Labor Day }
+  - { start: 2026-09-25, end: 2026-09-28, no_school: true, title: No School }
+  - { start: 2026-10-15, end: 2026-10-16, no_school: true, title: Fall Break }
+  - { date: 2026-10-26, no_school: true, title: No School }
+  - { start: 2026-11-25, end: 2026-11-27, no_school: true, title: Thanksgiving Break }
+  - { start: 2026-12-21, end: 2027-01-01, no_school: true, title: Winter Break }
+  - { date: 2027-01-15, no_school: true, title: No School }
+  - { date: 2027-01-18, no_school: true, title: Martin Luther King Jr. Day }
+  - { start: 2027-02-12, end: 2027-02-15, no_school: true, title: Presidents Day Break }
+  - { date: 2027-02-26, no_school: true, title: No School }
+  - { date: 2027-03-22, no_school: true, title: No School }
+  - { start: 2027-04-05, end: 2027-04-09, no_school: true, title: Spring Break }

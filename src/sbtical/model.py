@@ -110,6 +110,7 @@ class School:
     id: str
     name: str
     timezone: ZoneInfo
+    short_name: str | None
     first_day: dt.date
     last_day: dt.date
     bell_schedules: dict[str, BellSchedule]
@@ -170,10 +171,28 @@ def _date_range(raw: dict, where: str) -> tuple[dt.date, dt.date]:
 # Loader
 
 
+def _load_raw(path: Path, seen: tuple[Path, ...] = ()) -> dict:
+    path = path.resolve()
+    if path in seen:
+        raise CalendarError(f"circular extends: {path}")
+    with path.open() as f:
+        raw = yaml.safe_load(f) or {}
+    base_ref = raw.pop("extends", None)
+    if not base_ref:
+        return raw
+    base = _load_raw(path.parent / base_ref, seen + (path,))
+    merged = {**base, **raw}
+    # Lists accumulate (district first, so school-level days override them).
+    for key in ("days", "events"):
+        merged[key] = (base.get(key) or []) + (raw.get(key) or [])
+    for key in ("school", "year"):
+        merged[key] = {**(base.get(key) or {}), **(raw.get(key) or {})}
+    return merged
+
+
 def load_school(path: str | Path) -> School:
     path = Path(path)
-    with path.open() as f:
-        raw = yaml.safe_load(f)
+    raw = _load_raw(path)
     try:
         return parse_school(raw)
     except CalendarError as e:
@@ -358,6 +377,7 @@ def parse_school(raw: dict) -> School:
         id=str(s["id"]),
         name=s["name"],
         timezone=tz,
+        short_name=s.get("short_name"),
         first_day=first_day,
         last_day=last_day,
         bell_schedules=schedules,

@@ -1,0 +1,18 @@
+# District-wide days off as their own calendar (no bell times).
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: canyons
+  name: Canyons School District
+
+bell_schedules:
+  school_day: { name: School Day, periods: [] }
+
+weekly: { mon: school_day, tue: school_day, wed: school_day, thu: school_day, fri: school_day }
+
+feeds:
+  - id: no-school
+    name: No School Days
+    description: Holidays and breaks for Canyons School District 2026-27.
+    include: [days]
+    no_school_only: true

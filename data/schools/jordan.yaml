@@ -1,0 +1,41 @@
+# SOURCE: 2026-27 entries in the family iCloud calendar ("Jordan - A/B Day",
+# "Jordan Period 1/2").
+# TODO: only Periods 1-2 were in the calendar. Add the remaining periods and
+# lunch from the official 2026-27 Jordan High bell schedule.
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: jordan
+  name: Jordan High School
+  short_name: Jordan
+
+bell_schedules:
+  mon_thu:
+    name: Monday–Thursday
+    periods:
+      - { id: "1", name: Period 1, start: "07:45", end: "09:03" }
+      - { id: "2", name: Period 2, start: "09:45", end: "11:03" }
+  friday:
+    name: Friday
+    periods:
+      - { id: "1", name: Period 1, start: "07:45", end: "08:49" }
+      - { id: "2", name: Period 2, start: "08:54", end: "09:58" }
+
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
+
+# Alternates every school day, skipping days off. Reproduces all 174 A/B
+# entries from the old calendar exactly (see tests).
+rotation:
+  labels: [A, B]
+  start: 2026-08-17
+
+feeds:
+  - id: ab-days
+    name: A/B Days
+    description: All-day A Day / B Day markers for Jordan High School.
+    include: [day_labels]
+  - id: bell-schedule
+    name: Bell Schedule
+    description: Jordan High School periods on school days only.
+    include: [bells]
+    include_breaks: true

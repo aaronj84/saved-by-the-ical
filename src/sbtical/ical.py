@@ -43,6 +43,16 @@ def _event(uid: str, summary: str, stamp: dt.datetime, **props) -> VEvent:
     return ev
 
 
+def _title(school: School, text: str) -> str:
+    return f"{school.short_name} {text}" if school.short_name else text
+
+
+def default_stamp(school: School) -> dt.datetime:
+    """Fixed DTSTAMP so rebuilding unchanged data produces identical files
+    (clean git diffs). Subscribed calendars re-read the whole feed anyway."""
+    return dt.datetime.combine(school.first_day, dt.time(), tzinfo=dt.timezone.utc)
+
+
 def _at(school: School, d: dt.date, t: dt.time) -> dt.datetime:
     return dt.datetime.combine(d, t, tzinfo=school.timezone)
 
@@ -71,7 +81,7 @@ def bell_events(
             desc = day.schedule.name + (f" · {day.rotation} Day" if day.rotation else "")
             yield _event(
                 f"{school.id}-{scope}-{day.date.isoformat()}-p{p.id}",
-                p.name,
+                _title(school, p.name),
                 stamp,
                 dtstart=_at(school, day.date, p.start),
                 dtend=_at(school, day.date, p.end),
@@ -128,7 +138,7 @@ def day_label_events(school: School, days: Iterable[Day], stamp, scope: str):
             continue
         yield _event(
             f"{school.id}-{scope}-{day.date.isoformat()}-label",
-            " · ".join(parts),
+            _title(school, " · ".join(parts)),
             stamp,
             dtstart=day.date,
             dtend=day.date + dt.timedelta(days=1),
@@ -180,7 +190,7 @@ def school_events(school: School, stamp, scope: str, categories: tuple[str, ...]
 
 
 def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, days=None) -> Calendar:
-    stamp = stamp or dt.datetime.now(dt.timezone.utc)
+    stamp = stamp or default_stamp(school)
     days = days if days is not None else resolve_days(school)
     cal = _new_calendar(school, f"{school.name} · {feed.name}", feed.description)
     scope = feed.id
@@ -200,7 +210,7 @@ def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, day
 
 
 def build_student_feed(school: School, student: Student, stamp=None, days=None) -> Calendar:
-    stamp = stamp or dt.datetime.now(dt.timezone.utc)
+    stamp = stamp or default_stamp(school)
     days = days if days is not None else resolve_days(school)
     cal = _new_calendar(school, f"{student.name} · {school.name}", None)
     for part in student.include:

@@ -1,0 +1,38 @@
+# SOURCE: 2026-27 entries in the family iCloud "Brighton Bell Schedule" calendar.
+# TODO: verify against the official 2026-27 Canyons bell schedule PDF.
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: brighton
+  name: Brighton High School
+  short_name: BHS
+
+bell_schedules:
+  mon_thu:
+    name: Monday–Thursday
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:46" }
+      - { id: "2", name: 2nd Period, start: "08:52", end: "09:53" }
+      - { id: app, name: APP, start: "09:59", end: "10:29" }
+      - { id: "3", name: 3rd Period, start: "10:35", end: "11:36" }
+      - { id: lunch, name: Lunch, start: "11:36", end: "12:11", kind: break }
+      - { id: "4", name: 4th Period, start: "12:17", end: "13:18" }
+      - { id: "5", name: 5th Period, start: "13:24", end: "14:25" }
+  friday:
+    name: Friday (Early Out)
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:35" }
+      - { id: "2", name: 2nd Period, start: "08:41", end: "09:30" }
+      - { id: "3", name: 3rd Period, start: "09:36", end: "10:23" }
+      - { id: "4", name: 4th Period, start: "10:30", end: "11:25" }
+      - { id: "5", name: 5th Period, start: "11:31", end: "12:20" }
+      - { id: lunch, name: Lunch, start: "12:20", end: "12:50", kind: break }
+
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
+
+feeds:
+  - id: bell-schedule
+    name: Bell Schedule
+    description: Brighton High School periods and lunch on school days only.
+    include: [bells]
+    include_breaks: true
