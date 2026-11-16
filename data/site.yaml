@@ -13,8 +13,8 @@ columns:
   - { title: Butler Elem, school: butler-elementary, prefix: Elem }
   - { title: Butler Mid, school: butler, prefix: Butler }
   - { title: Carpool, carpool: true }
-  - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
   - { title: Brighton, school: brighton, prefix: BHS }
+  - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
 
 # Main calendars to subscribe to, in this order (paths under feeds/, no .ics).
 # Shown first on the site and in the README; everything else is listed under
