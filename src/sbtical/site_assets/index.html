@@ -113,6 +113,9 @@
                  box-shadow: 0 -1px 0 var(--card), 0 1px 0 var(--card); }
   .blk.overlay.half { left: 50%; }
   .blk.overlay.past { opacity: 1; color: var(--muted); }
+  .blk.car { border-left-style: dashed; padding-top: 0; padding-bottom: 0; z-index: 2; }
+  .blk.car { justify-content: center; }
+  .blk.car b { white-space: nowrap; text-overflow: ellipsis; display: block; letter-spacing: -0.02em; }
   .blk.past { opacity: .5; }
   .closed { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, var(--off-bg) 0 8px, transparent 8px 16px); }
   .nowline { position: absolute; left: 30px; right: 0; border-top: 2px solid #ef4444; z-index: 3; pointer-events: none; }
@@ -289,7 +292,13 @@ const PPM = 1.35;                       // pixels per minute
 const HEAD = 44;                        // column header height
 const COLORS = {                        // per-school accent (light, dark handled by alpha bg)
   "butler-elementary": "#0d9488", butler: "#7c3aed", jordan: "#dc2626", ctec: "#d97706", brighton: "#2563eb",
+  carpool: "#2f5d62",
 };
+// Carpool pickups for a kid (by initial) on a date: [{s, e, short, title, driver, kids, sid}]
+const rides = (date, initial) => (DATA.carpool?.[date] || [])
+  .map(([s, e, short, title, driver, kids, sid]) => ({ s: toMin(s), e: toMin(e), short, title, driver, kids, sid }))
+  .filter((r) => !initial || r.kids.includes(initial));
+const rideText = (r) => `${r.s < 12 * 60 ? "Carpool" : "Pickup"} ${fmt(r.s)}${r.driver ? " · " + r.driver : ""}`;
 const color = (sid) => COLORS[sid] || "#64748b";
 const periodShort = (n) => n
   .replace(/\b(\d+)(?:st|nd|rd|th) Period\b/, "P$1")
@@ -374,6 +383,19 @@ function renderGrid(at) {
   const cols = [];
   if (mode === "schools") {
     for (const col of DATA.columns) {
+      if (col.carpool) {
+        const rs = rides(viewDate);
+        const drivers = [...new Set(rs.map((r) => r.driver).filter(Boolean))];
+        cols.push({
+          title: col.title, sub: rs.length ? drivers.join(" & ") : "None", off: !rs.length, closed: !rs.length,
+          blocks: rs.map((r) => ({
+            s: r.s, e: r.e, c: color("carpool"), car: true,
+            label: `${r.short.replace(/ ·.*/, "")}${r.driver ? " · " + r.driver : ""}`,
+            tap: () => showRide(r),
+          })),
+        });
+        continue;
+      }
       if (col.school) {
         const sc = DATA.schools.find((x) => x.id === col.school);
         const d = schoolDay(sc, viewDate, col.groups || []);
@@ -411,7 +433,9 @@ function renderGrid(at) {
         title: k.initial, sub: items.length ? (labels[0] || "") : ((day?.notes || [])[0] || "No school"),
         off: !items.length, closed: !items.length,
         blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, label: kidLabel(t), c: color(sid), brk: !busy,
-          tap: () => showKidItem(k, [a, b, t, busy, sid]) })),
+          tap: () => showKidItem(k, [a, b, t, busy, sid]) }))
+          .concat(rides(viewDate, k.initial).map((r) => ({ s: r.s, e: r.e, c: color("carpool"), car: true,
+            label: `🚗${clock(r.s)}`, tap: () => showRide(r) }))),
       });
     }
   }
@@ -441,9 +465,9 @@ function renderGrid(at) {
     for (let m = t0 + 60; m < t1; m += 60) { const hr = el("div", "hr"); hr.style.top = `${(m - t0) * PPM}px`; body.append(hr); }
     if (c.closed) body.append(el("div", "closed"));
     for (const b of c.blocks) {
-      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (at != null && b.e <= at ? " past" : ""));
+      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (b.car ? " car" : "") + (at != null && b.e <= at ? " past" : ""));
       btn.style.top = `${(b.s - t0) * PPM}px`;
-      btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, 10)}px`;
+      btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, b.car ? 16 : 10)}px`;
       btn.style.setProperty("--c", b.c);
       btn.style.setProperty("--c-bg", b.c + "22");
       const h = (b.e - b.s) * PPM;
@@ -507,6 +531,19 @@ function showPeriod(schoolId, ps, pe, title, meta, cluster, groups) {
   openSheet(title, meta, rows);
 }
 
+function showRide(r) {
+  const sc = DATA.schools.find((x) => x.id === r.sid);
+  const rows = r.kids.map((i) => {
+    const kid = DATA.kids.find((k) => k.initial === i);
+    const items = (kid?.days[viewDate]?.items || []).filter((x) => x[4] === r.sid && x[3]);
+    const out = items.length ? Math.max(...items.map((x) => toMin(x[1]))) : null;
+    const first = items.length ? Math.min(...items.map((x) => toMin(x[0]))) : null;
+    const note = r.s < 12 * 60 ? (first != null ? `First class ${fmt(first)}` : "") : (out != null ? `Out of class ${fmt(out)}` : "");
+    return [i, sc ? sc.name : r.sid, note];
+  });
+  openSheet(r.title, `${fmt(r.s)}${r.driver ? " · " + r.driver + " drives" : ""}`, rows);
+}
+
 function showKidItem(k, [a, b, t, busy, sid]) {
   const sc = DATA.schools.find((s) => s.id === sid);
   openSheet(`${k.initial} · ${t}`, `${fmt(toMin(a))} – ${fmt(toMin(b))} · ${sc ? sc.name : sid}${busy ? "" : " · free"}`, []);
@@ -538,6 +575,14 @@ function render() {
     const info = el("div");
     info.append(el("div", "status", st.status));
     if (st.sub) { const sub = el("div", "sub"); sub.innerHTML = st.sub; info.append(sub); }  // sub: times + esc()'d text only
+    const rs = rides(viewDate, kid.initial);
+    if (rs.length) {
+      const next = at == null ? null : rs.find((r) => r.e > at);
+      const line = el("div", "sub");
+      line.textContent = "🚗 " + (at == null ? rs.map(rideText).join(" · ")
+        : next ? rideText(next) + (next.s > at ? ` (in ${dur(next.s - at)})` : " (now)") : "No more pickups today");
+      info.append(line);
+    }
     const chips = el("div", "chips");
     if (st.cls !== "off") for (const note of day?.notes || []) chips.append(el("span", "chip", note));
     if (chips.childElementCount) info.append(chips);

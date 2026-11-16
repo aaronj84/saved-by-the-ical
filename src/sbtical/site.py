@@ -15,6 +15,7 @@ import yaml
 from importlib import resources
 from pathlib import Path
 
+from .carpool import is_carpool_file, load_carpool, occurrences
 from .combine import is_person_file, load_person
 from .ical import build_feed, build_student_feed
 from .model import School, load_school
@@ -94,6 +95,9 @@ def _columns(config: Path, loaded: dict[str, School]) -> list[dict]:
                 for sid, s in loaded.items()]
     cols = []
     for c in (yaml.safe_load(config.read_text()) or {}).get("columns") or []:
+        if c.get("carpool"):
+            cols.append({"title": c["title"], "carpool": True})
+            continue
         if c.get("school"):
             school = loaded[c["school"]]
             groups = sorted({st.group for st in school.students if st.group and st.group != "unknown"})
@@ -121,7 +125,18 @@ def _columns(config: Path, loaded: dict[str, School]) -> list[dict]:
 def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None = None) -> None:
     kids, feeds, schools = [], [], []
     loaded: dict[str, School] = {}
+    carpool: dict[str, list] = {}
     for path in files:
+        if is_carpool_file(path):
+            cp = load_carpool(path)
+            for date, start, end, rule in occurrences(cp):
+                carpool.setdefault(date.isoformat(), []).append([
+                    start.strftime("%H:%M"), end.strftime("%H:%M"), rule.short, rule.title,
+                    rule.driver, list(rule.kids), rule.school.id])
+            feeds.append({"school": "Carpool", "feeds": [
+                {"name": f.name, "description": f.description, "path": f"feeds/carpool/{f.id}.ics"}
+                for f in cp.feeds]})
+            continue
         if is_person_file(path):
             person = load_person(path)
             parts = []
@@ -159,7 +174,7 @@ def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None
     out.mkdir(parents=True, exist_ok=True)
     columns = _columns(config or Path("data/site.yaml"), loaded)
     data = {"timezone": "America/Denver", "kids": kids, "schools": schools,
-            "columns": columns, "feeds": feeds}
+            "columns": columns, "carpool": carpool, "feeds": feeds}
     (out / "schedule.json").write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False))
     assets = resources.files("sbtical") / "site_assets"
     for name in ("index.html", "icon.png"):

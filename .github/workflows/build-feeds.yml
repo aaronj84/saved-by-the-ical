@@ -22,9 +22,9 @@ jobs:
           python-version: "3.13"
       - run: pip install -e '.[dev]'
       - run: pytest -q
-      - run: sbtical check data/schools/*.yaml data/people/*.yaml
-      - run: sbtical build data/schools/*.yaml data/people/*.yaml
-      - run: sbtical readme data/schools/*.yaml data/people/*.yaml
+      - run: sbtical check data/schools/*.yaml data/people/*.yaml data/carpool.yaml
+      - run: sbtical build data/schools/*.yaml data/people/*.yaml data/carpool.yaml
+      - run: sbtical readme data/schools/*.yaml data/people/*.yaml data/carpool.yaml
       - name: Fail PRs whose committed feeds are stale
         if: github.event_name == 'pull_request'
         run: git diff --exit-code -- feeds README.md
@@ -35,7 +35,7 @@ jobs:
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git add feeds README.md
           if ! git diff --cached --quiet; then git commit -m "Rebuild feeds" && git push; fi
-      - run: sbtical site data/schools/*.yaml data/people/*.yaml -o _site
+      - run: sbtical site data/schools/*.yaml data/people/*.yaml data/carpool.yaml -o _site
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         with:

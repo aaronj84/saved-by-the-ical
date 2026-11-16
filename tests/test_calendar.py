@@ -414,3 +414,22 @@ def test_site_columns_show_only_fynns_jordan_ctec_periods(tmp_path):
     assert [i[2] for i in jc["2027-01-20"]] == ["Jordan Period 5", "Jordan APP", "Jordan Period 6"]  # B, sem 2
     assert cols["Butler Elem"]["groups"] == ["1", "4"]
     assert cols["Butler Mid"]["groups"] == ["B", "C"]  # 6th grade B lunch, 7th grade C lunch
+
+
+def test_carpool_follows_calendar_rotation_and_drivers():
+    from sbtical.carpool import load_carpool, occurrences
+
+    cp = load_carpool(Path(__file__).parent.parent / "data/carpool.yaml")
+    occ = occurrences(cp)
+
+    def on(day):
+        return [(s.strftime("%H:%M"), r.driver, r.kids) for d, s, _, r in occ if d == day]
+
+    assert on(dt.date(2026, 11, 16)) == [  # Mon, B day (Maker's Club)
+        ("07:00", None, ("D", "R")), ("07:45", None, ("B", "M")),
+        ("15:15", "Jenn", ("B", "M")), ("15:25", "Jenn", ("D", "R"))]
+    assert on(dt.date(2026, 11, 17))[0] == ("07:20", None, ("D", "R"))  # Tue, A day
+    assert on(dt.date(2026, 11, 18))[2:] == [("15:15", "Aaron", ("B", "M")), ("15:25", "Aaron", ("D", "R"))]
+    assert on(dt.date(2026, 11, 20))[2:] == [("13:25", "Jenn", ("B", "M")), ("13:35", "Jenn", ("D", "R"))]
+    assert on(dt.date(2026, 11, 26)) == []  # Thanksgiving
+    assert len(occ) == 174 * 4

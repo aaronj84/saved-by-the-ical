@@ -8,6 +8,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from .carpool import build_carpool_feed, is_carpool_file, load_carpool, occurrences
 from .combine import build_person_feed, is_person_file, load_person
 from .ical import build_feed, build_student_feed
 from .model import CalendarError, load_school
@@ -16,6 +17,12 @@ from .resolve import resolve_days
 
 def cmd_check(args) -> int:
     for path in args.files:
+        if is_carpool_file(path):
+            cp = load_carpool(path)
+            occ = occurrences(cp)
+            print(f"Carpool — {path}\n  {len(cp.rules)} rules, {len(occ)} pickups; "
+                  f"feeds: {', '.join(f.id for f in cp.feeds)}")
+            continue
         if is_person_file(path):
             person = load_person(path)
             parts = [f"{s.school.id}/{s.feed or s.student}" for s in person.sources]
@@ -64,6 +71,12 @@ def cmd_day(args) -> int:
 def cmd_build(args) -> int:
     out = Path(args.out)
     for path in args.files:
+        if is_carpool_file(path):
+            cp = load_carpool(path)
+            (out / "carpool").mkdir(parents=True, exist_ok=True)
+            for f in cp.feeds:
+                _write(out / "carpool" / f"{f.id}.ics", build_carpool_feed(cp, f))
+            continue
         if is_person_file(path):
             person = load_person(path)
             (out / "people").mkdir(parents=True, exist_ok=True)
@@ -102,8 +115,9 @@ def render_links(files, out: str, base_url: str) -> str:
         lines.append(f"**{name}**" + (f" — {desc}" if desc else ""))
         lines.extend(["", "```", url.replace("https://", "webcal://", 1), "```", ""])
 
-    schools = [p for p in files if not is_person_file(p)]
-    people = [p for p in files if is_person_file(p)]
+    carpools = [p for p in files if is_carpool_file(p)]
+    people = [p for p in files if p not in carpools and is_person_file(p)]
+    schools = [p for p in files if p not in carpools and p not in people]
     kids = []
     for path in schools:
         school = load_school(path)
@@ -121,6 +135,10 @@ def render_links(files, out: str, base_url: str) -> str:
         lines += ["### Class Schedules", ""]
         for name, desc, url in sorted(kids):
             link(name, desc, url)
+    for path in carpools:
+        lines += ["### Carpool", ""]
+        for f in load_carpool(path).feeds:
+            link(f.name, f.description, f"{base_url}/{out}/carpool/{f.id}.ics")
     lines.append(END)
     return "\n".join(lines)
 

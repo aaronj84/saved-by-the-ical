@@ -127,6 +127,26 @@ webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/class-schedule-r.ics
 webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/class-schedule-s.ics
 ```
 
+### Carpool
+
+**Carpool** — All carpool pickups for the Butler kids.
+
+```
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/carpool/all.ics
+```
+
+**Jenn's Pickups** — Afternoon pickups Jenn drives.
+
+```
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/carpool/jenn.ics
+```
+
+**Aaron's Pickups** — Afternoon pickups Aaron drives.
+
+```
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/carpool/aaron.ics
+```
+
 <!-- feeds:end -->
 
 ## Updating the calendars
@@ -172,11 +192,11 @@ changes the URL.
 
 ```sh
 pip install -e '.[dev]'
-sbtical check data/schools/*.yaml data/people/*.yaml          # validate + school-day counts
+sbtical check data/schools/*.yaml data/people/*.yaml data/carpool.yaml          # validate + school-day counts
 sbtical day data/schools/jordan.yaml 2026-12-18   # how one date resolves
-sbtical build data/schools/*.yaml data/people/*.yaml          # write feeds/
-sbtical readme data/schools/*.yaml data/people/*.yaml         # refresh the links above
-sbtical site data/schools/*.yaml data/people/*.yaml           # build the Pages site into _site/
+sbtical build data/schools/*.yaml data/people/*.yaml data/carpool.yaml          # write feeds/
+sbtical readme data/schools/*.yaml data/people/*.yaml data/carpool.yaml         # refresh the links above
+sbtical site data/schools/*.yaml data/people/*.yaml data/carpool.yaml           # build the Pages site into _site/
 (cd _site && python3 -m http.server)   # preview; add ?now=2026-11-16T10:05 to test a time
 pytest
 ```
