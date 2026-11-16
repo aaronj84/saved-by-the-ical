@@ -107,7 +107,8 @@ def render_links(files, out: str, base_url: str) -> str:
     kids = []
     for path in schools:
         school = load_school(path)
-        lines += [f"### {school.name}", ""]
+        if school.feeds:
+            lines += [f"### {school.name}", ""]
         for f in school.feeds:
             link(f.name, f.description, f"{base_url}/{out}/{school.id}/{f.id}.ics")
         for s in school.students:
@@ -142,7 +143,7 @@ def cmd_readme(args) -> int:
 def cmd_site(args) -> int:
     from .site import build_site
 
-    build_site(sorted(args.files), Path(args.out), Path(args.feeds))
+    build_site(sorted(args.files), Path(args.out), Path(args.feeds), Path(args.config))
     return 0
 
 
@@ -178,6 +179,7 @@ def main(argv=None) -> int:
     p.add_argument("files", nargs="+")
     p.add_argument("-o", "--out", default="_site")
     p.add_argument("--feeds", default="feeds", help="built feeds to copy into the site")
+    p.add_argument("--config", default="data/site.yaml", help="site view configuration")
     p.set_defaults(func=cmd_site)
 
     args = ap.parse_args(argv)

@@ -1,0 +1,73 @@
+# SOURCE: Butler Elementary bell schedule page (2026-27 screenshot).
+# School 8:20 (late bell 8:25); dismissal Mon-Thu 3:10, Fri 1:20.
+# Lunch differs by grade, so each grade is its own track (group = grade).
+# Assumes the Canyons K-12 calendar; no A/B rotation.
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: butler-elementary
+  name: Butler Elementary
+  short_name: Butler Elem
+
+rotation: null
+
+bell_schedules:
+  mon_thu:
+    name: Monday–Thursday
+    periods:
+      - { id: am-k, name: School, slot: class, group: "K", start: "08:20", end: "11:35" }
+      - { id: lunch-k, name: Lunch, group: "K", kind: break, start: "11:35", end: "12:15" }
+      - { id: pm-k, name: School, slot: class, group: "K", start: "12:15", end: "15:10" }
+      - { id: am-1, name: School, slot: class, group: "1", start: "08:20", end: "12:35" }
+      - { id: lunch-1, name: Lunch, group: "1", kind: break, start: "12:35", end: "13:15" }
+      - { id: pm-1, name: School, slot: class, group: "1", start: "13:15", end: "15:10" }
+      - { id: am-2, name: School, slot: class, group: "2", start: "08:20", end: "11:55" }
+      - { id: lunch-2, name: Lunch, group: "2", kind: break, start: "11:55", end: "12:35" }
+      - { id: pm-2, name: School, slot: class, group: "2", start: "12:35", end: "15:10" }
+      - { id: am-3, name: School, slot: class, group: "3", start: "08:20", end: "12:15" }
+      - { id: lunch-3, name: Lunch, group: "3", kind: break, start: "12:15", end: "12:55" }
+      - { id: pm-3, name: School, slot: class, group: "3", start: "12:55", end: "15:10" }
+      - { id: am-4, name: School, slot: class, group: "4", start: "08:20", end: "11:10" }
+      - { id: lunch-4, name: Lunch, group: "4", kind: break, start: "11:10", end: "11:50" }
+      - { id: pm-4, name: School, slot: class, group: "4", start: "11:50", end: "15:10" }
+      - { id: am-5, name: School, slot: class, group: "5", start: "08:20", end: "12:55" }
+      - { id: lunch-5, name: Lunch, group: "5", kind: break, start: "12:55", end: "13:35" }
+      - { id: pm-5, name: School, slot: class, group: "5", start: "13:35", end: "15:10" }
+  friday:
+    name: Friday
+    periods:
+      - { id: am-k, name: School, slot: class, group: "K", start: "08:20", end: "11:35" }
+      - { id: lunch-k, name: Lunch, group: "K", kind: break, start: "11:35", end: "12:15" }
+      - { id: pm-k, name: School, slot: class, group: "K", start: "12:15", end: "13:20" }
+      - { id: am-1, name: School, slot: class, group: "1", start: "08:20", end: "12:20" }
+      - { id: lunch-1, name: Lunch, group: "1", kind: break, start: "12:20", end: "13:00" }
+      - { id: pm-1, name: School, slot: class, group: "1", start: "13:00", end: "13:20" }
+      - { id: am-2, name: School, slot: class, group: "2", start: "08:20", end: "11:55" }
+      - { id: lunch-2, name: Lunch, group: "2", kind: break, start: "11:55", end: "12:35" }
+      - { id: pm-2, name: School, slot: class, group: "2", start: "12:35", end: "13:20" }
+      - { id: am-3, name: School, slot: class, group: "3", start: "08:20", end: "12:05" }
+      - { id: lunch-3, name: Lunch, group: "3", kind: break, start: "12:05", end: "12:45" }
+      - { id: pm-3, name: School, slot: class, group: "3", start: "12:45", end: "13:20" }
+      - { id: am-4, name: School, slot: class, group: "4", start: "08:20", end: "11:10" }
+      - { id: lunch-4, name: Lunch, group: "4", kind: break, start: "11:10", end: "11:50" }
+      - { id: pm-4, name: School, slot: class, group: "4", start: "11:50", end: "13:20" }
+      - { id: am-5, name: School, slot: class, group: "5", start: "08:20", end: "12:35" }
+      - { id: lunch-5, name: Lunch, group: "5", kind: break, start: "12:35", end: "13:15" }
+      - { id: pm-5, name: School, slot: class, group: "5", start: "13:15", end: "13:20" }
+
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
+
+# Per-kid schedules (initials only; repo is public).
+students:
+  - id: class-schedule-b
+    name: Class Schedule B
+    description: 1st grade at Butler Elementary.
+    group: "1"
+    include_breaks: true
+    classes: { class: 1st Grade }
+  - id: class-schedule-m
+    name: Class Schedule M
+    description: 4th grade at Butler Elementary.
+    group: "4"
+    include_breaks: true
+    classes: { class: 4th Grade }

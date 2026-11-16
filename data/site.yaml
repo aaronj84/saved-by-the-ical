@@ -1,0 +1,12 @@
+# Columns for the site's "Daily schedule → Schools" view, left to right.
+#   school: show that school's bell schedule (group tracks like lunch groups or
+#           grades are narrowed to the groups the kids are in)
+#   feeds:  show only the periods in these feeds (school/feed), e.g. the
+#           Jordan/CTEC periods one kid actually attends
+#   prefix: text before each period name ("Jordan P1"); feed titles already
+#           carry their school's short name
+columns:
+  - { title: Butler Elem, school: butler-elementary, prefix: Elem }
+  - { title: Butler Mid, school: butler, prefix: Butler }
+  - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
+  - { title: Brighton, school: brighton, prefix: BHS }

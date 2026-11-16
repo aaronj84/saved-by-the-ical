@@ -79,6 +79,60 @@
                  border-bottom: 1px solid var(--line); }
   .subscribe a small { display: block; color: var(--muted); font-size: 13px; }
   .note { color: var(--muted); font-size: 13px; margin: 8px 0 14px; }
+  .pick { position: relative; }
+  .pick input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; }
+  .panel { background: var(--card); border-radius: 16px; padding: 4px 0 8px; margin-top: 16px; }
+  .panel > summary { padding: 10px 14px; font-weight: 600; cursor: pointer; }
+  .seg { display: flex; margin: 2px 14px 10px; background: var(--off-bg); border-radius: 10px; padding: 2px; }
+  .seg button { flex: 1; border: 0; background: transparent; color: var(--text); font-size: 14px;
+                padding: 6px 0; border-radius: 8px; font-weight: 600; }
+  .seg button.on { background: var(--card); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+  .gwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 8px 4px 0; }
+  .grid { position: relative; display: flex; }
+  .axis { width: 30px; flex: none; position: relative; }
+  .axis span { position: absolute; right: 5px; font-size: 11px; color: var(--muted);
+               transform: translateY(-50%); font-variant-numeric: tabular-nums; }
+  .col { flex: 1 0 46px; min-width: 0; position: relative; border-left: 1px solid var(--line); }
+  .colhead { height: 44px; padding: 4px 1px 0; text-align: center; font-size: 12px; font-weight: 700;
+             line-height: 1.15; overflow: hidden; }
+  .colhead small { display: block; font-weight: 600; color: var(--chip-text); font-size: 10.5px; }
+  .colhead small.off { color: var(--muted); }
+  .colbody { position: relative; }
+  .hr { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--line); }
+  .blk { position: absolute; left: 2px; right: 2px; border-radius: 6px; padding: 2px 3px; overflow: hidden;
+         font-size: 10.5px; line-height: 1.2; border: 0; text-align: left; color: var(--text);
+         background: var(--c-bg); border-left: 3px solid var(--c); font-family: inherit;
+         display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; }
+  .blk b { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--lines, 2);
+           font-weight: 700; overflow: hidden; overflow-wrap: break-word; }
+  .blk span { color: var(--muted); font-size: 10px; }
+  .blk.brk { background: repeating-linear-gradient(135deg, var(--free-bg) 0 6px, transparent 6px 12px);
+             border-left-color: var(--free); }
+  .blk.sel { outline: 2px solid var(--now); }
+  .blk.overlay { z-index: 2; background-color: var(--card);
+                 box-shadow: 0 -1px 0 var(--card), 0 1px 0 var(--card); }
+  .blk.overlay.half { left: 50%; }
+  .blk.overlay.past { opacity: 1; color: var(--muted); }
+  .blk.past { opacity: .5; }
+  .closed { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, var(--off-bg) 0 8px, transparent 8px 16px); }
+  .nowline { position: absolute; left: 30px; right: 0; border-top: 2px solid #ef4444; z-index: 3; pointer-events: none; }
+  .nowline::before { content: ""; position: absolute; left: -5px; top: -6px; width: 10px; height: 10px;
+                     border-radius: 50%; background: #ef4444; }
+  .legend { color: var(--muted); font-size: 12px; margin: 6px 14px 0; }
+  .sheet { position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom)); z-index: 10;
+           max-width: 544px; margin: 0 auto; background: var(--card); border-radius: 16px; padding: 14px 16px;
+           box-shadow: 0 8px 30px rgba(0,0,0,.25); max-height: 55vh; overflow-y: auto; }
+  .sheet h4 { margin: 0 32px 2px 0; font-size: 17px; }
+  .sheet .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .sheet .x { position: absolute; right: 10px; top: 8px; border: 0; background: var(--off-bg); color: var(--text);
+              width: 30px; height: 30px; border-radius: 50%; font-size: 16px; }
+  .sheet ul { list-style: none; padding: 0; margin: 0; }
+  .sheet li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; padding: 7px 0;
+              border-bottom: 1px solid var(--line); font-size: 15px; }
+  .sheet li:last-child { border-bottom: 0; }
+  .sheet .mini { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+                 font-weight: 700; background: var(--chip); color: var(--chip-text); font-size: 14px; }
+  .sheet .sub { margin: 0; }
   footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 18px; }
   footer a { color: var(--now); }
   .err { background: var(--busy-bg); color: var(--busy); padding: 12px; border-radius: 12px; }
@@ -92,9 +146,20 @@
       <button id="prev" aria-label="Previous day">‹</button>
       <button id="today">Today</button>
       <button id="next" aria-label="Next day">›</button>
+      <button class="pick" aria-label="Pick a date">📅<input type="date" id="pick"></button>
     </nav>
   </header>
   <div id="kids"></div>
+  <details class="panel" id="daily">
+    <summary>Daily schedule</summary>
+    <div class="seg" role="tablist">
+      <button data-mode="schools">Schools</button>
+      <button data-mode="kids">Kids</button>
+    </div>
+    <div class="gwrap"><div class="grid" id="grid"></div></div>
+    <p class="legend" id="legend"></p>
+  </details>
+  <div class="sheet" id="sheet" hidden></div>
   <details class="subscribe" id="subscribe">
     <summary>Subscribe to calendars</summary>
     <p class="note">Tap a calendar to add it to your iPhone. Updates arrive automatically.</p>
@@ -219,6 +284,234 @@ function timeline(a, at) {
   return ol;
 }
 
+// ---------- Daily schedule grid ----------
+const PPM = 1.35;                       // pixels per minute
+const HEAD = 44;                        // column header height
+const COLORS = {                        // per-school accent (light, dark handled by alpha bg)
+  "butler-elementary": "#0d9488", butler: "#7c3aed", jordan: "#dc2626", ctec: "#d97706", brighton: "#2563eb",
+};
+const color = (sid) => COLORS[sid] || "#64748b";
+const periodShort = (n) => n
+  .replace(/\b(\d+)(?:st|nd|rd|th) Period\b/, "P$1")
+  .replace(/\bPeriod (\d+)(?:\/\d+)?\b/, "P$1")
+  .replace(/\b(AM|PM) Class\b/, "$1");
+const kidLabel = periodShort;  // keep "Jordan P1" / "CTEC AM" so mixed-school days stay clear
+const gshort = (g) => g === "K" ? "K" : /^\d$/.test(g) ? `${g}${["th", "st", "nd", "rd"][g] || "th"} Gr` : g;
+const glong = (g) => g === "K" ? "Kindergarten" : /^\d$/.test(g) ? `${g}${["th", "st", "nd", "rd"][g] || "th"} grade` : `${g} lunch`;
+// Subtract intervals `cut` from intervals `keep` (all {s, e}).
+const subtract = (keep, cut) => keep.flatMap((k) => {
+  let parts = [{ s: k.s, e: k.e }];
+  for (const c of cut) parts = parts.flatMap((p) => c.e <= p.s || c.s >= p.e ? [p]
+    : [...(c.s > p.s ? [{ s: p.s, e: c.s }] : []), ...(c.e < p.e ? [{ s: c.e, e: p.e }] : [])]);
+  return parts;
+});
+const union = (iv) => iv.slice().sort((a, b) => a.s - b.s).reduce((acc, i) => {
+  const last = acc[acc.length - 1];
+  if (last && i.s <= last.e) last.e = Math.max(last.e, i.e); else acc.push({ s: i.s, e: i.e });
+  return acc;
+}, []);
+const pref = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch {} return null; };
+let mode = pref("mode") || "schools", selected = null;
+
+function schoolDay(school, date, groups = []) {
+  const entry = school.days[date];
+  if (!entry) return { closed: true, note: null, label: null, periods: [] };
+  const [sid, rot, note] = entry;
+  if (!sid) return { closed: true, note, label: null, periods: [] };
+  const sched = school.schedules[sid];
+  const periods = sched.periods.map(([s, e, name, kind, group, names]) => ({
+    s: toMin(s), e: toMin(e), name: (names && rot && names[rot]) || name, kind, group,
+  }));
+  // Group tracks (lunch groups, grades): show just the groups our kids are
+  // in (lunches labelled by group); if none known, one block per cluster.
+  const plain = periods.filter((p) => !p.group);
+  const grouped = periods.filter((p) => p.group).sort((a, b) => a.s - b.s);
+  const clusters = [];
+  for (const p of grouped) {
+    const c = clusters[clusters.length - 1];
+    if (c && p.s < c.e) { c.e = Math.max(c.e, p.e); c.parts.push(p); }
+    else clusters.push({ s: p.s, e: p.e, parts: [p] });
+  }
+  for (const c of clusters) {
+    const mine = c.parts.filter((p) => groups.includes(p.group));
+    if (!mine.length) {
+      const names = [...new Set(c.parts.filter((p) => p.kind !== "break").map((p) => p.name))];
+      const hasBreak = c.parts.some((p) => p.kind === "break");
+      plain.push({ s: c.s, e: c.e, name: names.join(" / ") + (hasBreak ? " + Lunch" : ""), kind: "class", cluster: c.parts });
+      continue;
+    }
+    const lunches = mine.filter((p) => p.kind === "break");
+    const classes = mine.filter((p) => p.kind !== "break");
+    const name = [...new Set(classes.map((p) => p.name))].join(" / ");
+    const multi = new Set(mine.map((p) => p.group)).size > 1;
+    // One group: its own class segments around its lunch. Several groups:
+    // one class band for the whole stretch, each group's lunch laid over it.
+    // Lunches sit on top of the band; side by side only if two groups' lunches overlap.
+    const clash = (l) => lunches.some((o) => o !== l && o.s < l.e && o.e > l.s);
+    for (const l of lunches) plain.push({ ...l, name: `${gshort(l.group)} Lunch`, noPrefix: true, cluster: c.parts,
+                                         overlay: multi, half: multi && clash(l) });
+    const segs = multi ? union(mine) : subtract(union(classes), lunches);
+    for (const seg of segs) plain.push({ ...seg, name, kind: "class", cluster: c.parts });
+  }
+  plain.sort((a, b) => a.s - b.s);
+  const label = [rot && `${rot} Day`, sched.name !== "Monday–Thursday" && sched.name !== "Friday" && sched.name !== "Regular Schedule" ? sched.name : null, note]
+    .filter(Boolean)[0] || null;
+  return { closed: false, note, label, rot, schedName: sched.name, periods: plain };
+}
+
+function kidsAt(schoolId, s, e, date) {
+  const out = [];
+  for (const k of DATA.kids) {
+    const items = (k.days[date]?.items || []).filter(([a, b, , , sid]) => sid === schoolId && toMin(a) < e && toMin(b) > s);
+    if (items.length) out.push({ kid: k, items });
+  }
+  return out;
+}
+
+function renderGrid(at) {
+  const grid = $("grid");
+  grid.replaceChildren();
+  const cols = [];
+  if (mode === "schools") {
+    for (const col of DATA.columns) {
+      if (col.school) {
+        const sc = DATA.schools.find((x) => x.id === col.school);
+        const d = schoolDay(sc, viewDate, col.groups || []);
+        cols.push({
+          title: col.title, sub: d.closed ? (d.note || "No school") : d.label, off: d.closed, closed: d.closed,
+          blocks: d.periods.map((p) => ({
+            ...p, c: color(sc.id), brk: p.kind === "break",
+            label: p.noPrefix || !col.prefix ? periodShort(p.name) : `${col.prefix} ${periodShort(p.name)}`,
+            tap: () => showPeriod(sc.id, p.s, p.e, `${sc.name} · ${p.name}`,
+              `${fmt(p.s)} – ${fmt(p.e)}` + (d.rot ? ` · ${d.rot} Day` : "") + ` · ${d.schedName}`, p.cluster, col.groups),
+          })),
+        });
+      } else {  // feed-driven column: only the periods in those feeds
+        const items = col.days[viewDate] || [];
+        const ref = DATA.schools.find((x) => x.id === col.label_from);
+        const entry = ref?.days[viewDate];
+        const rot = entry?.[1];
+        cols.push({
+          title: col.title, sub: items.length ? (rot ? `${rot} Day` : "") : (entry?.[2] || "No school"),
+          off: !items.length, closed: !items.length,
+          blocks: items.map(([a, b, t, busy, sid]) => ({
+            s: toMin(a), e: toMin(b), name: t, label: periodShort(t), c: color(sid), brk: !busy,
+            tap: () => showPeriod(sid, toMin(a), toMin(b), t,
+              `${fmt(toMin(a))} – ${fmt(toMin(b))}` + (rot ? ` · ${rot} Day` : "")),
+          })),
+        });
+      }
+    }
+  } else {
+    for (const k of DATA.kids) {
+      const day = k.days[viewDate];
+      const items = day?.items || [];
+      const labels = (day?.notes || []).filter((n) => / [AB] Day$/.test(n)).map((n) => n.replace(/^.* ([AB] Day)$/, "$1"));
+      cols.push({
+        title: k.initial, sub: items.length ? (labels[0] || "") : ((day?.notes || [])[0] || "No school"),
+        off: !items.length, closed: !items.length,
+        blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, label: kidLabel(t), c: color(sid), brk: !busy,
+          tap: () => showKidItem(k, [a, b, t, busy, sid]) })),
+      });
+    }
+  }
+  // Time range: hour before first period to hour after last (default 7–4).
+  const all = cols.flatMap((c) => c.blocks);
+  const t0 = all.length ? Math.floor(Math.min(...all.map((b) => b.s)) / 60) * 60 : 7 * 60;
+  const t1 = all.length ? Math.ceil(Math.max(...all.map((b) => b.e)) / 60) * 60 : 16 * 60;
+  const H = (t1 - t0) * PPM;
+  grid.style.minWidth = `${30 + cols.length * 46}px`;
+  grid.dataset.mode = mode;
+
+  const axis = el("div", "axis");
+  axis.style.height = `${HEAD + H}px`;
+  for (let m = t0; m <= t1; m += 60) {
+    const sp = el("span", null, clock(m).replace(":00", ""));
+    sp.style.top = `${HEAD + (m - t0) * PPM}px`;
+    axis.append(sp);
+  }
+  grid.append(axis);
+
+  for (const c of cols) {
+    const col = el("div", "col");
+    const head = el("div", "colhead", c.title);
+    if (c.sub) head.append(el("small", c.off ? "off" : "", c.sub));
+    const body = el("div", "colbody");
+    body.style.height = `${H}px`;
+    for (let m = t0 + 60; m < t1; m += 60) { const hr = el("div", "hr"); hr.style.top = `${(m - t0) * PPM}px`; body.append(hr); }
+    if (c.closed) body.append(el("div", "closed"));
+    for (const b of c.blocks) {
+      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (at != null && b.e <= at ? " past" : ""));
+      btn.style.top = `${(b.s - t0) * PPM}px`;
+      btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, 10)}px`;
+      btn.style.setProperty("--c", b.c);
+      btn.style.setProperty("--c-bg", b.c + "22");
+      const h = (b.e - b.s) * PPM;
+      const title = el("b", null, b.label);
+      title.style.setProperty("--lines", String(Math.max(1, Math.floor((h - (h > 46 ? 14 : 2)) / 13))));
+      btn.append(title);
+      if (h > 46) btn.append(el("span", null, `${clock(b.s)}–${clock(b.e)}`));
+      btn.onclick = () => { selected = btn; document.querySelectorAll(".blk.sel").forEach((x) => x.classList.remove("sel")); btn.classList.add("sel"); b.tap(); };
+      body.append(btn);
+    }
+    col.append(head, body);
+    grid.append(col);
+  }
+  if (at != null && at >= t0 && at <= t1) {
+    const line = el("div", "nowline");
+    line.style.top = `${HEAD + (at - t0) * PPM}px`;
+    grid.append(line);
+  }
+  $("legend").textContent = mode === "schools"
+    ? "Tap a period to see which kids are there and what class they have."
+    : "Colors show the school. Striped = lunch/break. Tap a class for details.";
+  document.querySelectorAll(".seg button").forEach((b) => b.classList.toggle("on", b.dataset.mode === mode));
+}
+
+function openSheet(title, meta, rows) {
+  const sh = $("sheet");
+  sh.replaceChildren();
+  const x = el("button", "x", "✕"); x.setAttribute("aria-label", "Close"); x.onclick = closeSheet;
+  sh.append(x, el("h4", null, title), el("div", "meta", meta));
+  if (rows.length) {
+    const ul = el("ul");
+    for (const [badge, text, sub] of rows) {
+      const li = el("li"); const right = el("div", null, text);
+      if (sub) right.append(el("div", "sub", sub));
+      li.append(el("div", "mini", badge), right); ul.append(li);
+    }
+    sh.append(ul);
+  }
+  sh.hidden = false;
+}
+function closeSheet() {
+  $("sheet").hidden = true;
+  document.querySelectorAll(".blk.sel").forEach((x) => x.classList.remove("sel"));
+}
+
+function showPeriod(schoolId, ps, pe, title, meta, cluster, groups) {
+  const here = kidsAt(schoolId, ps, pe, viewDate);
+  const rows = here.map(({ kid, items }) => [
+    kid.initial,
+    [...new Set(items.filter((i) => i[3]).map((i) => i[2]))].join(", ") || items.map((i) => i[2]).join(", "),
+    items.length > 1 || cluster ? items.map((i) => `${clock(toMin(i[0]))}–${clock(toMin(i[1]))} ${i[2]}`).join(" · ") : "",
+  ]);
+  if (!here.length) rows.push(["–", "None of the kids are here then", ""]);
+  if (cluster) {
+    const byGroup = {};
+    for (const q of cluster) if (!groups?.length || groups.includes(q.group)) (byGroup[q.group] ||= []).push(`${q.kind === "break" ? "Lunch" : periodShort(q.name)} ${clock(q.s)}–${clock(q.e)}`);
+    const order = (g) => (g === "K" ? "0" : g);
+    for (const g of Object.keys(byGroup).sort((a, b) => order(a).localeCompare(order(b))))
+      rows.push([g, glong(g), byGroup[g].join(" · ")]);
+  }
+  openSheet(title, meta, rows);
+}
+
+function showKidItem(k, [a, b, t, busy, sid]) {
+  const sc = DATA.schools.find((s) => s.id === sid);
+  openSheet(`${k.initial} · ${t}`, `${fmt(toMin(a))} – ${fmt(toMin(b))} · ${sc ? sc.name : sid}${busy ? "" : " · free"}`, []);
+}
+
 let DATA = null, viewDate = null;
 const openKids = new Set((() => { try { return JSON.parse(localStorage.getItem("open") || "[]"); } catch { return []; } })());
 const saveOpen = () => { try { localStorage.setItem("open", JSON.stringify([...openKids])); } catch {} };
@@ -253,6 +546,9 @@ function render() {
     if (a.items.length) d.append(timeline(a, at));
     box.append(d);
   }
+  const pick = $("pick");
+  pick.value = viewDate;
+  if ($("daily").open) renderGrid(at);
 }
 
 function renderFeeds() {
@@ -272,14 +568,20 @@ function renderFeeds() {
   }
 }
 
-$("prev").onclick = () => { viewDate = addDays(viewDate, -1); render(); };
-$("next").onclick = () => { viewDate = addDays(viewDate, 1); render(); };
-$("today").onclick = () => { viewDate = null; render(); };
+$("pick").onchange = (e) => { if (e.target.value) { viewDate = e.target.value; closeSheet(); render(); } };
+$("daily").addEventListener("toggle", () => { pref("daily", $("daily").open ? "1" : "0"); if (!$("daily").open) closeSheet(); render(); });
+document.querySelectorAll(".seg button").forEach((b) => b.onclick = () => { mode = b.dataset.mode; pref("mode", mode); closeSheet(); render(); });
+$("prev").onclick = () => { viewDate = addDays(viewDate, -1); closeSheet(); render(); };
+$("next").onclick = () => { viewDate = addDays(viewDate, 1); closeSheet(); render(); };
+$("today").onclick = () => { viewDate = null; closeSheet(); render(); };
 
 fetch("schedule.json", { cache: "no-cache" })
   .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then((data) => {
     DATA = data;
+    $("daily").open = pref("daily") === "1";
+    const dates = DATA.schools.flatMap((sc) => Object.keys(sc.days)).sort();
+    if (dates.length) { $("pick").min = dates[0]; $("pick").max = dates[dates.length - 1]; }
     render(); renderFeeds();
     setInterval(() => { if (!document.hidden) render(); }, 30000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) render(); });

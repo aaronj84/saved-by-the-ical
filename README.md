@@ -85,6 +85,12 @@ webcal://aaronj84.github.io/saved-by-the-ical/feeds/jordan/ab-days.ics
 
 ### Class Schedules
 
+**Class Schedule B** — 1st grade at Butler Elementary.
+
+```
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler-elementary/class-schedule-b.ics
+```
+
 **Class Schedule D** — 7th grade class schedule at Butler Middle School.
 
 ```
@@ -101,6 +107,12 @@ webcal://aaronj84.github.io/saved-by-the-ical/feeds/people/class-schedule-f.ics
 
 ```
 webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/class-schedule-l.ics
+```
+
+**Class Schedule M** — 4th grade at Butler Elementary.
+
+```
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler-elementary/class-schedule-m.ics
 ```
 
 **Class Schedule R** — 6th grade class schedule at Butler Middle School.
