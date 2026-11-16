@@ -378,7 +378,7 @@ def test_site_json_kids_and_schools(tmp_path):
     build_site(files, tmp_path, tmp_path / "nofeeds", DATA.parent / "site.yaml")
     data = json.loads((tmp_path / "schedule.json").read_text())
     kids = {k["initial"]: k for k in data["kids"]}
-    assert sorted(kids) == ["B", "D", "F", "L", "M", "R", "S"]
+    assert list(kids) == ["F", "S", "L", "D", "R", "M", "B"]  # order from data/site.yaml
     l_mon = kids["L"]["days"]["2026-11-16"]["items"]
     assert ["11:36", "12:11", "Lunch", False, "brighton"] in l_mon
     assert ["07:45", "08:46", "AP European History", True, "brighton"] in l_mon

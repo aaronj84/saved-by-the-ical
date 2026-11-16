@@ -206,12 +206,14 @@ def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None
                 kids.append(_kid(st.id, st.name, st.description,
                                  f"feeds/{school.id}/{st.id}.ics",
                                  [(school.id, build_student_feed(school, st, days=days))]))
-    kids.sort(key=lambda k: k["name"])
+    config = config or Path("data/site.yaml")
+    cfg = (yaml.safe_load(config.read_text()) or {}) if config.exists() else {}
+    order = [str(i) for i in cfg.get("kids") or []]
+    kids.sort(key=lambda k: (order.index(k["initial"]) if k["initial"] in order else len(order), k["name"]))
     order = ["butler-elementary", "butler", "jordan", "ctec", "brighton"]
     schools.sort(key=lambda s: (order.index(s["id"]) if s["id"] in order else 99, s["name"]))
 
     out.mkdir(parents=True, exist_ok=True)
-    config = config or Path("data/site.yaml")
     columns = _columns(config, loaded)
     main, rest = split_subscriptions(feed_catalog(files), config)
     data = {"timezone": "America/Denver", "kids": kids, "schools": schools,

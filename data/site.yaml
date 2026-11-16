@@ -1,3 +1,6 @@
+# Kid order on the site (cards and the Kids view), by initial.
+kids: [F, S, L, D, R, M, B]
+
 # Columns for the site's "Daily schedule → Schools" view, left to right.
 #   school: show that school's bell schedule (group tracks like lunch groups or
 #           grades are narrowed to the groups the kids are in)
