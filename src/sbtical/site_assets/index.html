@@ -58,6 +58,9 @@
   .free .badge { background: var(--free-bg); color: var(--free); }
   .off .badge { background: var(--off-bg); color: var(--off); }
   /* Done for the day / no school: empty circle, plain letter */
+  /* Done / no school rows: plain, unbolded, de-emphasized */
+  .kid.quiet .status { color: var(--text); font-weight: 400; font-size: 15px; }
+  .kid.quiet .until { font-size: 13px; }
   .badge.empty { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1.5px var(--text); }
   .status { font-weight: 600; font-size: 16px; }
   .busy .status { color: var(--text); }
@@ -592,7 +595,7 @@ function render() {
     const day = kid.days[viewDate];
     const a = analyze(day);
     const st = statusFor(day, a, at, viewDate);
-    const d = el("details", `kid ${st.cls}`);
+    const d = el("details", `kid ${st.cls}` + (st.done || st.cls === "off" ? " quiet" : ""));
     d.open = openKids.has(kid.id);
     d.addEventListener("toggle", () => { d.open ? openKids.add(kid.id) : openKids.delete(kid.id); saveOpen(); });
     const s = el("summary");
