@@ -138,6 +138,7 @@ class Student:
     include: tuple[str, ...] = ("bells", "days")
     group: str | None = None  # e.g. lunch group
     description: str | None = None
+    publish: bool = True  # False: only used inside a combined person feed
 
 
 @dataclass(frozen=True)
@@ -426,6 +427,7 @@ def parse_school(raw: dict) -> School:
                 include=_tuple(st_raw.get("include")) or ("bells", "days"),
                 group=str(st_raw["group"]) if st_raw.get("group") is not None else None,
                 description=st_raw.get("description"),
+                publish=bool(st_raw.get("publish", True)),
             )
         )
 

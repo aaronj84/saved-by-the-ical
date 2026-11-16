@@ -135,3 +135,12 @@ students:
       "4": { T1: Business Office Specialist, T2: Canyons Online, T3: AP English Language & Composition }
       "5": { T1: Girls Soccer, T2: Canyons Online, T3: Secondary Math 3 Honors }
       app: { T1: APP, T2: APP }
+  # Fynn's Brighton part only (Periods 4-5); published combined with his
+  # Jordan/CTEC mornings via data/people/class-schedule-f.yaml.
+  - id: class-schedule-f-brighton
+    name: Class Schedule F (Brighton part)
+    publish: false
+    classes:
+      # Printout lists two T1 Period 4 classes (Physics a, English 12 a).
+      "4": { T1: Physics / English 12, T2: US History, T3: US History }
+      "5": { T1: Financial Literacy, T2: English 12, T3: Business Office Specialist }

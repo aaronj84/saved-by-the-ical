@@ -20,9 +20,9 @@ jobs:
           python-version: "3.13"
       - run: pip install -e '.[dev]'
       - run: pytest -q
-      - run: sbtical check data/schools/*.yaml
-      - run: sbtical build data/schools/*.yaml
-      - run: sbtical readme data/schools/*.yaml
+      - run: sbtical check data/schools/*.yaml data/people/*.yaml
+      - run: sbtical build data/schools/*.yaml data/people/*.yaml
+      - run: sbtical readme data/schools/*.yaml data/people/*.yaml
       - name: Fail PRs whose committed feeds are stale
         if: github.event_name == 'pull_request'
         run: git diff --exit-code -- feeds README.md

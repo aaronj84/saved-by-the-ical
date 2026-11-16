@@ -341,3 +341,26 @@ def test_student_class_keys_are_validated():
     with pytest.raises(CalendarError, match="unknown keys"):
         base(terms={"T1": {"start": "2026-09-07", "end": "2026-09-18"}},
              students=[{"id": "k", "classes": {"1": {"T9": "Art"}}}])
+
+
+def test_fynn_combined_feed_has_no_overlaps_and_spans_three_schools():
+    from sbtical.combine import build_person_feed, load_person
+
+    cal = build_person_feed(load_person(Path(__file__).parent.parent / "data/people/class-schedule-f.yaml"))
+    timed = sorted(
+        (e["DTSTART"].dt, e["DTEND"].dt, str(e["SUMMARY"]))
+        for e in cal.walk("VEVENT") if isinstance(e["DTSTART"].dt, dt.datetime)
+    )
+    overlaps = {a[0].date() for a, b in zip(timed, timed[1:]) if b[0] < a[1]}
+    # Real conflict: Brighton early out (P4 at 10:31) vs Jordan Period 2 (to 11:03).
+    assert overlaps == {dt.date(2027, 2, 25)}
+
+    def on(day):
+        return [(s.strftime("%H:%M"), t) for s, _, t in timed if s.date() == day]
+
+    assert on(dt.date(2026, 11, 16)) == [  # B day, semester 1, T2
+        ("07:30", "CTEC AM Class"), ("12:17", "US History"), ("13:24", "English 12")]
+    assert on(dt.date(2027, 1, 19))[0] == ("07:45", "Jordan Period 5")  # B day, semester 2
+    assert on(dt.date(2026, 9, 28)) == [  # K-12 day off, Brighton in session
+        ("12:17", "Physics / English 12"), ("13:24", "Financial Literacy")]
+    assert len({str(e["UID"]) for e in cal.walk("VEVENT")}) == len(cal.walk("VEVENT"))
