@@ -413,4 +413,4 @@ def test_site_columns_show_only_fynns_jordan_ctec_periods(tmp_path):
     assert [i[2] for i in jc["2026-11-16"]] == ["CTEC AM Class"]  # B, semester 1
     assert [i[2] for i in jc["2027-01-20"]] == ["Jordan Period 5", "Jordan APP", "Jordan Period 6"]  # B, sem 2
     assert cols["Butler Elem"]["groups"] == ["1", "4"]
-    assert cols["Butler Mid"]["groups"] == []  # lunch groups not known yet
+    assert cols["Butler Mid"]["groups"] == ["B", "C"]  # 6th grade B lunch, 7th grade C lunch

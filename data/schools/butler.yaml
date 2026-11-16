@@ -54,13 +54,14 @@ feeds:
       description: Butler periods with 3rd (C) lunch. }
 
 # Per-kid class schedules. Class names only (repo is public): no teachers or
-# rooms. Source: 2026-27 SIS schedules. Set `group:` to A, B or C once the
-# lunch group is known ("unknown" shows Period 4 + lunch as one block).
+# rooms. Source: 2026-27 SIS schedules. `group:` is the lunch group:
+# 6th grade = B lunch, 7th grade = C lunch ("unknown" would show Period 4 +
+# lunch as one block).
 students:
   - id: class-schedule-d
     name: Class Schedule D
     description: 7th grade class schedule at Butler Middle School.
-    group: unknown
+    group: C  # 7th grade = C lunch
     include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:
@@ -73,7 +74,7 @@ students:
   - id: class-schedule-r
     name: Class Schedule R
     description: 6th grade class schedule at Butler Middle School.
-    group: unknown
+    group: B  # 6th grade = B lunch
     include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:

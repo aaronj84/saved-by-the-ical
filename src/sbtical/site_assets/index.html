@@ -101,13 +101,18 @@
   .hr { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--line); }
   .blk { position: absolute; left: 2px; right: 2px; border-radius: 6px; padding: 2px 3px; overflow: hidden;
          font-size: 10.5px; line-height: 1.2; border: 0; text-align: left; color: var(--text);
-         background: var(--c-bg); border-left: 3px solid var(--c); font-family: inherit; }
+         background: var(--c-bg); border-left: 3px solid var(--c); font-family: inherit;
+         display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; }
   .blk b { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--lines, 2);
-           font-weight: 700; overflow: hidden; overflow-wrap: anywhere; hyphens: auto; }
+           font-weight: 700; overflow: hidden; overflow-wrap: break-word; }
   .blk span { color: var(--muted); font-size: 10px; }
   .blk.brk { background: repeating-linear-gradient(135deg, var(--free-bg) 0 6px, transparent 6px 12px);
              border-left-color: var(--free); }
   .blk.sel { outline: 2px solid var(--now); }
+  .blk.overlay { z-index: 2; background-color: var(--card);
+                 box-shadow: 0 -1px 0 var(--card), 0 1px 0 var(--card); }
+  .blk.overlay.half { left: 50%; }
+  .blk.overlay.past { opacity: 1; color: var(--muted); }
   .blk.past { opacity: .5; }
   .closed { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, var(--off-bg) 0 8px, transparent 8px 16px); }
   .nowline { position: absolute; left: 30px; right: 0; border-top: 2px solid #ef4444; z-index: 3; pointer-events: none; }
@@ -336,11 +341,17 @@ function schoolDay(school, date, groups = []) {
       continue;
     }
     const lunches = mine.filter((p) => p.kind === "break");
-    for (const l of lunches) plain.push({ ...l, name: `${gshort(l.group)} Lunch`, noPrefix: true, cluster: c.parts });
     const classes = mine.filter((p) => p.kind !== "break");
     const name = [...new Set(classes.map((p) => p.name))].join(" / ");
-    for (const seg of subtract(union(classes), lunches))
-      plain.push({ ...seg, name, kind: "class", cluster: c.parts });
+    const multi = new Set(mine.map((p) => p.group)).size > 1;
+    // One group: its own class segments around its lunch. Several groups:
+    // one class band for the whole stretch, each group's lunch laid over it.
+    // Lunches sit on top of the band; side by side only if two groups' lunches overlap.
+    const clash = (l) => lunches.some((o) => o !== l && o.s < l.e && o.e > l.s);
+    for (const l of lunches) plain.push({ ...l, name: `${gshort(l.group)} Lunch`, noPrefix: true, cluster: c.parts,
+                                         overlay: multi, half: multi && clash(l) });
+    const segs = multi ? union(mine) : subtract(union(classes), lunches);
+    for (const seg of segs) plain.push({ ...seg, name, kind: "class", cluster: c.parts });
   }
   plain.sort((a, b) => a.s - b.s);
   const label = [rot && `${rot} Day`, sched.name !== "Monday–Thursday" && sched.name !== "Friday" && sched.name !== "Regular Schedule" ? sched.name : null, note]
@@ -430,7 +441,7 @@ function renderGrid(at) {
     for (let m = t0 + 60; m < t1; m += 60) { const hr = el("div", "hr"); hr.style.top = `${(m - t0) * PPM}px`; body.append(hr); }
     if (c.closed) body.append(el("div", "closed"));
     for (const b of c.blocks) {
-      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (at != null && b.e <= at ? " past" : ""));
+      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (at != null && b.e <= at ? " past" : ""));
       btn.style.top = `${(b.s - t0) * PPM}px`;
       btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, 10)}px`;
       btn.style.setProperty("--c", b.c);

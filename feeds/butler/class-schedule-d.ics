@@ -88,13 +88,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260817T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260817T110800
+DTEND;TZID=America/Denver:20260817T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260817T121200
 DTEND;TZID=America/Denver:20260817T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -142,13 +151,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260818T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260818T110800
+DTEND;TZID=America/Denver:20260818T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260818T121200
 DTEND;TZID=America/Denver:20260818T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -196,13 +214,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260819T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260819T110800
+DTEND;TZID=America/Denver:20260819T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260819T121200
 DTEND;TZID=America/Denver:20260819T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -250,13 +277,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260820T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260820T110800
+DTEND;TZID=America/Denver:20260820T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260820T121200
 DTEND;TZID=America/Denver:20260820T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -313,13 +349,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260821T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260821T105100
+DTEND;TZID=America/Denver:20260821T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260821T115600
 DTEND;TZID=America/Denver:20260821T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -358,13 +403,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260824T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260824T110800
+DTEND;TZID=America/Denver:20260824T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260824T121200
 DTEND;TZID=America/Denver:20260824T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -412,13 +466,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260825T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260825T110800
+DTEND;TZID=America/Denver:20260825T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-25-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260825T121200
 DTEND;TZID=America/Denver:20260825T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-25-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-25-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -466,13 +529,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260826T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260826T110800
+DTEND;TZID=America/Denver:20260826T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-26-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260826T121200
 DTEND;TZID=America/Denver:20260826T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-26-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-26-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -520,13 +592,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260827T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260827T110800
+DTEND;TZID=America/Denver:20260827T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-27-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260827T121200
 DTEND;TZID=America/Denver:20260827T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-27-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-27-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -583,13 +664,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260828T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260828T105100
+DTEND;TZID=America/Denver:20260828T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-28-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260828T115600
 DTEND;TZID=America/Denver:20260828T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-28-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-28-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -628,13 +718,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260831T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260831T110800
+DTEND;TZID=America/Denver:20260831T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-08-31-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260831T121200
 DTEND;TZID=America/Denver:20260831T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-08-31-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-08-31-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -682,13 +781,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260901T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260901T110800
+DTEND;TZID=America/Denver:20260901T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260901T121200
 DTEND;TZID=America/Denver:20260901T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -736,13 +844,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260902T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260902T110800
+DTEND;TZID=America/Denver:20260902T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260902T121200
 DTEND;TZID=America/Denver:20260902T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -790,13 +907,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260903T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260903T110800
+DTEND;TZID=America/Denver:20260903T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260903T121200
 DTEND;TZID=America/Denver:20260903T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -853,13 +979,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260904T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260904T105100
+DTEND;TZID=America/Denver:20260904T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260904T115600
 DTEND;TZID=America/Denver:20260904T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -898,13 +1033,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260908T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260908T110800
+DTEND;TZID=America/Denver:20260908T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260908T121200
 DTEND;TZID=America/Denver:20260908T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -952,13 +1096,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260909T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260909T110800
+DTEND;TZID=America/Denver:20260909T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260909T121200
 DTEND;TZID=America/Denver:20260909T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1006,13 +1159,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260910T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260910T110800
+DTEND;TZID=America/Denver:20260910T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260910T121200
 DTEND;TZID=America/Denver:20260910T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1069,13 +1231,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260911T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260911T105100
+DTEND;TZID=America/Denver:20260911T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260911T115600
 DTEND;TZID=America/Denver:20260911T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -1114,13 +1285,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260914T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260914T110800
+DTEND;TZID=America/Denver:20260914T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260914T121200
 DTEND;TZID=America/Denver:20260914T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1168,13 +1348,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260915T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260915T110800
+DTEND;TZID=America/Denver:20260915T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-15-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260915T121200
 DTEND;TZID=America/Denver:20260915T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-15-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-15-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1222,13 +1411,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260916T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260916T110800
+DTEND;TZID=America/Denver:20260916T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260916T121200
 DTEND;TZID=America/Denver:20260916T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1276,13 +1474,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260917T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260917T110800
+DTEND;TZID=America/Denver:20260917T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260917T121200
 DTEND;TZID=America/Denver:20260917T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1339,13 +1546,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260918T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260918T105100
+DTEND;TZID=America/Denver:20260918T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260918T115600
 DTEND;TZID=America/Denver:20260918T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -1384,13 +1600,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260921T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260921T110800
+DTEND;TZID=America/Denver:20260921T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260921T121200
 DTEND;TZID=America/Denver:20260921T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1438,13 +1663,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260922T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260922T110800
+DTEND;TZID=America/Denver:20260922T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-22-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260922T121200
 DTEND;TZID=America/Denver:20260922T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-22-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-22-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1492,13 +1726,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260923T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260923T110800
+DTEND;TZID=America/Denver:20260923T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260923T121200
 DTEND;TZID=America/Denver:20260923T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1546,13 +1789,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260924T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260924T110800
+DTEND;TZID=America/Denver:20260924T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260924T121200
 DTEND;TZID=America/Denver:20260924T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1600,13 +1852,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260929T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260929T110800
+DTEND;TZID=America/Denver:20260929T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-29-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260929T121200
 DTEND;TZID=America/Denver:20260929T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-29-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-29-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1654,13 +1915,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20260930T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20260930T110800
+DTEND;TZID=America/Denver:20260930T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-09-30-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20260930T121200
 DTEND;TZID=America/Denver:20260930T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-09-30-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-09-30-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1708,13 +1978,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261001T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261001T110800
+DTEND;TZID=America/Denver:20261001T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261001T121200
 DTEND;TZID=America/Denver:20261001T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1771,13 +2050,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261002T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261002T105100
+DTEND;TZID=America/Denver:20261002T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261002T115600
 DTEND;TZID=America/Denver:20261002T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -1816,13 +2104,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261005T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261005T110800
+DTEND;TZID=America/Denver:20261005T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261005T121200
 DTEND;TZID=America/Denver:20261005T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1870,13 +2167,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261006T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261006T110800
+DTEND;TZID=America/Denver:20261006T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-06-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261006T121200
 DTEND;TZID=America/Denver:20261006T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-06-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-06-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1924,13 +2230,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261007T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261007T110800
+DTEND;TZID=America/Denver:20261007T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-07-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261007T121200
 DTEND;TZID=America/Denver:20261007T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-07-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-07-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -1978,13 +2293,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261008T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261008T110800
+DTEND;TZID=America/Denver:20261008T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261008T121200
 DTEND;TZID=America/Denver:20261008T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2041,13 +2365,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261009T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261009T105100
+DTEND;TZID=America/Denver:20261009T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261009T115600
 DTEND;TZID=America/Denver:20261009T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -2086,13 +2419,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261012T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261012T110800
+DTEND;TZID=America/Denver:20261012T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261012T121200
 DTEND;TZID=America/Denver:20261012T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2140,13 +2482,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261013T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261013T110800
+DTEND;TZID=America/Denver:20261013T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-13-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261013T121200
 DTEND;TZID=America/Denver:20261013T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-13-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-13-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2194,13 +2545,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261014T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261014T110800
+DTEND;TZID=America/Denver:20261014T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261014T121200
 DTEND;TZID=America/Denver:20261014T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2248,13 +2608,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261019T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261019T110800
+DTEND;TZID=America/Denver:20261019T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261019T121200
 DTEND;TZID=America/Denver:20261019T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2302,13 +2671,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261020T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261020T110800
+DTEND;TZID=America/Denver:20261020T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261020T121200
 DTEND;TZID=America/Denver:20261020T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2356,13 +2734,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261021T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261021T110800
+DTEND;TZID=America/Denver:20261021T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261021T121200
 DTEND;TZID=America/Denver:20261021T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2410,13 +2797,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261022T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261022T110800
+DTEND;TZID=America/Denver:20261022T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-22-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261022T121200
 DTEND;TZID=America/Denver:20261022T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-22-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-22-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2473,13 +2869,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261023T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261023T105100
+DTEND;TZID=America/Denver:20261023T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261023T115600
 DTEND;TZID=America/Denver:20261023T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -2518,13 +2923,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261027T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261027T110800
+DTEND;TZID=America/Denver:20261027T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-27-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261027T121200
 DTEND;TZID=America/Denver:20261027T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-27-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-27-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2572,13 +2986,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261028T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261028T110800
+DTEND;TZID=America/Denver:20261028T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-28-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261028T121200
 DTEND;TZID=America/Denver:20261028T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-28-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-28-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2626,13 +3049,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261029T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261029T110800
+DTEND;TZID=America/Denver:20261029T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-29-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261029T121200
 DTEND;TZID=America/Denver:20261029T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-29-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-29-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2689,13 +3121,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261030T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261030T105100
+DTEND;TZID=America/Denver:20261030T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-10-30-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261030T115600
 DTEND;TZID=America/Denver:20261030T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-10-30-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-10-30-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -2734,13 +3175,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261102T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261102T110800
+DTEND;TZID=America/Denver:20261102T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261102T121200
 DTEND;TZID=America/Denver:20261102T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2788,13 +3238,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261103T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261103T110800
+DTEND;TZID=America/Denver:20261103T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261103T121200
 DTEND;TZID=America/Denver:20261103T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2842,13 +3301,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261104T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261104T110800
+DTEND;TZID=America/Denver:20261104T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261104T121200
 DTEND;TZID=America/Denver:20261104T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2896,13 +3364,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261105T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261105T110800
+DTEND;TZID=America/Denver:20261105T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261105T121200
 DTEND;TZID=America/Denver:20261105T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -2959,13 +3436,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261106T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261106T105100
+DTEND;TZID=America/Denver:20261106T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-06-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261106T115600
 DTEND;TZID=America/Denver:20261106T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-06-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-06-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -3004,13 +3490,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261109T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261109T110800
+DTEND;TZID=America/Denver:20261109T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261109T121200
 DTEND;TZID=America/Denver:20261109T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3058,13 +3553,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261110T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261110T110800
+DTEND;TZID=America/Denver:20261110T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261110T121200
 DTEND;TZID=America/Denver:20261110T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3112,13 +3616,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261111T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261111T110800
+DTEND;TZID=America/Denver:20261111T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261111T121200
 DTEND;TZID=America/Denver:20261111T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3166,13 +3679,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261112T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261112T110800
+DTEND;TZID=America/Denver:20261112T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261112T121200
 DTEND;TZID=America/Denver:20261112T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3229,13 +3751,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261113T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261113T105100
+DTEND;TZID=America/Denver:20261113T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-13-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261113T115600
 DTEND;TZID=America/Denver:20261113T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-13-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-13-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -3274,13 +3805,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261116T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261116T110800
+DTEND;TZID=America/Denver:20261116T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261116T121200
 DTEND;TZID=America/Denver:20261116T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3328,13 +3868,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261117T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261117T110800
+DTEND;TZID=America/Denver:20261117T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261117T121200
 DTEND;TZID=America/Denver:20261117T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3382,13 +3931,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261118T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261118T110800
+DTEND;TZID=America/Denver:20261118T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261118T121200
 DTEND;TZID=America/Denver:20261118T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3436,13 +3994,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261119T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261119T110800
+DTEND;TZID=America/Denver:20261119T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261119T121200
 DTEND;TZID=America/Denver:20261119T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3499,13 +4066,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261120T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261120T105100
+DTEND;TZID=America/Denver:20261120T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261120T115600
 DTEND;TZID=America/Denver:20261120T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -3544,13 +4120,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261123T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261123T110800
+DTEND;TZID=America/Denver:20261123T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261123T121200
 DTEND;TZID=America/Denver:20261123T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3598,13 +4183,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261124T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261124T110800
+DTEND;TZID=America/Denver:20261124T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261124T121200
 DTEND;TZID=America/Denver:20261124T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3652,13 +4246,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261130T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261130T110800
+DTEND;TZID=America/Denver:20261130T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-11-30-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261130T121200
 DTEND;TZID=America/Denver:20261130T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-11-30-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-11-30-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3706,13 +4309,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261201T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261201T110800
+DTEND;TZID=America/Denver:20261201T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261201T121200
 DTEND;TZID=America/Denver:20261201T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3760,13 +4372,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261202T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261202T110800
+DTEND;TZID=America/Denver:20261202T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261202T121200
 DTEND;TZID=America/Denver:20261202T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3814,13 +4435,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261203T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261203T110800
+DTEND;TZID=America/Denver:20261203T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261203T121200
 DTEND;TZID=America/Denver:20261203T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3877,13 +4507,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261204T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261204T105100
+DTEND;TZID=America/Denver:20261204T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261204T115600
 DTEND;TZID=America/Denver:20261204T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -3922,13 +4561,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261207T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261207T110800
+DTEND;TZID=America/Denver:20261207T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-07-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261207T121200
 DTEND;TZID=America/Denver:20261207T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-07-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-07-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -3976,13 +4624,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261208T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261208T110800
+DTEND;TZID=America/Denver:20261208T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261208T121200
 DTEND;TZID=America/Denver:20261208T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4030,13 +4687,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261209T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261209T110800
+DTEND;TZID=America/Denver:20261209T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261209T121200
 DTEND;TZID=America/Denver:20261209T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4084,13 +4750,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261210T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261210T110800
+DTEND;TZID=America/Denver:20261210T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261210T121200
 DTEND;TZID=America/Denver:20261210T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4147,13 +4822,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261211T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261211T105100
+DTEND;TZID=America/Denver:20261211T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261211T115600
 DTEND;TZID=America/Denver:20261211T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -4192,13 +4876,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261214T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261214T110800
+DTEND;TZID=America/Denver:20261214T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261214T121200
 DTEND;TZID=America/Denver:20261214T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4246,13 +4939,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261215T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261215T110800
+DTEND;TZID=America/Denver:20261215T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-15-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261215T121200
 DTEND;TZID=America/Denver:20261215T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-15-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-15-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4300,13 +5002,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261216T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261216T110800
+DTEND;TZID=America/Denver:20261216T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261216T121200
 DTEND;TZID=America/Denver:20261216T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4354,13 +5065,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261217T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261217T110800
+DTEND;TZID=America/Denver:20261217T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261217T121200
 DTEND;TZID=America/Denver:20261217T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4417,13 +5137,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20261218T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20261218T105100
+DTEND;TZID=America/Denver:20261218T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2026-12-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20261218T115600
 DTEND;TZID=America/Denver:20261218T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2026-12-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2026-12-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -4462,13 +5191,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270104T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270104T110800
+DTEND;TZID=America/Denver:20270104T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270104T121200
 DTEND;TZID=America/Denver:20270104T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4516,13 +5254,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270105T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270105T110800
+DTEND;TZID=America/Denver:20270105T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270105T121200
 DTEND;TZID=America/Denver:20270105T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4570,13 +5317,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270106T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270106T110800
+DTEND;TZID=America/Denver:20270106T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-06-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270106T121200
 DTEND;TZID=America/Denver:20270106T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-06-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-06-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4624,13 +5380,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270107T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270107T110800
+DTEND;TZID=America/Denver:20270107T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-07-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270107T121200
 DTEND;TZID=America/Denver:20270107T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-07-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-07-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4687,13 +5452,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270108T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270108T105100
+DTEND;TZID=America/Denver:20270108T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270108T115600
 DTEND;TZID=America/Denver:20270108T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -4732,13 +5506,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270111T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270111T110800
+DTEND;TZID=America/Denver:20270111T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270111T121200
 DTEND;TZID=America/Denver:20270111T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4786,13 +5569,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270112T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270112T110800
+DTEND;TZID=America/Denver:20270112T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270112T121200
 DTEND;TZID=America/Denver:20270112T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4840,13 +5632,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270113T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270113T110800
+DTEND;TZID=America/Denver:20270113T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-13-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270113T121200
 DTEND;TZID=America/Denver:20270113T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-13-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-13-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4894,13 +5695,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270114T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270114T110800
+DTEND;TZID=America/Denver:20270114T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270114T121200
 DTEND;TZID=America/Denver:20270114T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -4948,13 +5758,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270119T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270119T110800
+DTEND;TZID=America/Denver:20270119T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270119T121200
 DTEND;TZID=America/Denver:20270119T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5002,13 +5821,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270120T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270120T110800
+DTEND;TZID=America/Denver:20270120T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270120T121200
 DTEND;TZID=America/Denver:20270120T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5056,13 +5884,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270121T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270121T110800
+DTEND;TZID=America/Denver:20270121T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270121T121200
 DTEND;TZID=America/Denver:20270121T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5119,13 +5956,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270122T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270122T105100
+DTEND;TZID=America/Denver:20270122T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-22-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270122T115600
 DTEND;TZID=America/Denver:20270122T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-22-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-22-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -5164,13 +6010,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270125T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270125T110800
+DTEND;TZID=America/Denver:20270125T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-25-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270125T121200
 DTEND;TZID=America/Denver:20270125T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-25-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-25-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5218,13 +6073,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270126T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270126T110800
+DTEND;TZID=America/Denver:20270126T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-26-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270126T121200
 DTEND;TZID=America/Denver:20270126T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-26-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-26-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5272,13 +6136,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270127T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270127T110800
+DTEND;TZID=America/Denver:20270127T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-27-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270127T121200
 DTEND;TZID=America/Denver:20270127T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-27-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-27-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5326,13 +6199,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270128T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270128T110800
+DTEND;TZID=America/Denver:20270128T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-28-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270128T121200
 DTEND;TZID=America/Denver:20270128T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-28-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-28-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5389,13 +6271,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270129T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270129T105100
+DTEND;TZID=America/Denver:20270129T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-01-29-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270129T115600
 DTEND;TZID=America/Denver:20270129T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-01-29-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-01-29-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -5434,13 +6325,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270201T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270201T110800
+DTEND;TZID=America/Denver:20270201T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270201T121200
 DTEND;TZID=America/Denver:20270201T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5488,13 +6388,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270202T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270202T110800
+DTEND;TZID=America/Denver:20270202T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270202T121200
 DTEND;TZID=America/Denver:20270202T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5542,13 +6451,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270203T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270203T110800
+DTEND;TZID=America/Denver:20270203T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270203T121200
 DTEND;TZID=America/Denver:20270203T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5596,13 +6514,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270204T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270204T110800
+DTEND;TZID=America/Denver:20270204T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270204T121200
 DTEND;TZID=America/Denver:20270204T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5659,13 +6586,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270205T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270205T105100
+DTEND;TZID=America/Denver:20270205T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270205T115600
 DTEND;TZID=America/Denver:20270205T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -5704,13 +6640,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270208T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270208T110800
+DTEND;TZID=America/Denver:20270208T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270208T121200
 DTEND;TZID=America/Denver:20270208T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5758,13 +6703,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270209T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270209T110800
+DTEND;TZID=America/Denver:20270209T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270209T121200
 DTEND;TZID=America/Denver:20270209T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5812,13 +6766,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270210T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270210T110800
+DTEND;TZID=America/Denver:20270210T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270210T121200
 DTEND;TZID=America/Denver:20270210T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5866,13 +6829,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270211T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270211T110800
+DTEND;TZID=America/Denver:20270211T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270211T121200
 DTEND;TZID=America/Denver:20270211T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5920,13 +6892,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270216T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270216T110800
+DTEND;TZID=America/Denver:20270216T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270216T121200
 DTEND;TZID=America/Denver:20270216T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -5974,13 +6955,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270217T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270217T110800
+DTEND;TZID=America/Denver:20270217T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270217T121200
 DTEND;TZID=America/Denver:20270217T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6028,13 +7018,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270218T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270218T110800
+DTEND;TZID=America/Denver:20270218T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270218T121200
 DTEND;TZID=America/Denver:20270218T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6091,13 +7090,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270219T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270219T105100
+DTEND;TZID=America/Denver:20270219T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270219T115600
 DTEND;TZID=America/Denver:20270219T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -6136,13 +7144,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270222T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270222T110800
+DTEND;TZID=America/Denver:20270222T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-22-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270222T121200
 DTEND;TZID=America/Denver:20270222T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-22-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-22-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6190,13 +7207,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270223T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270223T110800
+DTEND;TZID=America/Denver:20270223T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270223T121200
 DTEND;TZID=America/Denver:20270223T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6244,13 +7270,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270224T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270224T110800
+DTEND;TZID=America/Denver:20270224T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270224T121200
 DTEND;TZID=America/Denver:20270224T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6298,13 +7333,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270225T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270225T110800
+DTEND;TZID=America/Denver:20270225T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-02-25-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270225T121200
 DTEND;TZID=America/Denver:20270225T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-02-25-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-02-25-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6352,13 +7396,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270301T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270301T110800
+DTEND;TZID=America/Denver:20270301T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270301T121200
 DTEND;TZID=America/Denver:20270301T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6406,13 +7459,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270302T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270302T110800
+DTEND;TZID=America/Denver:20270302T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270302T121200
 DTEND;TZID=America/Denver:20270302T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6460,13 +7522,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270303T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270303T110800
+DTEND;TZID=America/Denver:20270303T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270303T121200
 DTEND;TZID=America/Denver:20270303T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6514,13 +7585,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270304T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270304T110800
+DTEND;TZID=America/Denver:20270304T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270304T121200
 DTEND;TZID=America/Denver:20270304T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6577,13 +7657,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270305T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270305T105100
+DTEND;TZID=America/Denver:20270305T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270305T115600
 DTEND;TZID=America/Denver:20270305T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -6622,13 +7711,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270308T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270308T110800
+DTEND;TZID=America/Denver:20270308T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-08-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270308T121200
 DTEND;TZID=America/Denver:20270308T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-08-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-08-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6676,13 +7774,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270309T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270309T110800
+DTEND;TZID=America/Denver:20270309T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-09-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270309T121200
 DTEND;TZID=America/Denver:20270309T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-09-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-09-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6730,13 +7837,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270310T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270310T110800
+DTEND;TZID=America/Denver:20270310T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270310T121200
 DTEND;TZID=America/Denver:20270310T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6784,13 +7900,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270311T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270311T110800
+DTEND;TZID=America/Denver:20270311T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270311T121200
 DTEND;TZID=America/Denver:20270311T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6847,13 +7972,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270312T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270312T105100
+DTEND;TZID=America/Denver:20270312T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270312T115600
 DTEND;TZID=America/Denver:20270312T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -6892,13 +8026,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270315T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270315T110800
+DTEND;TZID=America/Denver:20270315T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-15-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270315T121200
 DTEND;TZID=America/Denver:20270315T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-15-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-15-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -6946,13 +8089,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270316T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270316T110800
+DTEND;TZID=America/Denver:20270316T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270316T121200
 DTEND;TZID=America/Denver:20270316T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7000,13 +8152,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270317T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270317T110800
+DTEND;TZID=America/Denver:20270317T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270317T121200
 DTEND;TZID=America/Denver:20270317T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7054,13 +8215,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270318T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270318T110800
+DTEND;TZID=America/Denver:20270318T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270318T121200
 DTEND;TZID=America/Denver:20270318T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7117,13 +8287,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270319T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270319T105100
+DTEND;TZID=America/Denver:20270319T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270319T115600
 DTEND;TZID=America/Denver:20270319T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -7162,13 +8341,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270323T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270323T110800
+DTEND;TZID=America/Denver:20270323T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270323T121200
 DTEND;TZID=America/Denver:20270323T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7216,13 +8404,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270324T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270324T110800
+DTEND;TZID=America/Denver:20270324T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270324T121200
 DTEND;TZID=America/Denver:20270324T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7270,13 +8467,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270325T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270325T110800
+DTEND;TZID=America/Denver:20270325T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-25-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270325T121200
 DTEND;TZID=America/Denver:20270325T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-25-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-25-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7333,13 +8539,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270326T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270326T105100
+DTEND;TZID=America/Denver:20270326T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-26-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270326T115600
 DTEND;TZID=America/Denver:20270326T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-26-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-26-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -7378,13 +8593,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270329T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270329T110800
+DTEND;TZID=America/Denver:20270329T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-29-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270329T121200
 DTEND;TZID=America/Denver:20270329T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-29-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-29-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7432,13 +8656,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270330T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270330T110800
+DTEND;TZID=America/Denver:20270330T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-30-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270330T121200
 DTEND;TZID=America/Denver:20270330T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-30-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-30-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7486,13 +8719,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270331T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270331T110800
+DTEND;TZID=America/Denver:20270331T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-03-31-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270331T121200
 DTEND;TZID=America/Denver:20270331T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-03-31-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-03-31-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7540,13 +8782,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270401T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270401T110800
+DTEND;TZID=America/Denver:20270401T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-01-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270401T121200
 DTEND;TZID=America/Denver:20270401T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-01-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-01-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7603,13 +8854,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270402T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270402T105100
+DTEND;TZID=America/Denver:20270402T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-02-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270402T115600
 DTEND;TZID=America/Denver:20270402T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-02-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-02-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -7648,13 +8908,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270412T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270412T110800
+DTEND;TZID=America/Denver:20270412T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270412T121200
 DTEND;TZID=America/Denver:20270412T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7702,13 +8971,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270413T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270413T110800
+DTEND;TZID=America/Denver:20270413T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-13-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270413T121200
 DTEND;TZID=America/Denver:20270413T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-13-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-13-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7756,13 +9034,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270414T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270414T110800
+DTEND;TZID=America/Denver:20270414T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270414T121200
 DTEND;TZID=America/Denver:20270414T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7810,13 +9097,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270415T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270415T110800
+DTEND;TZID=America/Denver:20270415T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-15-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270415T121200
 DTEND;TZID=America/Denver:20270415T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-15-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-15-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7873,13 +9169,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270416T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270416T105100
+DTEND;TZID=America/Denver:20270416T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-16-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270416T115600
 DTEND;TZID=America/Denver:20270416T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-16-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-16-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -7918,13 +9223,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270419T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270419T110800
+DTEND;TZID=America/Denver:20270419T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270419T121200
 DTEND;TZID=America/Denver:20270419T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -7972,13 +9286,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270420T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270420T110800
+DTEND;TZID=America/Denver:20270420T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270420T121200
 DTEND;TZID=America/Denver:20270420T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8026,13 +9349,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270421T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270421T110800
+DTEND;TZID=America/Denver:20270421T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270421T121200
 DTEND;TZID=America/Denver:20270421T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8080,13 +9412,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270422T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270422T110800
+DTEND;TZID=America/Denver:20270422T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-22-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270422T121200
 DTEND;TZID=America/Denver:20270422T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-22-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-22-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8143,13 +9484,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270423T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270423T105100
+DTEND;TZID=America/Denver:20270423T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-23-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270423T115600
 DTEND;TZID=America/Denver:20270423T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-23-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-23-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -8188,13 +9538,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270426T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270426T110800
+DTEND;TZID=America/Denver:20270426T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-26-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270426T121200
 DTEND;TZID=America/Denver:20270426T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-26-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-26-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8242,13 +9601,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270427T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270427T110800
+DTEND;TZID=America/Denver:20270427T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-27-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270427T121200
 DTEND;TZID=America/Denver:20270427T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-27-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-27-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8296,13 +9664,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270428T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270428T110800
+DTEND;TZID=America/Denver:20270428T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-28-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270428T121200
 DTEND;TZID=America/Denver:20270428T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-28-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-28-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8350,13 +9727,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270429T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270429T110800
+DTEND;TZID=America/Denver:20270429T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-29-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270429T121200
 DTEND;TZID=America/Denver:20270429T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-29-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-29-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8413,13 +9799,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270430T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270430T105100
+DTEND;TZID=America/Denver:20270430T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-04-30-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270430T115600
 DTEND;TZID=America/Denver:20270430T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-04-30-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-04-30-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -8458,13 +9853,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270503T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270503T110800
+DTEND;TZID=America/Denver:20270503T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-03-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270503T121200
 DTEND;TZID=America/Denver:20270503T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-03-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-03-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8512,13 +9916,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270504T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270504T110800
+DTEND;TZID=America/Denver:20270504T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-04-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270504T121200
 DTEND;TZID=America/Denver:20270504T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-04-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-04-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8566,13 +9979,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270505T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270505T110800
+DTEND;TZID=America/Denver:20270505T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-05-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270505T121200
 DTEND;TZID=America/Denver:20270505T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-05-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-05-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8620,13 +10042,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270506T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270506T110800
+DTEND;TZID=America/Denver:20270506T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-06-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270506T121200
 DTEND;TZID=America/Denver:20270506T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-06-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-06-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8683,13 +10114,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270507T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270507T105100
+DTEND;TZID=America/Denver:20270507T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-07-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270507T115600
 DTEND;TZID=America/Denver:20270507T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-07-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-07-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -8728,13 +10168,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270510T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270510T110800
+DTEND;TZID=America/Denver:20270510T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-10-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270510T121200
 DTEND;TZID=America/Denver:20270510T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-10-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-10-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8782,13 +10231,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270511T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270511T110800
+DTEND;TZID=America/Denver:20270511T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-11-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270511T121200
 DTEND;TZID=America/Denver:20270511T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-11-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-11-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8836,13 +10294,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270512T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270512T110800
+DTEND;TZID=America/Denver:20270512T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-12-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270512T121200
 DTEND;TZID=America/Denver:20270512T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-12-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-12-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8890,13 +10357,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270513T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270513T110800
+DTEND;TZID=America/Denver:20270513T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-13-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270513T121200
 DTEND;TZID=America/Denver:20270513T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-13-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-13-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -8953,13 +10429,22 @@ DESCRIPTION:Period 5\nFriday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270514T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270514T105100
+DTEND;TZID=America/Denver:20270514T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-14-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270514T115600
 DTEND;TZID=America/Denver:20270514T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-14-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-14-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Utah Studies 7
@@ -8998,13 +10483,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270517T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270517T110800
+DTEND;TZID=America/Denver:20270517T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-17-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270517T121200
 DTEND;TZID=America/Denver:20270517T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-17-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-17-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9052,13 +10546,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270518T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270518T110800
+DTEND;TZID=America/Denver:20270518T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-18-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270518T121200
 DTEND;TZID=America/Denver:20270518T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-18-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-18-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9106,13 +10609,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270519T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270519T110800
+DTEND;TZID=America/Denver:20270519T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-19-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270519T121200
 DTEND;TZID=America/Denver:20270519T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-19-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-19-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9160,13 +10672,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270520T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270520T110800
+DTEND;TZID=America/Denver:20270520T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-20-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270520T121200
 DTEND;TZID=America/Denver:20270520T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-20-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-20-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9223,13 +10744,22 @@ DESCRIPTION:Period 5\nFriday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270521T104700
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270521T105100
+DTEND;TZID=America/Denver:20270521T115600
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-21-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nFriday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270521T115600
 DTEND;TZID=America/Denver:20270521T122600
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-21-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nFriday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-21-plunch-c@saved-by-the-ical
+DESCRIPTION:Friday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French DLI Literature & Culture
@@ -9268,13 +10798,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270524T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270524T110800
+DTEND;TZID=America/Denver:20270524T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-24-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270524T121200
 DTEND;TZID=America/Denver:20270524T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-24-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-24-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9322,13 +10861,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270525T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270525T110800
+DTEND;TZID=America/Denver:20270525T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-25-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270525T121200
 DTEND;TZID=America/Denver:20270525T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-25-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-25-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9376,13 +10924,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · A Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270526T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270526T110800
+DTEND;TZID=America/Denver:20270526T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-26-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · A Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270526T121200
 DTEND;TZID=America/Denver:20270526T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-26-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · A Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-26-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · A Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
@@ -9430,13 +10987,22 @@ DESCRIPTION:Period 3\nMonday–Thursday · B Day
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Integrated Science 7 STEM + Lunch
-DTSTART;TZID=America/Denver:20270527T110300
+SUMMARY:Integrated Science 7 STEM
+DTSTART;TZID=America/Denver:20270527T110800
+DTEND;TZID=America/Denver:20270527T121200
+DTSTAMP:20260817T000000Z
+UID:butler-class-schedule-d-2027-05-27-p4c@saved-by-the-ical
+DESCRIPTION:Period 4\nMonday–Thursday · B Day
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lunch
+DTSTART;TZID=America/Denver:20270527T121200
 DTEND;TZID=America/Denver:20270527T124200
 DTSTAMP:20260817T000000Z
-UID:butler-class-schedule-d-2027-05-27-p4-lunch@saved-by-the-ical
-DESCRIPTION:Period 4 + Lunch\nMonday–Thursday · B Day
-TRANSP:OPAQUE
+UID:butler-class-schedule-d-2027-05-27-plunch-c@saved-by-the-ical
+DESCRIPTION:Monday–Thursday · B Day
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:French 3 Honors (DLI)
