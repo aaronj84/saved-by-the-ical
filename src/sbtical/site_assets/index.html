@@ -255,7 +255,7 @@ function statusFor(day, a, at, date) {
              : `Next good time: <b>after ${fmt(last)}</b>`;
   };
   if (at < first) return { cls: "free", status: "Free now", sub: `School starts ${fmt(first)} (in ${dur(first - at)})` };
-  if (at >= last) return { cls: "free", status: "Done for the day", sub: `Out since ${fmt(last)}` };
+  if (at >= last) return { cls: "free", status: "Done with school for today", sub: "", done: true };
   const block = a.blocks.find((b) => b.s <= at && at < b.e);
   if (block) {
     const cur = a.busy.filter((i) => i.s <= at && at < i.e).pop();
@@ -295,11 +295,15 @@ const COLORS = {                        // per-school accent (light, dark handle
   "butler-elementary": "#0d9488", butler: "#7c3aed", jordan: "#dc2626", ctec: "#d97706", brighton: "#2563eb",
   carpool: "#2f5d62",
 };
-// Carpool pickups for a kid (by initial) on a date: [{s, e, short, title, driver, kids, sid}]
-const rides = (date, initial) => (DATA.carpool?.[date] || [])
-  .map(([s, e, short, title, driver, kids, sid]) => ({ s: toMin(s), e: toMin(e), short, title, driver, kids, sid }))
-  .filter((r) => !initial || r.kids.includes(initial));
-const rideText = (r) => `${r.s < 12 * 60 ? "Carpool" : "Pickup"} ${fmt(r.s)}${r.driver ? " · " + r.driver : ""}`;
+// Carpool runs on a date, optionally only those stopping for a kid (initial).
+// r.at = that kid's stop time; r.stops = [{at, sid, kids}].
+const rides = (date, initial) => (DATA.carpool?.[date] || []).map(([s, e, short, title, driver, stops]) => {
+  const st = stops.map(([t, sid, kids]) => ({ at: toMin(t), sid, kids }));
+  const mine = initial ? st.find((x) => x.kids.includes(initial)) : st[0];
+  return mine && { s: toMin(s), e: toMin(e), short, title, driver, stops: st, at: mine.at, sid: mine.sid,
+                   kids: st.flatMap((x) => x.kids) };
+}).filter(Boolean);
+const rideText = (r) => `${r.at < 12 * 60 ? "Carpool" : "Pickup"} ${fmt(r.at)}${r.driver ? " · " + r.driver : ""}`;
 const color = (sid) => COLORS[sid] || "#64748b";
 const periodShort = (n) => n
   .replace(/\b(\d+)(?:st|nd|rd|th) Period\b/, "P$1")
@@ -436,7 +440,7 @@ function renderGrid(at) {
         blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, label: kidLabel(t), c: color(sid), brk: !busy,
           tap: () => showKidItem(k, [a, b, t, busy, sid]) }))
           .concat(rides(viewDate, k.initial).map((r) => ({ s: r.s, e: r.e, c: color("carpool"), car: true,
-            label: `🚗${clock(r.s)}`, tap: () => showRide(r) }))),
+            label: `🚗${clock(r.at)}`, tap: () => showRide(r) }))),
       });
     }
   }
@@ -533,16 +537,21 @@ function showPeriod(schoolId, ps, pe, title, meta, cluster, groups) {
 }
 
 function showRide(r) {
-  const sc = DATA.schools.find((x) => x.id === r.sid);
-  const rows = r.kids.map((i) => {
-    const kid = DATA.kids.find((k) => k.initial === i);
-    const items = (kid?.days[viewDate]?.items || []).filter((x) => x[4] === r.sid && x[3]);
-    const out = items.length ? Math.max(...items.map((x) => toMin(x[1]))) : null;
-    const first = items.length ? Math.min(...items.map((x) => toMin(x[0]))) : null;
-    const note = r.s < 12 * 60 ? (first != null ? `First class ${fmt(first)}` : "") : (out != null ? `Out of class ${fmt(out)}` : "");
-    return [i, sc ? sc.name : r.sid, note];
-  });
-  openSheet(r.title, `${fmt(r.s)}${r.driver ? " · " + r.driver + " drives" : ""}`, rows);
+  const rows = [];
+  for (const st of r.stops) {
+    const sc = DATA.schools.find((x) => x.id === st.sid);
+    for (const i of st.kids) {
+      const kid = DATA.kids.find((k) => k.initial === i);
+      const items = (kid?.days[viewDate]?.items || []).filter((x) => x[4] === st.sid && x[3]);
+      const out = items.length ? Math.max(...items.map((x) => toMin(x[1]))) : null;
+      const first = items.length ? Math.min(...items.map((x) => toMin(x[0]))) : null;
+      const note = st.at < 12 * 60 ? (first != null ? `First class ${fmt(first)}` : "")
+                                   : (out != null ? `Out of class ${fmt(out)}` : "");
+      rows.push([i, `${fmt(st.at)} · ${sc ? sc.name : st.sid}`, note]);
+    }
+  }
+  const span = r.stops.length > 1 ? `${fmt(r.s)} – ${fmt(r.e)}` : fmt(r.at);
+  openSheet(r.title, `${span}${r.driver ? " · " + r.driver + " drives" : ""}`, rows);
 }
 
 function showKidItem(k, [a, b, t, busy, sid]) {
@@ -576,7 +585,7 @@ function render() {
     const info = el("div");
     info.append(el("div", "status", st.status));
     if (st.sub) { const sub = el("div", "sub"); sub.innerHTML = st.sub; info.append(sub); }  // sub: times + esc()'d text only
-    const rs = rides(viewDate, kid.initial);
+    const rs = st.done ? [] : rides(viewDate, kid.initial);
     if (rs.length) {
       const next = at == null ? null : rs.find((r) => r.e > at);
       const line = el("div", "sub");
@@ -585,7 +594,7 @@ function render() {
       info.append(line);
     }
     const chips = el("div", "chips");
-    if (st.cls !== "off") for (const note of day?.notes || []) chips.append(el("span", "chip", note));
+    if (st.cls !== "off" && !st.done) for (const note of day?.notes || []) chips.append(el("span", "chip", note));
     if (chips.childElementCount) info.append(chips);
     s.append(el("div", "badge", kid.initial), info, el("span", "chev", "›"));
     d.append(s);

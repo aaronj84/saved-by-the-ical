@@ -168,10 +168,11 @@ def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None
     for path in files:
         if is_carpool_file(path):
             cp = load_carpool(path)
-            for date, start, end, rule in occurrences(cp):
-                carpool.setdefault(date.isoformat(), []).append([
-                    start.strftime("%H:%M"), end.strftime("%H:%M"), rule.short, rule.title,
-                    rule.driver, list(rule.kids), rule.school.id])
+            for o in occurrences(cp):
+                carpool.setdefault(o.date.isoformat(), []).append([
+                    o.start.strftime("%H:%M"), o.end.strftime("%H:%M"), o.rule.short, o.rule.title,
+                    o.rule.driver,
+                    [[t.strftime("%H:%M"), st.school.id, list(st.kids)] for t, st in o.stops]])
             feeds.append({"school": "Carpool", "feeds": [
                 {"name": f.name, "description": f.description, "path": f"feeds/carpool/{f.id}.ics"}
                 for f in cp.feeds]})

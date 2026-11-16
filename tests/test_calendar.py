@@ -423,16 +423,20 @@ def test_carpool_follows_calendar_rotation_and_drivers():
     occ = occurrences(cp)
 
     def on(day):
-        return [(s.strftime("%H:%M"), r.driver, r.kids) for d, s, _, r in occ if d == day]
+        return [(o.start.strftime("%H:%M"), o.end.strftime("%H:%M"), o.rule.driver,
+                 [(t.strftime("%H:%M"), s.kids) for t, s in o.stops]) for o in occ if o.date == day]
 
     assert on(dt.date(2026, 11, 16)) == [  # Mon, B day (Maker's Club)
-        ("07:00", "C/J", ("D", "R")), ("07:45", "VB", ("B", "M")),
-        ("15:15", "Jenn", ("B", "M")), ("15:25", "Jenn", ("D", "R"))]
-    assert on(dt.date(2026, 11, 17))[0] == ("07:20", "C/J", ("D", "R"))  # Tue, A day
-    assert on(dt.date(2026, 11, 18))[2:] == [("15:15", "Aaron", ("B", "M")), ("15:25", "Aaron", ("D", "R"))]
-    assert on(dt.date(2026, 11, 20))[2:] == [("13:25", "Jenn", ("B", "M")), ("13:35", "Jenn", ("D", "R"))]
+        ("07:00", "07:15", "C/J", [("07:00", ("D", "R"))]),
+        ("07:45", "08:00", "VB", [("07:45", ("B", "M"))]),
+        # one afternoon run: leave 3:10, Elem 3:15, Mid 3:25, home 3:45
+        ("15:10", "15:45", "Jenn", [("15:15", ("B", "M")), ("15:25", ("D", "R"))])]
+    assert on(dt.date(2026, 11, 17))[0][:3] == ("07:20", "07:35", "C/J")  # Tue, A day
+    assert on(dt.date(2026, 11, 18))[2][:3] == ("15:10", "15:45", "Aaron")
+    assert on(dt.date(2026, 11, 20))[2][:3] == ("13:20", "13:55", "Jenn")  # Friday
     assert on(dt.date(2026, 11, 26)) == []  # Thanksgiving
-    assert len(occ) == 174 * 4
+    assert len(occ) == 174 * 3
+    assert occ[2].summary == "Jenn Pickup (B & M, D & R)"
 
 
 def test_main_calendar_list_matches_config_and_names():
