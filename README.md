@@ -33,24 +33,24 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/canyons
 
 ### Canyons Technical Education Center
 
-**AM Session** — CTEC AM session on school days only.
+**AM Session (B Days)** — CTEC AM session, B days only.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am-session.ics
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am-b-days.ics
 ```
 
 ### Jordan High School
 
-**A/B Days** — All-day A Day / B Day markers for Jordan High School.
+**Periods 1 & 2 (A Days)** — Jordan High Periods 1 and 2, A days only.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/periods-1-2.ics
+```
+
+**A/B Days** — All-day A Day / B Day markers (Canyons District rotation).
 
 ```
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/ab-days.ics
-```
-
-**Bell Schedule** — Jordan High School periods on school days only.
-
-```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/bell-schedule.ics
 ```
 
 <!-- feeds:end -->
@@ -64,7 +64,7 @@ refresh (Apple: usually within hours; Google: up to a day).
 
 | file | what's in it |
 |------|--------------|
-| `data/districts/canyons-2026-27.yaml` | first/last day and every day off — shared by all Canyons schools |
+| `data/districts/canyons-2026-27.yaml` | first/last day, every day off and the A/B rotation — shared by all Canyons schools |
 | `data/schools/<school>.yaml` | that school's bell schedules, weekly pattern, A/B rotation and feeds |
 
 A snow day or schedule change goes in the district file (`days:`), once, and
@@ -81,7 +81,9 @@ A/B rotation advances once per school day and skips days off; an override can
 force a label (`rotation: A`) or hold it (`advance_rotation: false`).
 
 Feed components (`include:`): `bells` (timed periods), `day_labels` ("A Day"
-all-day markers), `days` (titled holidays/changes), `events`. See
+all-day markers), `days` (titled holidays/changes), `events`. Filters:
+`rotation: [A]` (only A days), `periods: ["1", "2"]` (only those periods),
+`include_breaks`, `no_school_only`, `categories`. See
 `examples/example-high.yaml` for every option, including per-student feeds
 that relabel periods with class names.
 

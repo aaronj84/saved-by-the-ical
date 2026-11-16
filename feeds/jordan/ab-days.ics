@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//saved-by-the-ical//sbtical//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALDESC:All-day A Day / B Day markers for Jordan High School.
+X-WR-CALDESC:All-day A Day / B Day markers (Canyons District rotation).
 X-WR-CALNAME:Jordan High School · A/B Days
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H

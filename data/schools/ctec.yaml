@@ -1,6 +1,7 @@
 # SOURCE: iCloud "CTEC" entries; Mon–Thu AM time matches the CTEC website
 # and the 2026-27 district bus schedule (7:30–9:55, Fri 7:30–9:15).
-# Assumes CTEC follows the Canyons district calendar.
+# Assumes CTEC follows the Canyons district calendar and A/B rotation.
+# Attended on B days (during home-school periods 5-6).
 # TODO: add the PM session if needed (Mon–Thu 11:30–1:55; Friday time unknown).
 extends: ../districts/canyons-2026-27.yaml
 
@@ -22,7 +23,8 @@ bell_schedules:
 weekly: { mon: am_mon_thu, tue: am_mon_thu, wed: am_mon_thu, thu: am_mon_thu, fri: am_friday }
 
 feeds:
-  - id: am-session
-    name: AM Session
-    description: CTEC AM session on school days only.
+  - id: am-b-days
+    name: AM Session (B Days)
+    description: CTEC AM session, B days only.
     include: [bells]
+    rotation: [B]

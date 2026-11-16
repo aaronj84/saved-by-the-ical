@@ -1,7 +1,5 @@
-# SOURCE: 2026-27 entries in the family iCloud calendar ("Jordan - A/B Day",
-# "Jordan Period 1/2").
-# TODO: only Periods 1-2 were in the calendar. Add the remaining periods and
-# lunch from the official 2026-27 Jordan High bell schedule.
+# SOURCE: https://jhs.canyonsdistrict.org/bell-shedule/ (2026-27 page; times
+# match the family iCloud calendar). Periods 1-4 run on A days, 5-8 on B days.
 extends: ../districts/canyons-2026-27.yaml
 
 school:
@@ -10,32 +8,44 @@ school:
   short_name: Jordan
 
 bell_schedules:
-  mon_thu:
-    name: Monday–Thursday
+  regular:
+    name: Regular Schedule
     periods:
-      - { id: "1", name: Period 1, start: "07:45", end: "09:03" }
-      - { id: "2", name: Period 2, start: "09:45", end: "11:03" }
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "09:03" }
+      - { id: app, name: APP, start: "09:09", end: "09:39" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "09:45", end: "11:03" }
+      - { id: lunch, name: Lunch, start: "11:03", end: "11:38", kind: break }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "11:44", end: "13:02" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "13:07", end: "14:25" }
   friday:
-    name: Friday
+    name: Friday Early Out
     periods:
-      - { id: "1", name: Period 1, start: "07:45", end: "08:49" }
-      - { id: "2", name: Period 2, start: "08:54", end: "09:58" }
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "08:49" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "08:54", end: "09:58" }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "10:03", end: "11:07" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "11:12", end: "12:15" }
+      - { id: lunch, name: Lunch, start: "12:15", end: "12:45", kind: break }
+  assembly:
+    # Use on a specific date:  - { date: 2027-02-03, schedule: assembly, title: Assembly }
+    name: 60 Minute Assembly
+    periods:
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "08:55" }
+      - { id: app, name: APP / Assembly, start: "09:00", end: "10:00" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "10:10", end: "11:20" }
+      - { id: lunch, name: Lunch, start: "11:20", end: "11:55", kind: break }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "12:00", end: "13:10" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "13:15", end: "14:25" }
 
-weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
-
-# Alternates every school day, skipping days off. Reproduces all 174 A/B
-# entries from the old calendar exactly (see tests).
-rotation:
-  labels: [A, B]
-  start: 2026-08-17
+weekly: { mon: regular, tue: regular, wed: regular, thu: regular, fri: friday }
 
 feeds:
+  - id: periods-1-2
+    name: Periods 1 & 2 (A Days)
+    description: Jordan High Periods 1 and 2, A days only.
+    include: [bells]
+    rotation: [A]
+    periods: ["1", "2"]
   - id: ab-days
     name: A/B Days
-    description: All-day A Day / B Day markers for Jordan High School.
+    description: All-day A Day / B Day markers (Canyons District rotation).
     include: [day_labels]
-  - id: bell-schedule
-    name: Bell Schedule
-    description: Jordan High School periods on school days only.
-    include: [bells]
-    include_breaks: true

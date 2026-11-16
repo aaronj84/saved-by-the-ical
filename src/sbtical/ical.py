@@ -81,7 +81,7 @@ def bell_events(
             desc = day.schedule.name + (f" · {day.rotation} Day" if day.rotation else "")
             yield _event(
                 f"{school.id}-{scope}-{day.date.isoformat()}-p{p.id}",
-                _title(school, p.name),
+                _title(school, p.name_for(day.rotation)),
                 stamp,
                 dtstart=_at(school, day.date, p.start),
                 dtend=_at(school, day.date, p.end),
@@ -101,12 +101,12 @@ def student_bell_events(school: School, student: Student, days: Iterable[Day], s
                 assignment = options.get(day.rotation or "") or options.get("*")
             if assignment is None:
                 if p.kind != "class" and student.include_breaks:
-                    summary, location, details = p.name, None, []
+                    summary, location, details = p.name_for(day.rotation), None, []
                 else:
                     continue
             else:
                 summary, location = assignment.title, assignment.location
-                details = [p.name]
+                details = [p.name_for(day.rotation)]
                 if assignment.teacher:
                     details.append(assignment.teacher)
             details.append(day.schedule.name + (f" · {day.rotation} Day" if day.rotation else ""))
@@ -192,6 +192,8 @@ def school_events(school: School, stamp, scope: str, categories: tuple[str, ...]
 def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, days=None) -> Calendar:
     stamp = stamp or default_stamp(school)
     days = days if days is not None else resolve_days(school)
+    if feed.rotation:
+        days = [d for d in days if d.rotation in feed.rotation]
     cal = _new_calendar(school, f"{school.name} · {feed.name}", feed.description)
     scope = feed.id
     for part in feed.include:

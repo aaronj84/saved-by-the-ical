@@ -189,3 +189,37 @@ def test_extends_merges_district_days_before_school_days(tmp_path):
     s = load_school(tmp_path / "s.yaml")
     assert s.timezone.key == "America/Denver"
     assert [d.date.day for d in resolve_days(s) if d.in_session] == [9]
+
+
+def test_feed_rotation_filter_and_rotation_specific_period_names():
+    s = base(
+        rotation={"labels": ["A", "B"]},
+        bell_schedules={"reg": {"periods": [
+            {"id": "1", "name": "P1/5", "names": {"A": "P1", "B": "P5"}, "start": "08:00", "end": "09:00"},
+            {"id": "x", "name": "Other", "start": "09:00", "end": "10:00"},
+        ]}},
+        feeds=[
+            {"id": "a", "include": ["bells"], "rotation": ["A"], "periods": ["1"]},
+            {"id": "all", "include": ["bells"], "periods": ["1"]},
+        ],
+    )
+    a = roundtrip(build_feed(s, s.feeds[0], STAMP)).walk("VEVENT")
+    assert {e["DTSTART"].dt.date() for e in a} == {
+        dt.date(2026, 9, d) for d in (7, 9, 11, 15, 17)
+    }
+    assert {str(e["SUMMARY"]) for e in a} == {"P1"}
+    both = roundtrip(build_feed(s, s.feeds[1], STAMP)).walk("VEVENT")
+    assert {str(e["SUMMARY"]) for e in both} == {"P1", "P5"}
+
+
+def test_rotation_filter_requires_known_labels():
+    with pytest.raises(CalendarError, match="unknown rotation labels"):
+        base(rotation={"labels": ["A", "B"]}, feeds=[{"id": "f", "include": ["bells"], "rotation": ["C"]}])
+
+
+def test_jordan_and_ctec_alternate_without_overlap():
+    jordan = load_school(DATA / "jordan.yaml")
+    ctec = load_school(DATA / "ctec.yaml")
+    j = {e["DTSTART"].dt.date() for e in build_feed(jordan, jordan.feeds[0]).walk("VEVENT")}
+    c = {e["DTSTART"].dt.date() for e in build_feed(ctec, ctec.feeds[0]).walk("VEVENT")}
+    assert len(j) == 87 and len(c) == 87 and not j & c

@@ -28,6 +28,10 @@ class Period:
     start: dt.time
     end: dt.time
     kind: str = "class"  # class | break | passing | other
+    names: tuple[tuple[str, str], ...] = ()  # rotation label -> display name
+
+    def name_for(self, rotation: str | None) -> str:
+        return dict(self.names).get(rotation or "", self.name)
 
 
 @dataclass(frozen=True)
@@ -83,6 +87,7 @@ class Feed:
     no_school_only: bool = False
     include_breaks: bool = False
     periods: tuple[str, ...] = ()  # restrict bells to these period ids
+    rotation: tuple[str, ...] = ()  # only school days with these rotation labels
     description: str | None = None
 
 
@@ -230,6 +235,7 @@ def parse_school(raw: dict) -> School:
                     start=start,
                     end=end,
                     kind=p.get("kind", "class"),
+                    names=tuple((str(k), str(v)) for k, v in (p.get("names") or {}).items()),
                 )
             )
         periods.sort(key=lambda p: p.start)
@@ -339,6 +345,7 @@ def parse_school(raw: dict) -> School:
                 no_school_only=bool(f.get("no_school_only", False)),
                 include_breaks=bool(f.get("include_breaks", False)),
                 periods=_tuple(f.get("periods")),
+                rotation=_tuple(f.get("rotation")),
                 description=f.get("description"),
             )
         )
@@ -367,6 +374,13 @@ def parse_school(raw: dict) -> School:
                 include=_tuple(st_raw.get("include")) or ("bells", "days"),
             )
         )
+
+    for f in feeds:
+        if f.rotation and not rotation:
+            raise CalendarError(f"feeds.{f.id}: rotation filter needs a rotation: section")
+        bad = set(f.rotation) - set(rotation.labels if rotation else ())
+        if bad:
+            raise CalendarError(f"feeds.{f.id}: unknown rotation labels {sorted(bad)}")
 
     all_ids = [f.id for f in feeds] + [s.id for s in students]
     dupes = {i for i in all_ids if all_ids.count(i) > 1}
