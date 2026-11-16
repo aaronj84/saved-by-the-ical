@@ -89,7 +89,7 @@ def bell_events(
                 dtstart=_at(school, day.date, p.start),
                 dtend=_at(school, day.date, p.end),
                 description=desc,
-                transp="OPAQUE" if p.kind == "class" else "TRANSPARENT",
+                transp="TRANSPARENT" if p.kind == "break" else "OPAQUE",
             )
 
 
@@ -132,6 +132,8 @@ def student_bell_events(school: School, student: Student, days: Iterable[Day], s
                 dtend=_at(school, day.date, p.end),
                 location=location,
                 description="\n".join(details),
+                # Breaks (lunch) show as free time in calendar apps and the site.
+                transp="TRANSPARENT" if p.kind == "break" else "OPAQUE",
             )
 
 

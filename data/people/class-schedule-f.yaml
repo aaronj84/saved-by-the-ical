@@ -8,5 +8,6 @@ person:
 
 sources:
   - { school: ../schools/jordan.yaml, feed: mornings }
+  - { school: ../schools/jordan.yaml, feed: ab-days }
   - { school: ../schools/ctec.yaml, feed: am-b-days }
   - { school: ../schools/brighton.yaml, student: class-schedule-f-brighton }

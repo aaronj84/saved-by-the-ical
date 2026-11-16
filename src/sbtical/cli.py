@@ -139,6 +139,13 @@ def cmd_readme(args) -> int:
     return 0
 
 
+def cmd_site(args) -> int:
+    from .site import build_site
+
+    build_site(sorted(args.files), Path(args.out), Path(args.feeds))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="sbtical", description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -163,9 +170,15 @@ def main(argv=None) -> int:
     p.add_argument("--out", default="feeds", help="feed directory, relative to repo root")
     p.add_argument(
         "--base-url",
-        default="https://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main",
+        default="https://aaronj84.github.io/saved-by-the-ical",
     )
     p.set_defaults(func=cmd_readme)
+
+    p = sub.add_parser("site", help="build the static GitHub Pages site")
+    p.add_argument("files", nargs="+")
+    p.add_argument("-o", "--out", default="_site")
+    p.add_argument("--feeds", default="feeds", help="built feeds to copy into the site")
+    p.set_defaults(func=cmd_site)
 
     args = ap.parse_args(argv)
     try:

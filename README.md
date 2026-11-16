@@ -4,6 +4,10 @@ School bell schedules and calendars as separate iCal subscriptions. Each
 calendar only has events on actual school days: holidays, breaks and summer
 are left out automatically.
 
+**📱 [Today's schedules](https://aaronj84.github.io/saved-by-the-ical/)**: who's in
+class right now and when they're next free. On iPhone: Share → Add to Home Screen.
+Its "Subscribe to calendars" section has one-tap subscribe links.
+
 ## Subscribe
 
 Copy a link below, then:
@@ -20,13 +24,13 @@ Copy a link below, then:
 **Bell Schedule** — Brighton High School periods and lunch on school days only.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/bell-schedule.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/bell-schedule.ics
 ```
 
 **School Calendar** — Brighton days off, early outs, trimester ends, conferences and graduation.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/calendar.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/calendar.ics
 ```
 
 ### Butler Middle School
@@ -34,19 +38,19 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighto
 **Bell Schedule (A Lunch)** — Butler periods with 1st (A) lunch.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-a-lunch.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/bell-schedule-a-lunch.ics
 ```
 
 **Bell Schedule (B Lunch)** — Butler periods with 2nd (B) lunch.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-b-lunch.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/bell-schedule-b-lunch.ics
 ```
 
 **Bell Schedule (C Lunch)** — Butler periods with 3rd (C) lunch.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-c-lunch.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/bell-schedule-c-lunch.ics
 ```
 
 ### Canyons School District
@@ -54,7 +58,7 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/
 **No School Days** — Holidays and breaks for Canyons School District 2026-27.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/canyons/no-school.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/canyons/no-school.ics
 ```
 
 ### Canyons Technical Education Center
@@ -62,7 +66,7 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/canyons
 **AM Class (B Days, Semester 1)** — CTEC AM class on B days through the end of semester 1.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am-b-days.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/ctec/am-b-days.ics
 ```
 
 ### Jordan High School
@@ -70,13 +74,13 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am
 **Morning Periods** — Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/mornings.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/jordan/mornings.ics
 ```
 
 **A/B Days** — All-day A Day / B Day markers (Canyons District rotation).
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/ab-days.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/jordan/ab-days.ics
 ```
 
 ### Class Schedules
@@ -84,31 +88,31 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/
 **Class Schedule D** — 7th grade class schedule at Butler Middle School.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/class-schedule-d.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/class-schedule-d.ics
 ```
 
 **Class Schedule F** — Mornings at Jordan (A days) / CTEC (B days, semester 1), Periods 4–5 at Brighton.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/people/class-schedule-f.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/people/class-schedule-f.ics
 ```
 
 **Class Schedule L** — Brighton High School class schedule.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/class-schedule-l.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/class-schedule-l.ics
 ```
 
 **Class Schedule R** — 6th grade class schedule at Butler Middle School.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/class-schedule-r.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/butler/class-schedule-r.ics
 ```
 
 **Class Schedule S** — Brighton High School class schedule.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/class-schedule-s.ics
+webcal://aaronj84.github.io/saved-by-the-ical/feeds/brighton/class-schedule-s.ics
 ```
 
 <!-- feeds:end -->
@@ -160,5 +164,7 @@ sbtical check data/schools/*.yaml data/people/*.yaml          # validate + schoo
 sbtical day data/schools/jordan.yaml 2026-12-18   # how one date resolves
 sbtical build data/schools/*.yaml data/people/*.yaml          # write feeds/
 sbtical readme data/schools/*.yaml data/people/*.yaml         # refresh the links above
+sbtical site data/schools/*.yaml data/people/*.yaml           # build the Pages site into _site/
+(cd _site && python3 -m http.server)   # preview; add ?now=2026-11-16T10:05 to test a time
 pytest
 ```

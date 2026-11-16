@@ -364,3 +364,22 @@ def test_fynn_combined_feed_has_no_overlaps_and_spans_three_schools():
     assert on(dt.date(2026, 9, 28)) == [  # K-12 day off, Brighton in session
         ("12:17", "Physics / English 12"), ("13:24", "Financial Literacy")]
     assert len({str(e["UID"]) for e in cal.walk("VEVENT")}) == len(cal.walk("VEVENT"))
+
+
+def test_site_json_marks_lunch_free_and_lists_all_kids(tmp_path):
+    import json
+
+    from sbtical.site import build_site
+
+    files = sorted(str(p) for p in DATA.glob("*.yaml")) + sorted(
+        str(p) for p in (DATA.parent / "people").glob("*.yaml"))
+    build_site(files, tmp_path, tmp_path / "nofeeds")
+    data = json.loads((tmp_path / "schedule.json").read_text())
+    kids = {k["initial"]: k for k in data["kids"]}
+    assert sorted(kids) == ["D", "F", "L", "R", "S"]
+    l_mon = kids["L"]["days"]["2026-11-16"]["items"]
+    assert ["11:36", "12:11", "Lunch", False] in l_mon
+    assert ["07:45", "08:46", "AP European History", True] in l_mon
+    assert kids["D"]["days"]["2026-11-16"]["notes"] == ["Butler B Day"]
+    assert "2026-11-26" in kids["F"]["days"]  # holiday note present
+    assert (tmp_path / "index.html").exists() and (tmp_path / "icon.png").exists()

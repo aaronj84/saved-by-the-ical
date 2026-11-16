@@ -61,6 +61,7 @@ students:
     name: Class Schedule D
     description: 7th grade class schedule at Butler Middle School.
     group: unknown
+    include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:
       "1": { A: Concert Band, B: Health 7 }
@@ -73,6 +74,7 @@ students:
     name: Class Schedule R
     description: 6th grade class schedule at Butler Middle School.
     group: unknown
+    include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:
       "1": Integrated Science 6 STEM
