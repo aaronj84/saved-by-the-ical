@@ -71,7 +71,7 @@ webcal://aaronj84.github.io/saved-by-the-ical/feeds/ctec/am-b-days.ics
 
 ### Jordan High School
 
-**Morning Periods** — Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days.
+**Morning Periods** — Jordan High morning block: Periods 1–2 + APP on A days; from semester 2 also Periods 5–6 + APP on B days.
 
 ```
 webcal://aaronj84.github.io/saved-by-the-ical/feeds/jordan/mornings.ics
