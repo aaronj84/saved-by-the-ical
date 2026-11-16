@@ -19,7 +19,9 @@ class Day:
 
     @property
     def titles(self) -> list[str]:
-        return [o.title for o in self.overrides if o.title]
+        """The title that applies (the last titled override wins)."""
+        titled = [o.title for o in self.overrides if o.title]
+        return titled[-1:]
 
 
 def resolve_days(school: School) -> list[Day]:

@@ -23,6 +23,12 @@ Copy a link below, then:
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/bell-schedule.ics
 ```
 
+**School Calendar** — Brighton days off, early outs, trimester ends, conferences and graduation.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/calendar.ics
+```
+
 ### Canyons School District
 
 **No School Days** — Holidays and breaks for Canyons School District 2026-27.

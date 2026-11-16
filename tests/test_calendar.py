@@ -223,3 +223,28 @@ def test_jordan_and_ctec_alternate_without_overlap():
     j = {e["DTSTART"].dt.date() for e in build_feed(jordan, jordan.feeds[0]).walk("VEVENT")}
     c = {e["DTSTART"].dt.date() for e in build_feed(ctec, ctec.feeds[0]).walk("VEVENT")}
     assert len(j) == 87 and len(c) == 87 and not j & c
+
+
+def test_later_override_hides_district_day_off_title():
+    s = base(
+        days=[
+            {"date": "2026-09-08", "no_school": True, "title": "District Day Off"},
+            {"date": "2026-09-09", "no_school": True, "title": "Old Name"},
+            {"date": "2026-09-08", "schedule": "reg"},  # school cancels the day off, untitled
+            {"date": "2026-09-09", "no_school": True, "title": "New Name"},
+        ],
+        feeds=[{"id": "d", "include": ["days"]}],
+    )
+    evs = build_feed(s, s.feeds[0], STAMP).walk("VEVENT")
+    assert [str(e["SUMMARY"]) for e in evs] == ["New Name"]
+
+
+def test_brighton_differs_from_district_where_its_calendar_says():
+    brighton = {d.date: d for d in resolve_days(load_school(DATA / "brighton.yaml"))}
+    district = {d.date: d for d in resolve_days(load_school(DATA / "canyons-district.yaml"))}
+    diff = sorted(d for d in district if brighton[d].in_session != district[d].in_session)
+    assert diff == [dt.date(2026, 9, 28), dt.date(2026, 10, 26),
+                    dt.date(2026, 11, 13), dt.date(2027, 4, 23)]
+    assert brighton[dt.date(2026, 9, 24)].schedule.id == "early_out"
+    assert brighton[dt.date(2027, 2, 25)].schedule.id == "early_out"
+    assert brighton[dt.date(2026, 9, 24)].rotation is None

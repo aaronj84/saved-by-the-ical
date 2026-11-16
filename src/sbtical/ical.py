@@ -146,10 +146,38 @@ def day_label_events(school: School, days: Iterable[Day], stamp, scope: str):
         )
 
 
-def override_events(school: School, stamp, scope: str, no_school_only=False):
-    """Titled day overrides (holidays, breaks, minimum days) as all-day events."""
-    for o in school.overrides:
-        if not o.title or (no_school_only and not o.no_school):
+def _visible_overrides(school: School, days: Iterable[Day]):
+    """Titled overrides that still matter after later overrides are applied.
+
+    An override is shown if, on at least one of its dates, it is the last
+    titled override for that date and (for no-school entries) that date really
+    is off. So a school file can cancel or retitle a district day off without
+    the district's title leaking into its calendar.
+    """
+    in_session = {d.date: d.in_session for d in days}
+    winner: dict[dt.date, int] = {}
+    for i, o in enumerate(school.overrides):
+        if not o.title:
+            continue
+        d = o.start
+        while d <= o.end:
+            winner[d] = i
+            d += dt.timedelta(days=1)
+    for i, o in enumerate(school.overrides):
+        if not o.title:
+            continue
+        d = o.start
+        while d <= o.end:
+            if winner.get(d) == i and not (o.no_school and in_session.get(d, False)):
+                yield o
+                break
+            d += dt.timedelta(days=1)
+
+
+def override_events(school: School, days: Iterable[Day], stamp, scope: str, no_school_only=False):
+    """Titled day overrides (holidays, breaks, early outs) as all-day events."""
+    for o in _visible_overrides(school, days):
+        if no_school_only and not o.no_school:
             continue
         yield _event(
             f"{school.id}-{scope}-day-{o.start.isoformat()}-{o.end.isoformat()}",
@@ -191,9 +219,8 @@ def school_events(school: School, stamp, scope: str, categories: tuple[str, ...]
 
 def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, days=None) -> Calendar:
     stamp = stamp or default_stamp(school)
-    days = days if days is not None else resolve_days(school)
-    if feed.rotation:
-        days = [d for d in days if d.rotation in feed.rotation]
+    all_days = days if days is not None else resolve_days(school)
+    days = [d for d in all_days if d.rotation in feed.rotation] if feed.rotation else all_days
     cal = _new_calendar(school, f"{school.name} · {feed.name}", feed.description)
     scope = feed.id
     for part in feed.include:
@@ -202,7 +229,7 @@ def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, day
         elif part == "day_labels":
             events = day_label_events(school, days, stamp, scope)
         elif part == "days":
-            events = override_events(school, stamp, scope, feed.no_school_only)
+            events = override_events(school, all_days, stamp, scope, feed.no_school_only)
         elif part == "events":
             events = school_events(school, stamp, scope, feed.categories)
         for ev in events:
@@ -221,7 +248,7 @@ def build_student_feed(school: School, student: Student, stamp=None, days=None) 
         elif part == "day_labels":
             events = day_label_events(school, days, stamp, student.id)
         elif part == "days":
-            events = override_events(school, stamp, student.id)
+            events = override_events(school, days, stamp, student.id)
         elif part == "events":
             events = school_events(school, stamp, student.id)
         else:

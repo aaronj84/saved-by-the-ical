@@ -1,11 +1,16 @@
-# SOURCE: 2026-27 entries in the family iCloud "Brighton Bell Schedule" calendar.
-# TODO: verify against the official 2026-27 Canyons bell schedule PDF.
+# Brighton runs trimesters and its own calendar on top of the district's.
+# SOURCES:
+# - Bells: https://bhs.canyonsdistrict.org/bell-schedule/ (2026-27 image + text)
+# - Calendar: "Canyons School District 2026-2027 School Calendar, Brighton High
+#   School", revised 2025.11.12
 extends: ../districts/canyons-2026-27.yaml
 
 school:
   id: brighton
   name: Brighton High School
   short_name: BHS
+
+rotation: null  # Brighton is not on the district A/B rotation
 
 bell_schedules:
   mon_thu:
@@ -18,17 +23,71 @@ bell_schedules:
       - { id: lunch, name: Lunch, start: "11:36", end: "12:11", kind: break }
       - { id: "4", name: 4th Period, start: "12:17", end: "13:18" }
       - { id: "5", name: 5th Period, start: "13:24", end: "14:25" }
-  friday:
-    name: Friday (Early Out)
+  early_out:
+    name: Early Out
     periods:
       - { id: "1", name: 1st Period, start: "07:45", end: "08:35" }
       - { id: "2", name: 2nd Period, start: "08:41", end: "09:30" }
-      - { id: "3", name: 3rd Period, start: "09:36", end: "10:23" }
-      - { id: "4", name: 4th Period, start: "10:30", end: "11:25" }
-      - { id: "5", name: 5th Period, start: "11:31", end: "12:20" }
-      - { id: lunch, name: Lunch, start: "12:20", end: "12:50", kind: break }
+      - { id: "3", name: 3rd Period, start: "09:36", end: "10:25" }
+      - { id: "4", name: 4th Period, start: "10:31", end: "11:20" }
+      - { id: "5", name: 5th Period, start: "11:26", end: "12:15" }
+      - { id: lunch, name: Lunch, start: "12:15", end: "12:45", kind: break }
+  # Assembly days: add  - { date: YYYY-MM-DD, schedule: gym_assembly, title: Assembly }
+  gym_assembly:
+    name: Gym Assembly
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:40" }
+      - { id: "2", name: 2nd Period, start: "08:46", end: "09:41" }
+      - { id: assembly, name: Assembly, start: "09:47", end: "10:47" }
+      - { id: "3", name: 3rd Period, start: "10:53", end: "11:48" }
+      - { id: lunch, name: Lunch, start: "11:48", end: "12:23", kind: break }
+      - { id: "4", name: 4th Period, start: "12:29", end: "13:24" }
+      - { id: "5", name: 5th Period, start: "13:30", end: "14:25" }
+  # Auditorium assemblies split students into "A" and "B" assembly groups
+  # (not A/B days). Use the variant for your student's group.
+  auditorium_assembly_a:
+    name: Auditorium Assembly (Group A)
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
+      - { id: assembly, name: Assembly, start: "08:48", end: "09:43" }
+      - { id: "2", name: 2nd Period, start: "09:49", end: "10:44" }
+      - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
+      - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
+      - { id: "4", name: 4th Period, start: "12:27", end: "13:23" }
+      - { id: "5", name: 5th Period, start: "13:29", end: "14:25" }
+  auditorium_assembly_b:
+    name: Auditorium Assembly (Group B)
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
+      - { id: "2", name: 2nd Period, start: "08:48", end: "09:43" }
+      - { id: assembly, name: Assembly, start: "09:49", end: "10:44" }
+      - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
+      - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
+      - { id: "4", name: 4th Period, start: "12:27", end: "13:23" }
+      - { id: "5", name: 5th Period, start: "13:29", end: "14:25" }
 
-weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: early_out }
+
+# Applied after the district's days (later wins).
+days:
+  - { date: 2026-09-24, schedule: early_out, title: Early Out Day }  # assumes Friday times
+  - { date: 2026-09-28, schedule: mon_thu, title: "School in session (K-12 off)" }
+  - { date: 2026-10-26, schedule: mon_thu, title: "School in session (K-12 off)" }
+  - { date: 2026-11-13, no_school: true, title: Teacher Professional Day (No Students) }
+  - { date: 2027-02-12, no_school: true, title: Teacher Professional Day (No Students) }
+  - { date: 2027-02-25, schedule: early_out, title: Early Out Day }  # assumes Friday times
+  - { date: 2027-04-23, no_school: true, title: PTC Compensatory Day (No Students) }
+
+events:
+  - { title: 9th Grade Orientation (½ day), date: 2026-08-14, categories: [school] }
+  - { title: First Day of School, date: 2026-08-17, categories: [school] }
+  - { title: Parent/Teacher Conferences, date: 2026-09-24, categories: [conferences] }
+  - { title: End of 1st Trimester, date: 2026-11-12, categories: [trimester] }
+  - { title: Parent/Teacher Conferences, date: 2027-01-14, categories: [conferences] }
+  - { title: End of 2nd Trimester, date: 2027-02-25, categories: [trimester] }
+  - { title: Parent/Teacher Conferences, date: 2027-04-22, categories: [conferences] }
+  - { title: Graduation, date: 2027-05-25, categories: [school] }
+  - { title: Last Day of School / End of 3rd Trimester, date: 2027-05-27, categories: [school, trimester] }
 
 feeds:
   - id: bell-schedule
@@ -36,3 +95,7 @@ feeds:
     description: Brighton High School periods and lunch on school days only.
     include: [bells]
     include_breaks: true
+  - id: calendar
+    name: School Calendar
+    description: Brighton days off, early outs, trimester ends, conferences and graduation.
+    include: [days, events]
