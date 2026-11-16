@@ -346,9 +346,11 @@ function schoolDay(school, date, groups = []) {
   const [sid, rot, note] = entry;
   if (!sid) return { closed: true, note, label: null, periods: [] };
   const sched = school.schedules[sid];
-  const periods = sched.periods.map(([s, e, name, kind, group, names]) => ({
-    s: toMin(s), e: toMin(e), name: (names && rot && names[rot]) || name, kind, group,
-  }));
+  const periods = sched.periods
+    .filter((p) => !p[6] || p[6].includes(rot))  // B-day-only periods etc.
+    .map(([s, e, name, kind, group, names]) => ({
+      s: toMin(s), e: toMin(e), name: (names && rot && names[rot]) || name, kind, group,
+    }));
   // Group tracks (lunch groups, grades): show just the groups our kids are
   // in (lunches labelled by group); if none known, one block per cluster.
   const plain = periods.filter((p) => !p.group);

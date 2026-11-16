@@ -245,7 +245,7 @@ def test_butler_lunch_group_feeds_have_no_overlaps():
         for (a_start, a_end), (b_start, _) in zip(evs, evs[1:]):
             assert b_start >= a_end, (feed.id, a_start, b_start)
         per_day = 8 if feed.group == "B" else 7  # 6 periods + lunch; B splits period 4
-        assert len(evs) == 174 * per_day, feed.id
+        assert len(evs) == 174 * per_day + 87, feed.id  # + Maker Space on the 87 B days
 
 
 def test_groups_only_overlap_across_different_groups():
@@ -306,7 +306,10 @@ def test_student_lunch_group_controls_period_4():
         ("11:38", "12:08", "Lunch"),
         ("12:12", "12:42", "Integrated Science 7 STEM"),
     ]
-    assert b[0] == ("07:55", "08:53", "Health 7")  # B-day period 1
+    assert b[0] == ("07:20", "07:50", "Maker Space")  # B days only
+    assert b[1] == ("07:55", "08:53", "Health 7")  # B-day period 1
+    a_day = _student_day("class-schedule-d", "B", dt.date(2026, 11, 17))
+    assert a_day[0] == ("07:55", "08:53", "Concert Band")  # no Maker Space on A days
 
 
 def test_kid_feeds_contain_no_teacher_or_room_details():
