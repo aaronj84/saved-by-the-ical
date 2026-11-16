@@ -361,6 +361,8 @@ def test_fynn_combined_feed_has_no_overlaps_and_spans_three_schools():
     assert on(dt.date(2026, 11, 16)) == [  # B day, semester 1, T2
         ("07:30", "CTEC AM Class"), ("12:17", "US History"), ("13:24", "English 12")]
     assert on(dt.date(2027, 1, 20))[0] == ("07:45", "Jordan Period 5")  # B day, semester 2
+    assert on(dt.date(2026, 11, 17))[:3] == [  # A day: APP between Periods 1 and 2
+        ("07:45", "Jordan Period 1"), ("09:09", "Jordan APP"), ("09:45", "Jordan Period 2")]
     assert on(dt.date(2026, 9, 28)) == [  # K-12 day off, Brighton in session
         ("12:17", "Physics / English 12"), ("13:24", "Financial Literacy")]
     assert len({str(e["UID"]) for e in cal.walk("VEVENT")}) == len(cal.walk("VEVENT"))

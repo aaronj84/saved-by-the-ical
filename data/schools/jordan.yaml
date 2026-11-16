@@ -39,13 +39,14 @@ bell_schedules:
 weekly: { mon: regular, tue: regular, wed: regular, thu: regular, fri: friday }
 
 feeds:
-  # Semester 1: Periods 1-2 on A days (B-day mornings are at CTEC).
-  # Semester 2: also Periods 5-6 on B days, same time slots.
+  # Semester 1: Periods 1-2 and APP on A days (B-day mornings are at CTEC).
+  # Semester 2: also Periods 5-6 and APP on B days, same time slots.
+  # No APP on Fridays; on assembly days APP becomes the assembly.
   - id: mornings
     name: Morning Periods
-    description: "Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days."
+    description: "Jordan High morning block: Periods 1–2 + APP on A days; from semester 2 also Periods 5–6 + APP on B days."
     include: [bells]
-    periods: ["1", "2"]
+    periods: ["1", "app", "2"]
     when:
       - { rotation: [A] }
       - { rotation: [B], term: semester_2 }
