@@ -407,7 +407,7 @@ def test_site_columns_show_only_fynns_jordan_ctec_periods(tmp_path):
         str(p) for p in (root / "data/people").glob("*.yaml"))
     build_site(files, tmp_path, tmp_path / "nofeeds", root / "data/site.yaml")
     cols = {c["title"]: c for c in json.loads((tmp_path / "schedule.json").read_text())["columns"]}
-    assert list(cols) == ["Butler Elem", "Butler Mid", "Jordan / CTEC", "Brighton"]
+    assert list(cols) == ["Butler Elem", "Butler Mid", "Carpool", "Jordan / CTEC", "Brighton"]
     jc = cols["Jordan / CTEC"]["days"]
     assert [i[2] for i in jc["2026-11-17"]] == ["Jordan Period 1", "Jordan APP", "Jordan Period 2"]  # A
     assert [i[2] for i in jc["2026-11-16"]] == ["CTEC AM Class"]  # B, semester 1
