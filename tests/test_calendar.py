@@ -238,7 +238,7 @@ def test_morning_feeds_cover_each_school_day_exactly_once():
 
 def test_butler_lunch_group_feeds_have_no_overlaps():
     s = load_school(DATA / "butler.yaml")
-    for feed in s.feeds:
+    for feed in (f for f in s.feeds if f.group):  # the bell-schedule feeds
         evs = sorted(
             (e["DTSTART"].dt, e["DTEND"].dt) for e in build_feed(s, feed).walk("VEVENT")
         )
@@ -374,11 +374,11 @@ def test_site_json_kids_and_schools(tmp_path):
     from sbtical.site import build_site
 
     files = sorted(str(p) for p in DATA.glob("*.yaml")) + sorted(
-        str(p) for p in (DATA.parent / "people").glob("*.yaml"))
-    build_site(files, tmp_path, tmp_path / "nofeeds")
+        str(p) for p in (DATA.parent / "people").glob("*.yaml")) + [str(DATA.parent / "carpool.yaml")]
+    build_site(files, tmp_path, tmp_path / "nofeeds", DATA.parent / "site.yaml")
     data = json.loads((tmp_path / "schedule.json").read_text())
     kids = {k["initial"]: k for k in data["kids"]}
-    assert sorted(kids) == ["B", "D", "F", "L", "M", "R", "S"]
+    assert list(kids) == ["F", "S", "L", "D", "R", "M", "B"]  # order from data/site.yaml
     l_mon = kids["L"]["days"]["2026-11-16"]["items"]
     assert ["11:36", "12:11", "Lunch", False, "brighton"] in l_mon
     assert ["07:45", "08:46", "AP European History", True, "brighton"] in l_mon
@@ -404,13 +404,66 @@ def test_site_columns_show_only_fynns_jordan_ctec_periods(tmp_path):
 
     root = Path(__file__).parent.parent
     files = sorted(str(p) for p in DATA.glob("*.yaml")) + sorted(
-        str(p) for p in (root / "data/people").glob("*.yaml"))
+        str(p) for p in (root / "data/people").glob("*.yaml")) + [str(root / "data/carpool.yaml")]
     build_site(files, tmp_path, tmp_path / "nofeeds", root / "data/site.yaml")
     cols = {c["title"]: c for c in json.loads((tmp_path / "schedule.json").read_text())["columns"]}
-    assert list(cols) == ["Butler Elem", "Butler Mid", "Jordan / CTEC", "Brighton"]
+    assert list(cols) == ["Butler Elem", "Butler Mid", "Brighton", "Jordan / CTEC"]  # carpool: Kids tab only
     jc = cols["Jordan / CTEC"]["days"]
     assert [i[2] for i in jc["2026-11-17"]] == ["Jordan Period 1", "Jordan APP", "Jordan Period 2"]  # A
     assert [i[2] for i in jc["2026-11-16"]] == ["CTEC AM Class"]  # B, semester 1
     assert [i[2] for i in jc["2027-01-20"]] == ["Jordan Period 5", "Jordan APP", "Jordan Period 6"]  # B, sem 2
     assert cols["Butler Elem"]["groups"] == ["1", "4"]
     assert cols["Butler Mid"]["groups"] == ["B", "C"]  # 6th grade B lunch, 7th grade C lunch
+
+
+def test_carpool_follows_calendar_rotation_and_drivers():
+    from sbtical.carpool import load_carpool, occurrences
+
+    cp = load_carpool(Path(__file__).parent.parent / "data/carpool.yaml")
+    occ = occurrences(cp)
+
+    def on(day):
+        return [(o.start.strftime("%H:%M"), o.end.strftime("%H:%M"), o.rule.driver,
+                 [(t.strftime("%H:%M"), s.kids) for t, s in o.stops]) for o in occ if o.date == day]
+
+    assert on(dt.date(2026, 11, 16)) == [  # Mon, B day (Maker's Club)
+        ("07:00", "07:15", "C/J", [("07:00", ("D", "R"))]),
+        ("07:45", "08:00", "VB", [("07:45", ("B", "M"))]),
+        # one afternoon run: leave 3:10, Elem 3:15, Mid 3:25, home 3:45
+        ("15:10", "15:45", "Jenn", [("15:15", ("B", "M")), ("15:25", ("D", "R"))])]
+    assert on(dt.date(2026, 11, 17))[0][:3] == ("07:20", "07:35", "C/J")  # Tue, A day
+    assert on(dt.date(2026, 11, 18))[2][:3] == ("15:10", "15:45", "Aaron")
+    assert on(dt.date(2026, 11, 20))[2][:3] == ("13:20", "13:55", "Jenn")  # Friday
+    assert on(dt.date(2026, 11, 26)) == []  # Thanksgiving
+    assert len(occ) == 174 * 3
+    assert occ[2].summary == "Jenn Pickup (B & M, D & R)"
+
+
+def test_main_calendar_list_matches_config_and_names():
+    from sbtical.site import feed_catalog, split_subscriptions
+
+    root = Path(__file__).parent.parent
+    files = sorted(str(p) for p in DATA.glob("*.yaml")) + sorted(
+        str(p) for p in (root / "data/people").glob("*.yaml")) + [str(root / "data/carpool.yaml")]
+    main, _ = split_subscriptions(feed_catalog(files), root / "data/site.yaml")
+    assert [c["name"] for c in main] == [
+        "Carpool Calendar", "F School Calendar", "Brighton Calendar", "Butler Middle Calendar",
+        "Butler Elementary Calendar", "S School Calendar", "L School Calendar", "D School Calendar",
+        "R School Calendar", "M School Calendar", "B School Calendar"]
+
+
+def test_svea_is_free_after_third_period_in_t2():
+    s = load_school(DATA / "brighton.yaml")
+    st = next(x for x in s.students if x.id == "class-schedule-s")
+    evs = build_student_feed(s, st).walk("VEVENT")
+
+    def day(d):
+        return [(e["DTSTART"].dt.strftime("%H:%M"), str(e["SUMMARY"])) for e in sorted(evs, key=lambda e: str(e["DTSTART"].dt))
+                if isinstance(e["DTSTART"].dt, dt.datetime) and e["DTSTART"].dt.date() == d]
+
+    assert day(dt.date(2026, 11, 16)) == [  # T2 Monday
+        ("07:45", "AP English Language & Composition"), ("08:52", "AP US History"),
+        ("09:59", "APP"), ("10:35", "French 3117")]
+    assert ("11:36", "Lunch") in day(dt.date(2026, 9, 1))  # T1 keeps lunch
+    assert ("12:17", "AP English Language & Composition") in day(dt.date(2027, 3, 1))  # T3
+    assert not any("Canyons Online" in str(e["SUMMARY"]) for e in evs)

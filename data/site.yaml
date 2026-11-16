@@ -1,3 +1,6 @@
+# Kid order on the site (cards and the Kids view), by initial.
+kids: [F, S, L, D, R, M, B]
+
 # Columns for the site's "Daily schedule → Schools" view, left to right.
 #   school: show that school's bell schedule (group tracks like lunch groups or
 #           grades are narrowed to the groups the kids are in)
@@ -8,5 +11,21 @@
 columns:
   - { title: Butler Elem, school: butler-elementary, prefix: Elem }
   - { title: Butler Mid, school: butler, prefix: Butler }
-  - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
   - { title: Brighton, school: brighton, prefix: BHS }
+  - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
+
+# Main calendars to subscribe to, in this order (paths under feeds/, no .ics).
+# Shown first on the site and in the README; everything else is listed under
+# "More calendars".
+subscribe:
+  - carpool/all
+  - people/class-schedule-f
+  - brighton/calendar
+  - butler/calendar
+  - butler-elementary/calendar
+  - brighton/class-schedule-s
+  - brighton/class-schedule-l
+  - butler/class-schedule-d
+  - butler/class-schedule-r
+  - butler-elementary/class-schedule-m
+  - butler-elementary/class-schedule-b

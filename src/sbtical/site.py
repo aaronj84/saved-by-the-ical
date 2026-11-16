@@ -15,6 +15,7 @@ import yaml
 from importlib import resources
 from pathlib import Path
 
+from .carpool import is_carpool_file, load_carpool, occurrences
 from .combine import is_person_file, load_person
 from .ical import build_feed, build_student_feed
 from .model import School, load_school
@@ -40,6 +41,44 @@ def _add_calendar(days: dict, cal, school_id: str) -> None:
                 d += dt.timedelta(days=1)
 
 
+def feed_catalog(files) -> list[dict]:
+    """Every published feed: {path, name, description, group}, in file order."""
+    out = []
+    for path in files:
+        if is_carpool_file(path):
+            for f in load_carpool(path).feeds:
+                out.append({"path": f"carpool/{f.id}", "name": f.name, "description": f.description,
+                            "group": "Carpool"})
+        elif is_person_file(path):
+            person = load_person(path)
+            out.append({"path": f"people/{person.id}", "name": person.name,
+                        "description": person.description, "group": "Kids"})
+        else:
+            school = load_school(path)
+            for f in school.feeds:
+                out.append({"path": f"{school.id}/{f.id}", "name": f.calendar_name or f.name,
+                            "description": f.description, "group": school.name})
+            for st in school.students:
+                if st.publish:
+                    out.append({"path": f"{school.id}/{st.id}", "name": st.name,
+                                "description": st.description, "group": "Kids"})
+    return out
+
+
+def split_subscriptions(catalog: list[dict], config: Path) -> tuple[list[dict], list[dict]]:
+    """(main calendars in configured order, everything else)."""
+    order = []
+    if config.exists():
+        order = (yaml.safe_load(config.read_text()) or {}).get("subscribe") or []
+    by_path = {c["path"]: c for c in catalog}
+    missing = [p for p in order if p not in by_path]
+    if missing:
+        raise ValueError(f"{config}: subscribe lists unknown feeds {missing}")
+    main = [by_path[p] for p in order]
+    rest = [c for c in catalog if c["path"] not in order]
+    return main, rest
+
+
 def _kid(kid_id, name, description, feed_path, parts) -> dict:
     days: dict[str, dict] = {}
     for school_id, cal in parts:
@@ -50,7 +89,8 @@ def _kid(kid_id, name, description, feed_path, parts) -> dict:
     return {
         "id": kid_id,
         "name": name,
-        "initial": name.split()[-1] if name.startswith("Class Schedule") else name[:1],
+        # "D School Calendar" -> D (older names: "Class Schedule D")
+        "initial": name.split()[0] if len(name.split()[0]) == 1 else name.split()[-1],
         "description": description,
         "feed": feed_path,
         "days": dict(sorted(days.items())),
@@ -94,6 +134,9 @@ def _columns(config: Path, loaded: dict[str, School]) -> list[dict]:
                 for sid, s in loaded.items()]
     cols = []
     for c in (yaml.safe_load(config.read_text()) or {}).get("columns") or []:
+        if c.get("carpool"):
+            cols.append({"title": c["title"], "carpool": True})
+            continue
         if c.get("school"):
             school = loaded[c["school"]]
             groups = sorted({st.group for st in school.students if st.group and st.group != "unknown"})
@@ -121,7 +164,19 @@ def _columns(config: Path, loaded: dict[str, School]) -> list[dict]:
 def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None = None) -> None:
     kids, feeds, schools = [], [], []
     loaded: dict[str, School] = {}
+    carpool: dict[str, list] = {}
     for path in files:
+        if is_carpool_file(path):
+            cp = load_carpool(path)
+            for o in occurrences(cp):
+                carpool.setdefault(o.date.isoformat(), []).append([
+                    o.start.strftime("%H:%M"), o.end.strftime("%H:%M"), o.rule.short, o.rule.title,
+                    o.rule.driver,
+                    [[t.strftime("%H:%M"), st.school.id, list(st.kids)] for t, st in o.stops]])
+            feeds.append({"school": "Carpool", "feeds": [
+                {"name": f.name, "description": f.description, "path": f"feeds/carpool/{f.id}.ics"}
+                for f in cp.feeds]})
+            continue
         if is_person_file(path):
             person = load_person(path)
             parts = []
@@ -152,14 +207,19 @@ def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None
                 kids.append(_kid(st.id, st.name, st.description,
                                  f"feeds/{school.id}/{st.id}.ics",
                                  [(school.id, build_student_feed(school, st, days=days))]))
-    kids.sort(key=lambda k: k["name"])
+    config = config or Path("data/site.yaml")
+    cfg = (yaml.safe_load(config.read_text()) or {}) if config.exists() else {}
+    order = [str(i) for i in cfg.get("kids") or []]
+    kids.sort(key=lambda k: (order.index(k["initial"]) if k["initial"] in order else len(order), k["name"]))
     order = ["butler-elementary", "butler", "jordan", "ctec", "brighton"]
     schools.sort(key=lambda s: (order.index(s["id"]) if s["id"] in order else 99, s["name"]))
 
     out.mkdir(parents=True, exist_ok=True)
-    columns = _columns(config or Path("data/site.yaml"), loaded)
+    columns = _columns(config, loaded)
+    main, rest = split_subscriptions(feed_catalog(files), config)
     data = {"timezone": "America/Denver", "kids": kids, "schools": schools,
-            "columns": columns, "feeds": feeds}
+            "columns": columns, "carpool": carpool,
+            "subscribe": {"main": main, "more": rest}}
     (out / "schedule.json").write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False))
     assets = resources.files("sbtical") / "site_assets"
     for name in ("index.html", "icon.png"):

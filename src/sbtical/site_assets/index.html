@@ -77,6 +77,7 @@
                   margin: 14px 0 4px; }
   .subscribe a { display: block; padding: 8px 0; color: var(--now); text-decoration: none;
                  border-bottom: 1px solid var(--line); }
+  .subscribe .more > summary { padding: 12px 0 4px; color: var(--muted); font-size: 14px; cursor: pointer; }
   .subscribe a small { display: block; color: var(--muted); font-size: 13px; }
   .note { color: var(--muted); font-size: 13px; margin: 8px 0 14px; }
   .pick { position: relative; }
@@ -113,6 +114,9 @@
                  box-shadow: 0 -1px 0 var(--card), 0 1px 0 var(--card); }
   .blk.overlay.half { left: 50%; }
   .blk.overlay.past { opacity: 1; color: var(--muted); }
+  .blk.car { border-left-style: dashed; padding-top: 0; padding-bottom: 0; z-index: 2; }
+  .blk.car { justify-content: center; }
+  .blk.car b { white-space: nowrap; text-overflow: ellipsis; display: block; letter-spacing: -0.02em; }
   .blk.past { opacity: .5; }
   .closed { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, var(--off-bg) 0 8px, transparent 8px 16px); }
   .nowline { position: absolute; left: 30px; right: 0; border-top: 2px solid #ef4444; z-index: 3; pointer-events: none; }
@@ -251,7 +255,7 @@ function statusFor(day, a, at, date) {
              : `Next good time: <b>after ${fmt(last)}</b>`;
   };
   if (at < first) return { cls: "free", status: "Free now", sub: `School starts ${fmt(first)} (in ${dur(first - at)})` };
-  if (at >= last) return { cls: "free", status: "Done for the day", sub: `Out since ${fmt(last)}` };
+  if (at >= last) return { cls: "free", status: "Done with school for today", sub: "", done: true };
   const block = a.blocks.find((b) => b.s <= at && at < b.e);
   if (block) {
     const cur = a.busy.filter((i) => i.s <= at && at < i.e).pop();
@@ -289,7 +293,17 @@ const PPM = 1.35;                       // pixels per minute
 const HEAD = 44;                        // column header height
 const COLORS = {                        // per-school accent (light, dark handled by alpha bg)
   "butler-elementary": "#0d9488", butler: "#7c3aed", jordan: "#dc2626", ctec: "#d97706", brighton: "#2563eb",
+  carpool: "#2f5d62",
 };
+// Carpool runs on a date, optionally only those stopping for a kid (initial).
+// r.at = that kid's stop time; r.stops = [{at, sid, kids}].
+const rides = (date, initial) => (DATA.carpool?.[date] || []).map(([s, e, short, title, driver, stops]) => {
+  const st = stops.map(([t, sid, kids]) => ({ at: toMin(t), sid, kids }));
+  const mine = initial ? st.find((x) => x.kids.includes(initial)) : st[0];
+  return mine && { s: toMin(s), e: toMin(e), short, title, driver, stops: st, at: mine.at, sid: mine.sid,
+                   kids: st.flatMap((x) => x.kids) };
+}).filter(Boolean);
+const rideText = (r) => `${r.at < 12 * 60 ? "Carpool" : "Pickup"} ${fmt(r.at)}${r.driver ? " · " + r.driver : ""}`;
 const color = (sid) => COLORS[sid] || "#64748b";
 const periodShort = (n) => n
   .replace(/\b(\d+)(?:st|nd|rd|th) Period\b/, "P$1")
@@ -374,6 +388,19 @@ function renderGrid(at) {
   const cols = [];
   if (mode === "schools") {
     for (const col of DATA.columns) {
+      if (col.carpool) {
+        const rs = rides(viewDate);
+        const drivers = [...new Set(rs.filter((r) => r.s >= 12 * 60).map((r) => r.driver).filter(Boolean))];
+        cols.push({
+          title: col.title, sub: rs.length ? drivers.join(" & ") : "None", off: !rs.length, closed: !rs.length,
+          blocks: rs.map((r) => ({
+            s: r.s, e: r.e, c: color("carpool"), car: true,
+            label: r.driver || r.short,
+            tap: () => showRide(r),
+          })),
+        });
+        continue;
+      }
       if (col.school) {
         const sc = DATA.schools.find((x) => x.id === col.school);
         const d = schoolDay(sc, viewDate, col.groups || []);
@@ -411,7 +438,9 @@ function renderGrid(at) {
         title: k.initial, sub: items.length ? (labels[0] || "") : ((day?.notes || [])[0] || "No school"),
         off: !items.length, closed: !items.length,
         blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, label: kidLabel(t), c: color(sid), brk: !busy,
-          tap: () => showKidItem(k, [a, b, t, busy, sid]) })),
+          tap: () => showKidItem(k, [a, b, t, busy, sid]) }))
+          .concat(rides(viewDate, k.initial).map((r) => ({ s: r.s, e: r.e, c: color("carpool"), car: true,
+            label: `🚗${clock(r.at)}`, tap: () => showRide(r) }))),
       });
     }
   }
@@ -441,9 +470,9 @@ function renderGrid(at) {
     for (let m = t0 + 60; m < t1; m += 60) { const hr = el("div", "hr"); hr.style.top = `${(m - t0) * PPM}px`; body.append(hr); }
     if (c.closed) body.append(el("div", "closed"));
     for (const b of c.blocks) {
-      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (at != null && b.e <= at ? " past" : ""));
+      const btn = el("button", "blk" + (b.brk ? " brk" : "") + (b.overlay ? " overlay" : "") + (b.half ? " half" : "") + (b.car ? " car" : "") + (at != null && b.e <= at ? " past" : ""));
       btn.style.top = `${(b.s - t0) * PPM}px`;
-      btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, 10)}px`;
+      btn.style.height = `${Math.max((b.e - b.s) * PPM - 2, b.car ? 16 : 10)}px`;
       btn.style.setProperty("--c", b.c);
       btn.style.setProperty("--c-bg", b.c + "22");
       const h = (b.e - b.s) * PPM;
@@ -507,6 +536,24 @@ function showPeriod(schoolId, ps, pe, title, meta, cluster, groups) {
   openSheet(title, meta, rows);
 }
 
+function showRide(r) {
+  const rows = [];
+  for (const st of r.stops) {
+    const sc = DATA.schools.find((x) => x.id === st.sid);
+    for (const i of st.kids) {
+      const kid = DATA.kids.find((k) => k.initial === i);
+      const items = (kid?.days[viewDate]?.items || []).filter((x) => x[4] === st.sid && x[3]);
+      const out = items.length ? Math.max(...items.map((x) => toMin(x[1]))) : null;
+      const first = items.length ? Math.min(...items.map((x) => toMin(x[0]))) : null;
+      const note = st.at < 12 * 60 ? (first != null ? `First class ${fmt(first)}` : "")
+                                   : (out != null ? `Out of class ${fmt(out)}` : "");
+      rows.push([i, `${fmt(st.at)} · ${sc ? sc.name : st.sid}`, note]);
+    }
+  }
+  const span = r.stops.length > 1 ? `${fmt(r.s)} – ${fmt(r.e)}` : fmt(r.at);
+  openSheet(r.title, `${span}${r.driver ? " · " + r.driver + " drives" : ""}`, rows);
+}
+
 function showKidItem(k, [a, b, t, busy, sid]) {
   const sc = DATA.schools.find((s) => s.id === sid);
   openSheet(`${k.initial} · ${t}`, `${fmt(toMin(a))} – ${fmt(toMin(b))} · ${sc ? sc.name : sid}${busy ? "" : " · free"}`, []);
@@ -538,8 +585,16 @@ function render() {
     const info = el("div");
     info.append(el("div", "status", st.status));
     if (st.sub) { const sub = el("div", "sub"); sub.innerHTML = st.sub; info.append(sub); }  // sub: times + esc()'d text only
+    const rs = st.done ? [] : rides(viewDate, kid.initial);
+    if (rs.length) {
+      const next = at == null ? null : rs.find((r) => r.e > at);
+      const line = el("div", "sub");
+      line.textContent = "🚗 " + (at == null ? rs.map(rideText).join(" · ")
+        : next ? rideText(next) + (next.s > at ? ` (in ${dur(next.s - at)})` : " (now)") : "No more pickups today");
+      info.append(line);
+    }
     const chips = el("div", "chips");
-    if (st.cls !== "off") for (const note of day?.notes || []) chips.append(el("span", "chip", note));
+    if (st.cls !== "off" && !st.done) for (const note of day?.notes || []) chips.append(el("span", "chip", note));
     if (chips.childElementCount) info.append(chips);
     s.append(el("div", "badge", kid.initial), info, el("span", "chev", "›"));
     d.append(s);
@@ -554,17 +609,23 @@ function render() {
 function renderFeeds() {
   const box = $("feeds");
   const base = location.host ? `webcal://${location.host}${location.pathname.replace(/[^/]*$/, "")}` : "";
-  const add = (name, desc, path) => {
-    const link = el("a", null, name);
-    link.href = base ? base + path : path;
-    if (desc) link.append(el("small", null, desc));
-    box.append(link);
+  const add = (c, into) => {
+    const link = el("a", null, c.name);
+    link.href = (base || "") + `feeds/${c.path}.ics`;
+    if (c.description) link.append(el("small", null, c.description));
+    into.append(link);
   };
-  box.append(el("h3", null, "Class schedules"));
-  for (const k of DATA.kids) add(k.name, k.description, k.feed);
-  for (const g of DATA.feeds) {
-    box.append(el("h3", null, g.school));
-    for (const f of g.feeds) add(f.name, f.description, f.path);
+  box.append(el("h3", null, "Our calendars"));
+  for (const c of DATA.subscribe.main) add(c, box);
+  if (DATA.subscribe.more.length) {
+    const more = el("details", "more");
+    more.append(el("summary", null, "More calendars"));
+    let group = null;
+    for (const c of DATA.subscribe.more) {
+      if (c.group !== group) { group = c.group; more.append(el("h3", null, group)); }
+      add(c, more);
+    }
+    box.append(more);
   }
 }
 

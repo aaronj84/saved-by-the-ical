@@ -4,7 +4,7 @@ PRODID:-//saved-by-the-ical//sbtical//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC:Brighton High School class schedule.
-X-WR-CALNAME:Class Schedule L
+X-WR-CALNAME:L School Calendar
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 X-WR-TIMEZONE:America/Denver

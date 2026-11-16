@@ -4,7 +4,7 @@ PRODID:-//saved-by-the-ical//sbtical//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC:7th grade class schedule at Butler Middle School.
-X-WR-CALNAME:Class Schedule D
+X-WR-CALNAME:D School Calendar
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 X-WR-TIMEZONE:America/Denver

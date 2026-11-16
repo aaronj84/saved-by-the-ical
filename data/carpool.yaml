@@ -1,0 +1,37 @@
+# Carpool runs. A run has one or more stops; each stop follows its school's
+# calendar (no stop on that school's days off). A run happens on matching
+# weekdays / A/B days when at least one of its stops is in session.
+#   stops: [{ school, time }]; kids at a stop = every kid with a calendar at
+#          that school (or list `kids: [D, R]` on the stop)
+#   before / after: minutes the event starts before the first stop and ends
+#          after the last stop
+#   rotation: A/B labels of the first stop's school
+#   driver: drivers get their own feed below
+# Other families are named by initials (this repo is public).
+carpool:
+  # Mornings: picked up from home by the driving family (15 minutes)
+  - { title: "C/J Pickup", short: Mid AM, driver: C/J, rotation: [A], after: 15,
+      stops: [{ school: schools/butler.yaml, time: "07:20" }] }
+  - { title: "C/J Pickup (Maker's Club)", short: Mid AM, driver: C/J, rotation: [B], after: 15,
+      stops: [{ school: schools/butler.yaml, time: "07:00" }] }
+  - { title: "VB Pickup", short: Elem AM, driver: VB, days: [mon, thu], after: 15,
+      stops: [{ school: schools/butler-elementary.yaml, time: "07:45" }] }
+  - { title: "VB Pickup", short: Elem AM, driver: VB, days: [tue, wed, fri], after: 15,
+      stops: [{ school: schools/butler-elementary.yaml, time: "08:00" }] }
+
+  # Afternoons: one run, Butler Elem then Butler Mid; from 5 min before the
+  # elementary pickup to 20 min after the middle-school pickup.
+  - { title: "Jenn Pickup", short: PM, driver: Jenn, days: [mon, tue], before: 5, after: 20,
+      stops: [{ school: schools/butler-elementary.yaml, time: "15:15" },
+              { school: schools/butler.yaml, time: "15:25" }] }
+  - { title: "Jenn Pickup", short: PM, driver: Jenn, days: [fri], before: 5, after: 20,
+      stops: [{ school: schools/butler-elementary.yaml, time: "13:25" },
+              { school: schools/butler.yaml, time: "13:35" }] }
+  - { title: "Aaron Pickup", short: PM, driver: Aaron, days: [wed, thu], before: 5, after: 20,
+      stops: [{ school: schools/butler-elementary.yaml, time: "15:15" },
+              { school: schools/butler.yaml, time: "15:25" }] }
+
+feeds:
+  - { id: all, name: Carpool Calendar, description: "All carpool pickups for the Butler kids." }
+  - { id: jenn, name: Jenn's Pickups, driver: Jenn, description: "Afternoon pickups Jenn drives." }
+  - { id: aaron, name: Aaron's Pickups, driver: Aaron, description: "Afternoon pickups Aaron drives." }

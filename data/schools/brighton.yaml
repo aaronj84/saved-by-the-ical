@@ -105,6 +105,7 @@ feeds:
     include_breaks: true
   - id: calendar
     name: School Calendar
+    calendar_name: Brighton Calendar
     description: Brighton days off, early outs, trimester ends, conferences and graduation.
     include: [days, events]
 
@@ -113,7 +114,7 @@ feeds:
 # printout is APP. Keys: T1/T2/T3 = trimester, "*" or a plain value = all year.
 students:
   - id: class-schedule-l
-    name: Class Schedule L
+    name: L School Calendar
     description: Brighton High School class schedule.
     include_breaks: true
     classes:
@@ -124,16 +125,17 @@ students:
       "5": { T1: AP European History, T2: Chemistry (Honors), T3: English 10 (Honors) }
       app: { T1: APP, T2: APP }
   - id: class-schedule-s
-    name: Class Schedule S
+    name: S School Calendar
     description: Brighton High School class schedule.
-    include_breaks: true
     classes:
       "1": { T1: AP English Language & Composition, T2: AP English Language & Composition, T3: AP US History }
       "2": { T1: AP US History, T2: AP US History, T3: French 3117 }
       "3": { T1: Secondary Math 3 Honors, T2: French 3117, T3: Culinary 1 }
-      # Canyons Online is year-long (YT) and fills periods 4-5 in T2.
-      "4": { T1: Business Office Specialist, T2: Canyons Online, T3: AP English Language & Composition }
-      "5": { T1: Girls Soccer, T2: Canyons Online, T3: Secondary Math 3 Honors }
+      # T2: free after 3rd period (Canyons Online is done on her own time), so
+      # no lunch or periods 4-5 that trimester.
+      lunch: { T1: Lunch, T3: Lunch }
+      "4": { T1: Business Office Specialist, T3: AP English Language & Composition }
+      "5": { T1: Girls Soccer, T3: Secondary Math 3 Honors }
       app: { T1: APP, T2: APP }
   # Fynn's Brighton part only (Periods 4-5); published combined with his
   # Jordan/CTEC mornings via data/people/class-schedule-f.yaml.

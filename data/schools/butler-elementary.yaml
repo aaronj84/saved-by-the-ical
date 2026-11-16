@@ -57,16 +57,20 @@ bell_schedules:
 
 weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
 
+feeds:
+  - { id: calendar, name: School Calendar, calendar_name: Butler Elementary Calendar, include: [days],
+      description: "Butler Elementary days off." }
+
 # Per-kid schedules (initials only; repo is public).
 students:
   - id: class-schedule-b
-    name: Class Schedule B
+    name: B School Calendar
     description: 1st grade at Butler Elementary.
     group: "1"
     include_breaks: true
     classes: { class: 1st Grade }
   - id: class-schedule-m
-    name: Class Schedule M
+    name: M School Calendar
     description: 4th grade at Butler Elementary.
     group: "4"
     include_breaks: true
