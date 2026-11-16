@@ -16,12 +16,14 @@ bell_schedules:
       - { id: "2", name: Period 2, start: "08:58", end: "10:00" }
       - { id: "3", name: Period 3, start: "10:05", end: "11:03" }
       - { id: lunch-a, name: Lunch, group: A, kind: break, start: "11:03", end: "11:33" }
-      - { id: 4a, name: Period 4, group: A, start: "11:38", end: "12:42" }
-      - { id: 4b-1, name: Period 4, group: B, start: "11:08", end: "11:38" }
+      - { id: 4a, name: Period 4, slot: "4", group: A, start: "11:38", end: "12:42" }
+      - { id: 4b-1, name: Period 4, slot: "4", group: B, start: "11:08", end: "11:38" }
       - { id: lunch-b, name: Lunch, group: B, kind: break, start: "11:38", end: "12:08" }
-      - { id: 4b-2, name: Period 4, group: B, start: "12:12", end: "12:42" }
-      - { id: 4c, name: Period 4, group: C, start: "11:08", end: "12:12" }
+      - { id: 4b-2, name: Period 4, slot: "4", group: B, start: "12:12", end: "12:42" }
+      - { id: 4c, name: Period 4, slot: "4", group: C, start: "11:08", end: "12:12" }
       - { id: lunch-c, name: Lunch, group: C, kind: break, start: "12:12", end: "12:42" }
+      # Lunch group not known yet: whole Period 4 + lunch window as one block.
+      - { id: 4-lunch, name: Period 4 + Lunch, group: unknown, slot: "4", student_title: "{class} + Lunch", start: "11:03", end: "12:42" }
       - { id: "5", name: Period 5, start: "12:47", end: "13:45" }
       - { id: "6", name: Period 6, start: "13:50", end: "14:50" }
   friday:
@@ -32,12 +34,13 @@ bell_schedules:
       - { id: "3", name: Period 3, start: "09:23", end: "10:03" }
       - { id: "5", name: Period 5, start: "10:07", end: "10:47" }  # 5 before 4 on Fridays
       - { id: lunch-a, name: Lunch, group: A, kind: break, start: "10:47", end: "11:17" }
-      - { id: 4a, name: Period 4, group: A, start: "11:21", end: "12:26" }
-      - { id: 4b-1, name: Period 4, group: B, start: "10:51", end: "11:23" }
+      - { id: 4a, name: Period 4, slot: "4", group: A, start: "11:21", end: "12:26" }
+      - { id: 4b-1, name: Period 4, slot: "4", group: B, start: "10:51", end: "11:23" }
       - { id: lunch-b, name: Lunch, group: B, kind: break, start: "11:23", end: "11:53" }
-      - { id: 4b-2, name: Period 4, group: B, start: "11:57", end: "12:26" }
-      - { id: 4c, name: Period 4, group: C, start: "10:51", end: "11:56" }
+      - { id: 4b-2, name: Period 4, slot: "4", group: B, start: "11:57", end: "12:26" }
+      - { id: 4c, name: Period 4, slot: "4", group: C, start: "10:51", end: "11:56" }
       - { id: lunch-c, name: Lunch, group: C, kind: break, start: "11:56", end: "12:26" }
+      - { id: 4-lunch, name: Period 4 + Lunch, group: unknown, slot: "4", student_title: "{class} + Lunch", start: "10:47", end: "12:26" }
       - { id: "6", name: Period 6, start: "12:30", end: "13:10" }
 
 weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
@@ -49,3 +52,32 @@ feeds:
       description: Butler periods with 2nd (B) lunch. }
   - { id: bell-schedule-c-lunch, name: Bell Schedule (C Lunch), include: [bells], include_breaks: true, group: C,
       description: Butler periods with 3rd (C) lunch. }
+
+# Per-kid class schedules. Class names only (repo is public): no teachers or
+# rooms. Source: 2026-27 SIS schedules. Set `group:` to A, B or C once the
+# lunch group is known ("unknown" shows Period 4 + lunch as one block).
+students:
+  - id: class-schedule-d
+    name: Class Schedule D
+    description: 7th grade class schedule at Butler Middle School.
+    group: unknown
+    include_breaks: true  # show Lunch once the group is set
+    classes:
+      "1": { A: Concert Band, B: Health 7 }
+      "2": English Language Arts 7
+      "3": Math 7
+      "4": Integrated Science 7 STEM
+      "5": French 3 Honors (DLI)
+      "6": { A: Utah Studies 7, B: French DLI Literature & Culture }
+  - id: class-schedule-r
+    name: Class Schedule R
+    description: 6th grade class schedule at Butler Middle School.
+    group: unknown
+    include_breaks: true  # show Lunch once the group is set
+    classes:
+      "1": Integrated Science 6 STEM
+      "2": French 2H Language (DLI)
+      "3": French DLI History
+      "4": English Language Arts 6
+      "5": { A: Digital Literacy, B: Band 1 Woodwinds }
+      "6": Math Core 6

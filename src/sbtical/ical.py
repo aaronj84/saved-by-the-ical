@@ -98,7 +98,9 @@ def student_bell_events(school: School, student: Student, days: Iterable[Day], s
         if not day.in_session or not day.schedule:
             continue
         for p in day.schedule.periods:
-            options = student.classes.get(p.id)
+            if p.group and p.group != student.group:
+                continue
+            options = student.classes.get(p.class_slot)
             assignment = None
             if options:
                 assignment = options.get(day.rotation or "") or options.get("*")
@@ -109,6 +111,8 @@ def student_bell_events(school: School, student: Student, days: Iterable[Day], s
                     continue
             else:
                 summary, location = assignment.title, assignment.location
+                if p.student_title:
+                    summary = p.student_title.format(**{"class": assignment.title})
                 details = [p.name_for(day.rotation)]
                 if assignment.teacher:
                     details.append(assignment.teacher)
@@ -246,7 +250,7 @@ def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, day
 def build_student_feed(school: School, student: Student, stamp=None, days=None) -> Calendar:
     stamp = stamp or default_stamp(school)
     days = days if days is not None else resolve_days(school)
-    cal = _new_calendar(school, f"{student.name} · {school.name}", None)
+    cal = _new_calendar(school, student.name, student.description)
     for part in student.include:
         if part == "bells":
             events = student_bell_events(school, student, days, stamp)

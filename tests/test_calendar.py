@@ -281,3 +281,37 @@ def test_brighton_differs_from_district_where_its_calendar_says():
     assert brighton[dt.date(2026, 9, 24)].schedule.id == "early_out"
     assert brighton[dt.date(2027, 2, 25)].schedule.id == "early_out"
     assert brighton[dt.date(2026, 9, 24)].rotation is None
+
+
+def _student_day(student_id, group, day):
+    import dataclasses
+    s = load_school(DATA / "butler.yaml")
+    st = next(x for x in s.students if x.id == student_id)
+    st = dataclasses.replace(st, group=group)
+    evs = build_student_feed(s, st).walk("VEVENT")
+    return [
+        (e["DTSTART"].dt.strftime("%H:%M"), e["DTEND"].dt.strftime("%H:%M"), str(e["SUMMARY"]))
+        for e in sorted(evs, key=lambda e: str(e["DTSTART"].dt))
+        if isinstance(e["DTSTART"].dt, dt.datetime) and e["DTSTART"].dt.date() == day
+    ]
+
+
+def test_student_lunch_group_controls_period_4():
+    mon = dt.date(2026, 11, 16)  # B day (matches the SIS "Current Day: B")
+    unknown = _student_day("class-schedule-d", "unknown", mon)
+    assert ("11:03", "12:42", "Integrated Science 7 STEM + Lunch") in unknown
+    b = _student_day("class-schedule-d", "B", mon)
+    assert [x for x in b if "11:00" < x[0] < "12:45"] == [
+        ("11:08", "11:38", "Integrated Science 7 STEM"),
+        ("11:38", "12:08", "Lunch"),
+        ("12:12", "12:42", "Integrated Science 7 STEM"),
+    ]
+    assert b[0] == ("07:55", "08:53", "Health 7")  # B-day period 1
+
+
+def test_kid_feeds_contain_no_teacher_or_room_details():
+    s = load_school(DATA / "butler.yaml")
+    for st in s.students:
+        for classes in st.classes.values():
+            for a in classes.values():
+                assert a.teacher is None and a.location is None, st.id

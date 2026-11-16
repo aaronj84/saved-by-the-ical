@@ -30,6 +30,12 @@ class Period:
     kind: str = "class"  # class | break | passing | other
     names: tuple[tuple[str, str], ...] = ()  # rotation label -> display name
     group: str | None = None  # e.g. lunch group; only shown to feeds in that group
+    slot: str | None = None  # class slot for student mapping (defaults to id)
+    student_title: str | None = None  # e.g. "{class} + Lunch"
+
+    @property
+    def class_slot(self) -> str:
+        return self.slot or self.id
 
     def name_for(self, rotation: str | None) -> str:
         return dict(self.names).get(rotation or "", self.name)
@@ -130,6 +136,8 @@ class Student:
     classes: dict[str, dict[str, ClassAssignment]]
     include_breaks: bool = False
     include: tuple[str, ...] = ("bells", "days")
+    group: str | None = None  # e.g. lunch group
+    description: str | None = None
 
 
 @dataclass(frozen=True)
@@ -260,6 +268,8 @@ def parse_school(raw: dict) -> School:
                     kind=p.get("kind", "class"),
                     names=tuple((str(k), str(v)) for k, v in (p.get("names") or {}).items()),
                     group=str(p["group"]) if p.get("group") is not None else None,
+                    slot=str(p["slot"]) if p.get("slot") is not None else None,
+                    student_title=p.get("student_title"),
                 )
             )
         periods.sort(key=lambda p: p.start)
@@ -414,6 +424,8 @@ def parse_school(raw: dict) -> School:
                 classes=classes,
                 include_breaks=bool(st_raw.get("include_breaks", False)),
                 include=_tuple(st_raw.get("include")) or ("bells", "days"),
+                group=str(st_raw["group"]) if st_raw.get("group") is not None else None,
+                description=st_raw.get("description"),
             )
         )
 

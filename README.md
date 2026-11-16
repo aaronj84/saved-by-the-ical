@@ -49,6 +49,18 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-c-lunch.ics
 ```
 
+**Class Schedule D** — 7th grade class schedule at Butler Middle School.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/class-schedule-d.ics
+```
+
+**Class Schedule R** — 6th grade class schedule at Butler Middle School.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/class-schedule-r.ics
+```
+
 ### Canyons School District
 
 **No School Days** — Holidays and breaks for Canyons School District 2026-27.
