@@ -10,6 +10,8 @@ from __future__ import annotations
 import datetime as dt
 import json
 import shutil
+
+import yaml
 from importlib import resources
 from pathlib import Path
 
@@ -85,8 +87,40 @@ def _school(school: School) -> dict | None:
     }
 
 
-def build_site(files: list[str], out: Path, feeds_dir: Path) -> None:
+def _columns(config: Path, loaded: dict[str, School]) -> list[dict]:
+    """Schools-view columns from data/site.yaml (see that file)."""
+    if not config.exists():
+        return [{"title": s.short_name or s.name, "school": sid, "prefix": s.short_name or ""}
+                for sid, s in loaded.items()]
+    cols = []
+    for c in (yaml.safe_load(config.read_text()) or {}).get("columns") or []:
+        if c.get("school"):
+            school = loaded[c["school"]]
+            groups = sorted({st.group for st in school.students if st.group and st.group != "unknown"})
+            cols.append({"title": c["title"], "school": school.id,
+                         "prefix": c.get("prefix", school.short_name or ""), "groups": groups})
+            continue
+        days: dict[str, list] = {}
+        for ref in c["feeds"]:
+            sid, fid = ref.split("/")
+            school = loaded[sid]
+            feed = next(f for f in school.feeds if f.id == fid)
+            for ev in build_feed(school, feed).walk("VEVENT"):
+                start, end = ev["DTSTART"].dt, ev["DTEND"].dt
+                if isinstance(start, dt.datetime):
+                    days.setdefault(start.date().isoformat(), []).append(
+                        [start.strftime("%H:%M"), end.strftime("%H:%M"), str(ev["SUMMARY"]),
+                         str(ev.get("TRANSP", "OPAQUE")) != "TRANSPARENT", sid])
+        for v in days.values():
+            v.sort()
+        cols.append({"title": c["title"], "label_from": c.get("label_from"),
+                     "days": dict(sorted(days.items()))})
+    return cols
+
+
+def build_site(files: list[str], out: Path, feeds_dir: Path, config: Path | None = None) -> None:
     kids, feeds, schools = [], [], []
+    loaded: dict[str, School] = {}
     for path in files:
         if is_person_file(path):
             person = load_person(path)
@@ -103,6 +137,7 @@ def build_site(files: list[str], out: Path, feeds_dir: Path) -> None:
                              f"feeds/people/{person.id}.ics", parts))
             continue
         school = load_school(path)
+        loaded[school.id] = school
         days = resolve_days(school)
         if school.feeds:
             feeds.append({"school": school.name, "feeds": [
@@ -122,7 +157,9 @@ def build_site(files: list[str], out: Path, feeds_dir: Path) -> None:
     schools.sort(key=lambda s: (order.index(s["id"]) if s["id"] in order else 99, s["name"]))
 
     out.mkdir(parents=True, exist_ok=True)
-    data = {"timezone": "America/Denver", "kids": kids, "schools": schools, "feeds": feeds}
+    columns = _columns(config or Path("data/site.yaml"), loaded)
+    data = {"timezone": "America/Denver", "kids": kids, "schools": schools,
+            "columns": columns, "feeds": feeds}
     (out / "schedule.json").write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False))
     assets = resources.files("sbtical") / "site_assets"
     for name in ("index.html", "icon.png"):

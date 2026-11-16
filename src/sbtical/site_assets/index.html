@@ -286,17 +286,29 @@ const COLORS = {                        // per-school accent (light, dark handle
   "butler-elementary": "#0d9488", butler: "#7c3aed", jordan: "#dc2626", ctec: "#d97706", brighton: "#2563eb",
 };
 const color = (sid) => COLORS[sid] || "#64748b";
-const shortName = (n) => n
-  .replace(/^(?:Jordan|CTEC|BHS|Butler(?: Elem)?) (?=\S)/, "")
-  .replace(/^School \+ Lunch$/, "School day")
-  .replace(/^Period (\d+) \+ Lunch$/, "P$1 + Lunch")
-  .replace(/^(\d+)(?:st|nd|rd|th) Period$/, "P$1")
-  .replace(/^Period (\d+)(?:\/\d+)?$/, "P$1")
-  .replace(/^(AM|PM) Class$/, "$1");
+const periodShort = (n) => n
+  .replace(/\b(\d+)(?:st|nd|rd|th) Period\b/, "P$1")
+  .replace(/\bPeriod (\d+)(?:\/\d+)?\b/, "P$1")
+  .replace(/\b(AM|PM) Class\b/, "$1");
+const kidLabel = periodShort;  // keep "Jordan P1" / "CTEC AM" so mixed-school days stay clear
+const gshort = (g) => g === "K" ? "K" : /^\d$/.test(g) ? `${g}${["th", "st", "nd", "rd"][g] || "th"} Gr` : g;
+const glong = (g) => g === "K" ? "Kindergarten" : /^\d$/.test(g) ? `${g}${["th", "st", "nd", "rd"][g] || "th"} grade` : `${g} lunch`;
+// Subtract intervals `cut` from intervals `keep` (all {s, e}).
+const subtract = (keep, cut) => keep.flatMap((k) => {
+  let parts = [{ s: k.s, e: k.e }];
+  for (const c of cut) parts = parts.flatMap((p) => c.e <= p.s || c.s >= p.e ? [p]
+    : [...(c.s > p.s ? [{ s: p.s, e: c.s }] : []), ...(c.e < p.e ? [{ s: c.e, e: p.e }] : [])]);
+  return parts;
+});
+const union = (iv) => iv.slice().sort((a, b) => a.s - b.s).reduce((acc, i) => {
+  const last = acc[acc.length - 1];
+  if (last && i.s <= last.e) last.e = Math.max(last.e, i.e); else acc.push({ s: i.s, e: i.e });
+  return acc;
+}, []);
 const pref = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch {} return null; };
 let mode = pref("mode") || "schools", selected = null;
 
-function schoolDay(school, date) {
+function schoolDay(school, date, groups = []) {
   const entry = school.days[date];
   if (!entry) return { closed: true, note: null, label: null, periods: [] };
   const [sid, rot, note] = entry;
@@ -305,8 +317,8 @@ function schoolDay(school, date) {
   const periods = sched.periods.map(([s, e, name, kind, group, names]) => ({
     s: toMin(s), e: toMin(e), name: (names && rot && names[rot]) || name, kind, group,
   }));
-  // Group-specific periods (lunch groups, grades) collapse into one block per
-  // overlapping cluster; the detail sheet lists each group's times.
+  // Group tracks (lunch groups, grades): show just the groups our kids are
+  // in (lunches labelled by group); if none known, one block per cluster.
   const plain = periods.filter((p) => !p.group);
   const grouped = periods.filter((p) => p.group).sort((a, b) => a.s - b.s);
   const clusters = [];
@@ -316,9 +328,19 @@ function schoolDay(school, date) {
     else clusters.push({ s: p.s, e: p.e, parts: [p] });
   }
   for (const c of clusters) {
-    const names = [...new Set(c.parts.filter((p) => p.kind !== "break").map((p) => p.name))];
-    const hasBreak = c.parts.some((p) => p.kind === "break");
-    plain.push({ s: c.s, e: c.e, name: names.join(" / ") + (hasBreak ? " + Lunch" : ""), kind: "class", cluster: c.parts });
+    const mine = c.parts.filter((p) => groups.includes(p.group));
+    if (!mine.length) {
+      const names = [...new Set(c.parts.filter((p) => p.kind !== "break").map((p) => p.name))];
+      const hasBreak = c.parts.some((p) => p.kind === "break");
+      plain.push({ s: c.s, e: c.e, name: names.join(" / ") + (hasBreak ? " + Lunch" : ""), kind: "class", cluster: c.parts });
+      continue;
+    }
+    const lunches = mine.filter((p) => p.kind === "break");
+    for (const l of lunches) plain.push({ ...l, name: `${gshort(l.group)} Lunch`, noPrefix: true, cluster: c.parts });
+    const classes = mine.filter((p) => p.kind !== "break");
+    const name = [...new Set(classes.map((p) => p.name))].join(" / ");
+    for (const seg of subtract(union(classes), lunches))
+      plain.push({ ...seg, name, kind: "class", cluster: c.parts });
   }
   plain.sort((a, b) => a.s - b.s);
   const label = [rot && `${rot} Day`, sched.name !== "Monday–Thursday" && sched.name !== "Friday" && sched.name !== "Regular Schedule" ? sched.name : null, note]
@@ -340,13 +362,34 @@ function renderGrid(at) {
   grid.replaceChildren();
   const cols = [];
   if (mode === "schools") {
-    for (const sc of DATA.schools) {
-      const d = schoolDay(sc, viewDate);
-      cols.push({
-        title: sc.short, sub: d.closed ? (d.note || "No school") : d.label, off: d.closed, closed: d.closed,
-        blocks: d.periods.map((p) => ({ ...p, c: color(sc.id), brk: p.kind === "break",
-          tap: () => showSchoolPeriod(sc, d, p) })),
-      });
+    for (const col of DATA.columns) {
+      if (col.school) {
+        const sc = DATA.schools.find((x) => x.id === col.school);
+        const d = schoolDay(sc, viewDate, col.groups || []);
+        cols.push({
+          title: col.title, sub: d.closed ? (d.note || "No school") : d.label, off: d.closed, closed: d.closed,
+          blocks: d.periods.map((p) => ({
+            ...p, c: color(sc.id), brk: p.kind === "break",
+            label: p.noPrefix || !col.prefix ? periodShort(p.name) : `${col.prefix} ${periodShort(p.name)}`,
+            tap: () => showPeriod(sc.id, p.s, p.e, `${sc.name} · ${p.name}`,
+              `${fmt(p.s)} – ${fmt(p.e)}` + (d.rot ? ` · ${d.rot} Day` : "") + ` · ${d.schedName}`, p.cluster, col.groups),
+          })),
+        });
+      } else {  // feed-driven column: only the periods in those feeds
+        const items = col.days[viewDate] || [];
+        const ref = DATA.schools.find((x) => x.id === col.label_from);
+        const entry = ref?.days[viewDate];
+        const rot = entry?.[1];
+        cols.push({
+          title: col.title, sub: items.length ? (rot ? `${rot} Day` : "") : (entry?.[2] || "No school"),
+          off: !items.length, closed: !items.length,
+          blocks: items.map(([a, b, t, busy, sid]) => ({
+            s: toMin(a), e: toMin(b), name: t, label: periodShort(t), c: color(sid), brk: !busy,
+            tap: () => showPeriod(sid, toMin(a), toMin(b), t,
+              `${fmt(toMin(a))} – ${fmt(toMin(b))}` + (rot ? ` · ${rot} Day` : "")),
+          })),
+        });
+      }
     }
   } else {
     for (const k of DATA.kids) {
@@ -356,7 +399,7 @@ function renderGrid(at) {
       cols.push({
         title: k.initial, sub: items.length ? (labels[0] || "") : ((day?.notes || [])[0] || "No school"),
         off: !items.length, closed: !items.length,
-        blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, c: color(sid), brk: !busy,
+        blocks: items.map(([a, b, t, busy, sid]) => ({ s: toMin(a), e: toMin(b), name: t, label: kidLabel(t), c: color(sid), brk: !busy,
           tap: () => showKidItem(k, [a, b, t, busy, sid]) })),
       });
     }
@@ -367,6 +410,7 @@ function renderGrid(at) {
   const t1 = all.length ? Math.ceil(Math.max(...all.map((b) => b.e)) / 60) * 60 : 16 * 60;
   const H = (t1 - t0) * PPM;
   grid.style.minWidth = `${30 + cols.length * 46}px`;
+  grid.dataset.mode = mode;
 
   const axis = el("div", "axis");
   axis.style.height = `${HEAD + H}px`;
@@ -392,7 +436,7 @@ function renderGrid(at) {
       btn.style.setProperty("--c", b.c);
       btn.style.setProperty("--c-bg", b.c + "22");
       const h = (b.e - b.s) * PPM;
-      const title = el("b", null, shortName(b.name));
+      const title = el("b", null, b.label);
       title.style.setProperty("--lines", String(Math.max(1, Math.floor((h - (h > 46 ? 14 : 2)) / 13))));
       btn.append(title);
       if (h > 46) btn.append(el("span", null, `${clock(b.s)}–${clock(b.e)}`));
@@ -434,23 +478,22 @@ function closeSheet() {
   document.querySelectorAll(".blk.sel").forEach((x) => x.classList.remove("sel"));
 }
 
-function showSchoolPeriod(sc, d, p) {
-  const when = `${fmt(p.s)} – ${fmt(p.e)}` + (d.rot ? ` · ${d.rot} Day` : "") + ` · ${d.schedName}`;
-  const rows = kidsAt(sc.id, p.s, p.e, viewDate).map(({ kid, items }) => [
+function showPeriod(schoolId, ps, pe, title, meta, cluster, groups) {
+  const here = kidsAt(schoolId, ps, pe, viewDate);
+  const rows = here.map(({ kid, items }) => [
     kid.initial,
     [...new Set(items.filter((i) => i[3]).map((i) => i[2]))].join(", ") || items.map((i) => i[2]).join(", "),
-    items.length > 1 || p.cluster ? items.map((i) => `${clock(toMin(i[0]))}–${clock(toMin(i[1]))} ${i[2]}`).join(" · ") : "",
+    items.length > 1 || cluster ? items.map((i) => `${clock(toMin(i[0]))}–${clock(toMin(i[1]))} ${i[2]}`).join(" · ") : "",
   ]);
-  if (p.cluster) {
+  if (!here.length) rows.push(["–", "None of the kids are here then", ""]);
+  if (cluster) {
     const byGroup = {};
-    for (const q of p.cluster) (byGroup[q.group] ||= []).push(`${q.kind === "break" ? "Lunch" : shortName(q.name)} ${clock(q.s)}–${clock(q.e)}`);
-    const gname = (g) => g === "K" ? "Kindergarten" : /^\d$/.test(g) ? `${g}${["th","st","nd","rd"][g] || "th"} grade` : `${g} lunch`;
+    for (const q of cluster) if (!groups?.length || groups.includes(q.group)) (byGroup[q.group] ||= []).push(`${q.kind === "break" ? "Lunch" : periodShort(q.name)} ${clock(q.s)}–${clock(q.e)}`);
     const order = (g) => (g === "K" ? "0" : g);
     for (const g of Object.keys(byGroup).sort((a, b) => order(a).localeCompare(order(b))))
-      rows.push([g, gname(g), byGroup[g].join(" · ")]);
+      rows.push([g, glong(g), byGroup[g].join(" · ")]);
   }
-  if (!kidsAt(sc.id, p.s, p.e, viewDate).length) rows.unshift(["–", "None of the kids are here then", ""]);
-  openSheet(`${sc.name} · ${p.name}`, when, rows);
+  openSheet(title, meta, rows);
 }
 
 function showKidItem(k, [a, b, t, busy, sid]) {

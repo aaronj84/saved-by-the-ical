@@ -395,3 +395,22 @@ def test_site_json_kids_and_schools(tmp_path):
     # The "lunch group unknown" placeholder track is not shown as a school period.
     assert all(p[4] != "unknown" for p in schools["butler"]["schedules"]["mon_thu"]["periods"])
     assert (tmp_path / "index.html").exists() and (tmp_path / "icon.png").exists()
+
+
+def test_site_columns_show_only_fynns_jordan_ctec_periods(tmp_path):
+    import json
+
+    from sbtical.site import build_site
+
+    root = Path(__file__).parent.parent
+    files = sorted(str(p) for p in DATA.glob("*.yaml")) + sorted(
+        str(p) for p in (root / "data/people").glob("*.yaml"))
+    build_site(files, tmp_path, tmp_path / "nofeeds", root / "data/site.yaml")
+    cols = {c["title"]: c for c in json.loads((tmp_path / "schedule.json").read_text())["columns"]}
+    assert list(cols) == ["Butler Elem", "Butler Mid", "Jordan / CTEC", "Brighton"]
+    jc = cols["Jordan / CTEC"]["days"]
+    assert [i[2] for i in jc["2026-11-17"]] == ["Jordan Period 1", "Jordan APP", "Jordan Period 2"]  # A
+    assert [i[2] for i in jc["2026-11-16"]] == ["CTEC AM Class"]  # B, semester 1
+    assert [i[2] for i in jc["2027-01-20"]] == ["Jordan Period 5", "Jordan APP", "Jordan Period 6"]  # B, sem 2
+    assert cols["Butler Elem"]["groups"] == ["1", "4"]
+    assert cols["Butler Mid"]["groups"] == []  # lunch groups not known yet
