@@ -417,6 +417,12 @@ function renderGrid(at) {
       if (col.school) {
         const sc = DATA.schools.find((x) => x.id === col.school);
         const d = schoolDay(sc, viewDate, col.groups || []);
+        // Carpool runs that stop at this school, as their own blocks.
+        const cars = rides(viewDate).flatMap((r) => r.stops.filter((st) => st.sid === sc.id).map((st) => ({
+          s: r.s, e: r.e, c: color("carpool"), car: true,
+          label: `🚗 ${r.driver ? r.driver + " " : ""}${clock(st.at)}`,
+          tap: () => showRide({ ...r, at: st.at, sid: st.sid }),
+        })));
         cols.push({
           title: col.title, sub: d.closed ? (d.note || "No school") : d.label, off: d.closed, closed: d.closed,
           blocks: d.periods.map((p) => ({
@@ -424,7 +430,7 @@ function renderGrid(at) {
             label: p.noPrefix || !col.prefix ? periodShort(p.name) : `${col.prefix} ${periodShort(p.name)}`,
             tap: () => showPeriod(sc.id, p.s, p.e, `${sc.name} · ${p.name}`,
               `${fmt(p.s)} – ${fmt(p.e)}` + (d.rot ? ` · ${d.rot} Day` : "") + ` · ${d.schedName}`, p.cluster, col.groups),
-          })),
+          })).concat(d.closed ? [] : cars),
         });
       } else {  // feed-driven column: only the periods in those feeds
         const items = col.days[viewDate] || [];
