@@ -1,0 +1,55 @@
+# SOURCE: https://jhs.canyonsdistrict.org/bell-shedule/ (2026-27 page; times
+# match the family iCloud calendar). Periods 1-4 run on A days, 5-8 on B days.
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: jordan
+  name: Jordan High School
+  short_name: Jordan
+
+bell_schedules:
+  regular:
+    name: Regular Schedule
+    periods:
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "09:03" }
+      - { id: app, name: APP, start: "09:09", end: "09:39" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "09:45", end: "11:03" }
+      - { id: lunch, name: Lunch, start: "11:03", end: "11:38", kind: break }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "11:44", end: "13:02" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "13:07", end: "14:25" }
+  friday:
+    name: Friday Early Out
+    periods:
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "08:49" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "08:54", end: "09:58" }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "10:03", end: "11:07" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "11:12", end: "12:15" }
+      - { id: lunch, name: Lunch, start: "12:15", end: "12:45", kind: break }
+  assembly:
+    # Use on a specific date:  - { date: 2027-02-03, schedule: assembly, title: Assembly }
+    name: 60 Minute Assembly
+    periods:
+      - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "08:55" }
+      - { id: app, name: APP / Assembly, kind: other, start: "09:00", end: "10:00" }
+      - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "10:10", end: "11:20" }
+      - { id: lunch, name: Lunch, start: "11:20", end: "11:55", kind: break }
+      - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "12:00", end: "13:10" }
+      - { id: "4", name: Period 4/8, names: { A: Period 4, B: Period 8 }, start: "13:15", end: "14:25" }
+
+weekly: { mon: regular, tue: regular, wed: regular, thu: regular, fri: friday }
+
+feeds:
+  # Semester 1: Periods 1-2 on A days (B-day mornings are at CTEC).
+  # Semester 2: also Periods 5-6 on B days, same time slots.
+  - id: mornings
+    name: Morning Periods
+    description: "Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days."
+    include: [bells]
+    periods: ["1", "2"]
+    when:
+      - { rotation: [A] }
+      - { rotation: [B], term: semester_2 }
+  - id: ab-days
+    name: A/B Days
+    description: All-day A Day / B Day markers (Canyons District rotation).
+    include: [day_labels]

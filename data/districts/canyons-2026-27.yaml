@@ -1,0 +1,45 @@
+# Canyons School District 2026-27 — shared by every Canyons school file.
+#
+# SOURCES:
+# - Days off: gaps in the "Jordan - A/B Day" entries from the family iCloud
+#   calendar (every weekday without an A/B entry = no school).
+# - Names: Brighton's 2026-27 calendar (rev. 2025.11.12), which marks the dates
+#   that differ from K-12 in red. Days off it doesn't share are "No School (K-12)".
+# - First day Aug 17 and last day May 27 confirmed by that calendar.
+# TODO: confirm names for Sep 28, Oct 26 and Feb 12 against the K-12 calendar.
+school:
+  timezone: America/Denver
+
+year:
+  first_day: 2026-08-17
+  last_day: 2027-05-27
+
+# Semesters (Q1+Q2, Q3+Q4). End of Q2 = Jan 14, 2027 per published calendars;
+# Jan 15 and Jan 18 are days off, so semester 2 starts Tue Jan 19.
+# TODO: confirm Jan 14 against the official K-12 calendar.
+terms:
+  semester_1: { start: 2026-08-17, end: 2027-01-14 }
+  semester_2: { start: 2027-01-19, end: 2027-05-27 }
+
+# District A/B rotation (shared by Jordan, CTEC, ...). Alternates every school
+# day and skips days off; reproduces all 174 A/B entries from the old iCloud
+# calendar exactly (tests/fixtures/jordan-ab-2026-27.txt).
+rotation:
+  labels: [A, B]
+  start: 2026-08-17
+
+days:
+  - { date: 2026-09-07, no_school: true, title: Labor Day }
+  - { date: 2026-09-25, no_school: true, title: Teacher Professional Day (No Students) }
+  - { date: 2026-09-28, no_school: true, title: No School (K-12) }
+  - { start: 2026-10-15, end: 2026-10-16, no_school: true, title: Fall Recess }
+  - { date: 2026-10-26, no_school: true, title: No School (K-12) }
+  - { start: 2026-11-25, end: 2026-11-27, no_school: true, title: Thanksgiving Recess }
+  - { start: 2026-12-21, end: 2027-01-01, no_school: true, title: Winter Recess }
+  - { date: 2027-01-15, no_school: true, title: PTC Compensatory Day (No Students) }
+  - { date: 2027-01-18, no_school: true, title: Martin Luther King Jr. Day Recess }
+  - { date: 2027-02-12, no_school: true, title: No School }
+  - { date: 2027-02-15, no_school: true, title: Presidents' Day Recess }
+  - { date: 2027-02-26, no_school: true, title: Grading Day (No Students) }
+  - { date: 2027-03-22, no_school: true, title: Teacher Professional Day (No Students) }
+  - { start: 2027-04-05, end: 2027-04-09, no_school: true, title: Spring Break Recess }

@@ -1,0 +1,146 @@
+# Brighton runs trimesters and its own calendar on top of the district's.
+# SOURCES:
+# - Bells: https://bhs.canyonsdistrict.org/bell-schedule/ (2026-27 image + text)
+# - Calendar: "Canyons School District 2026-2027 School Calendar, Brighton High
+#   School", revised 2025.11.12
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: brighton
+  name: Brighton High School
+  short_name: BHS
+
+rotation: null  # Brighton is not on the district A/B rotation
+
+# Trimesters replace the district semesters. Starts inferred from the calendar
+# (Nov 13 and Feb 26 are no-student days after each trimester ends).
+# Named T1/T2/T3 to match the "Length" column on student schedules.
+terms:
+  T1: { start: 2026-08-17, end: 2026-11-12 }
+  T2: { start: 2026-11-16, end: 2027-02-25 }
+  T3: { start: 2027-03-01, end: 2027-05-27 }
+
+bell_schedules:
+  mon_thu:
+    name: Monday–Thursday
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:46" }
+      - { id: "2", name: 2nd Period, start: "08:52", end: "09:53" }
+      - { id: app, name: APP, start: "09:59", end: "10:29" }
+      - { id: "3", name: 3rd Period, start: "10:35", end: "11:36" }
+      - { id: lunch, name: Lunch, start: "11:36", end: "12:11", kind: break }
+      - { id: "4", name: 4th Period, start: "12:17", end: "13:18" }
+      - { id: "5", name: 5th Period, start: "13:24", end: "14:25" }
+  early_out:
+    name: Early Out
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:35" }
+      - { id: "2", name: 2nd Period, start: "08:41", end: "09:30" }
+      - { id: "3", name: 3rd Period, start: "09:36", end: "10:25" }
+      - { id: "4", name: 4th Period, start: "10:31", end: "11:20" }
+      - { id: "5", name: 5th Period, start: "11:26", end: "12:15" }
+      - { id: lunch, name: Lunch, start: "12:15", end: "12:45", kind: break }
+  # Assembly days: add  - { date: YYYY-MM-DD, schedule: gym_assembly, title: Assembly }
+  gym_assembly:
+    name: Gym Assembly
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:40" }
+      - { id: "2", name: 2nd Period, start: "08:46", end: "09:41" }
+      - { id: assembly, name: Assembly, kind: other, start: "09:47", end: "10:47" }
+      - { id: "3", name: 3rd Period, start: "10:53", end: "11:48" }
+      - { id: lunch, name: Lunch, start: "11:48", end: "12:23", kind: break }
+      - { id: "4", name: 4th Period, start: "12:29", end: "13:24" }
+      - { id: "5", name: 5th Period, start: "13:30", end: "14:25" }
+  # Auditorium assemblies split students into "A" and "B" assembly groups
+  # (not A/B days). Use the variant for your student's group.
+  auditorium_assembly_a:
+    name: Auditorium Assembly (Group A)
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
+      - { id: assembly, name: Assembly, kind: other, start: "08:48", end: "09:43" }
+      - { id: "2", name: 2nd Period, start: "09:49", end: "10:44" }
+      - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
+      - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
+      - { id: "4", name: 4th Period, start: "12:27", end: "13:23" }
+      - { id: "5", name: 5th Period, start: "13:29", end: "14:25" }
+  auditorium_assembly_b:
+    name: Auditorium Assembly (Group B)
+    periods:
+      - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
+      - { id: "2", name: 2nd Period, start: "08:48", end: "09:43" }
+      - { id: assembly, name: Assembly, kind: other, start: "09:49", end: "10:44" }
+      - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
+      - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
+      - { id: "4", name: 4th Period, start: "12:27", end: "13:23" }
+      - { id: "5", name: 5th Period, start: "13:29", end: "14:25" }
+
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: early_out }
+
+# Applied after the district's days (later wins).
+days:
+  - { date: 2026-09-24, schedule: early_out, title: Early Out Day }  # assumes Friday times
+  - { date: 2026-09-28, schedule: mon_thu, title: "School in session (K-12 off)" }
+  - { date: 2026-10-26, schedule: mon_thu, title: "School in session (K-12 off)" }
+  - { date: 2026-11-13, no_school: true, title: Teacher Professional Day (No Students) }
+  - { date: 2027-02-12, no_school: true, title: Teacher Professional Day (No Students) }
+  - { date: 2027-02-25, schedule: early_out, title: Early Out Day }  # assumes Friday times
+  - { date: 2027-04-23, no_school: true, title: PTC Compensatory Day (No Students) }
+
+events:
+  - { title: 9th Grade Orientation (½ day), date: 2026-08-14, categories: [school] }
+  - { title: First Day of School, date: 2026-08-17, categories: [school] }
+  - { title: Parent/Teacher Conferences, date: 2026-09-24, categories: [conferences] }
+  - { title: End of 1st Trimester, date: 2026-11-12, categories: [trimester] }
+  - { title: Parent/Teacher Conferences, date: 2027-01-14, categories: [conferences] }
+  - { title: End of 2nd Trimester, date: 2027-02-25, categories: [trimester] }
+  - { title: Parent/Teacher Conferences, date: 2027-04-22, categories: [conferences] }
+  - { title: Graduation, date: 2027-05-25, categories: [school] }
+  - { title: Last Day of School / End of 3rd Trimester, date: 2027-05-27, categories: [school, trimester] }
+
+feeds:
+  - id: bell-schedule
+    name: Bell Schedule
+    description: Brighton High School periods and lunch on school days only.
+    include: [bells]
+    include_breaks: true
+  - id: calendar
+    name: School Calendar
+    description: Brighton days off, early outs, trimester ends, conferences and graduation.
+    include: [days, events]
+
+# Per-kid class schedules. Class names only (repo is public): no teachers or
+# rooms. Source: "All Year Schedule" printouts (2026-11-16). Period 06 on the
+# printout is APP. Keys: T1/T2/T3 = trimester, "*" or a plain value = all year.
+students:
+  - id: class-schedule-l
+    name: Class Schedule L
+    description: Brighton High School class schedule.
+    include_breaks: true
+    classes:
+      "1": { T1: Chemistry (Honors), T2: AP European History, T3: AP European History }
+      "2": { T1: Secondary Math 3 Honors, T2: Ceramics 1, T3: French 3117 }
+      "3": { T1: English 10 (Honors), T2: French 3117, T3: Personal Health and Wellness }
+      "4": { T1: Jewelry 1, T2: Secondary Math 3 Honors, T3: Culinary 1 }
+      "5": { T1: AP European History, T2: Chemistry (Honors), T3: English 10 (Honors) }
+      app: { T1: APP, T2: APP }
+  - id: class-schedule-s
+    name: Class Schedule S
+    description: Brighton High School class schedule.
+    include_breaks: true
+    classes:
+      "1": { T1: AP English Language & Composition, T2: AP English Language & Composition, T3: AP US History }
+      "2": { T1: AP US History, T2: AP US History, T3: French 3117 }
+      "3": { T1: Secondary Math 3 Honors, T2: French 3117, T3: Culinary 1 }
+      # Canyons Online is year-long (YT) and fills periods 4-5 in T2.
+      "4": { T1: Business Office Specialist, T2: Canyons Online, T3: AP English Language & Composition }
+      "5": { T1: Girls Soccer, T2: Canyons Online, T3: Secondary Math 3 Honors }
+      app: { T1: APP, T2: APP }
+  # Fynn's Brighton part only (Periods 4-5); published combined with his
+  # Jordan/CTEC mornings via data/people/class-schedule-f.yaml.
+  - id: class-schedule-f-brighton
+    name: Class Schedule F (Brighton part)
+    publish: false
+    classes:
+      # Printout lists two T1 Period 4 classes (Physics a, English 12 a).
+      "4": { T1: Physics / English 12, T2: US History, T3: US History }
+      "5": { T1: Financial Literacy, T2: English 12, T3: Business Office Specialist }

@@ -1,0 +1,33 @@
+# SOURCE: CTEC bell schedule page ("All CTEC students attend either the AM
+# Class or the PM Class every day"). Follows the Canyons K-12 calendar and A/B
+# rotation (same as Jordan).
+extends: ../districts/canyons-2026-27.yaml
+
+school:
+  id: ctec
+  name: Canyons Technical Education Center
+  short_name: CTEC
+
+bell_schedules:
+  mon_thu:
+    name: Monday–Thursday
+    periods:
+      - { id: am, name: AM Class, start: "07:30", end: "09:55" }
+      - { id: pm, name: PM Class, start: "11:30", end: "13:55" }
+  friday:
+    name: Friday Collaboration Schedule
+    periods:
+      - { id: am, name: AM Class, start: "07:30", end: "09:15" }
+      - { id: pm, name: PM Class, start: "10:10", end: "11:55" }
+
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
+
+feeds:
+  # B days in semester 1 only (semester 2 B-day mornings move to Jordan).
+  - id: am-b-days
+    name: AM Class (B Days, Semester 1)
+    description: CTEC AM class on B days through the end of semester 1.
+    include: [bells]
+    periods: [am]
+    when:
+      - { rotation: [B], term: semester_1 }

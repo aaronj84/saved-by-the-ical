@@ -1,0 +1,13 @@
+# One calendar for a student split across three schools. Each part follows
+# its own school's calendar (e.g. Brighton is in session on Sep 28 when
+# Jordan/CTEC are not).
+person:
+  id: class-schedule-f
+  name: Class Schedule F
+  description: "Mornings at Jordan (A days) / CTEC (B days, semester 1), Periods 4–5 at Brighton."
+
+sources:
+  - { school: ../schools/jordan.yaml, feed: mornings }
+  - { school: ../schools/jordan.yaml, feed: ab-days }
+  - { school: ../schools/ctec.yaml, feed: am-b-days }
+  - { school: ../schools/brighton.yaml, student: class-schedule-f-brighton }
