@@ -446,3 +446,20 @@ def test_main_calendar_list_matches_config_and_names():
         "Carpool Calendar", "F School Calendar", "Brighton Calendar", "Butler Middle Calendar",
         "Butler Elementary Calendar", "S School Calendar", "L School Calendar", "D School Calendar",
         "R School Calendar", "M School Calendar", "B School Calendar"]
+
+
+def test_svea_is_free_after_third_period_in_t2():
+    s = load_school(DATA / "brighton.yaml")
+    st = next(x for x in s.students if x.id == "class-schedule-s")
+    evs = build_student_feed(s, st).walk("VEVENT")
+
+    def day(d):
+        return [(e["DTSTART"].dt.strftime("%H:%M"), str(e["SUMMARY"])) for e in sorted(evs, key=lambda e: str(e["DTSTART"].dt))
+                if isinstance(e["DTSTART"].dt, dt.datetime) and e["DTSTART"].dt.date() == d]
+
+    assert day(dt.date(2026, 11, 16)) == [  # T2 Monday
+        ("07:45", "AP English Language & Composition"), ("08:52", "AP US History"),
+        ("09:59", "APP"), ("10:35", "French 3117")]
+    assert ("11:36", "Lunch") in day(dt.date(2026, 9, 1))  # T1 keeps lunch
+    assert ("12:17", "AP English Language & Composition") in day(dt.date(2027, 3, 1))  # T3
+    assert not any("Canyons Online" in str(e["SUMMARY"]) for e in evs)
