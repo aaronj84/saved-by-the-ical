@@ -368,7 +368,7 @@ def test_fynn_combined_feed_has_no_overlaps_and_spans_three_schools():
     assert len({str(e["UID"]) for e in cal.walk("VEVENT")}) == len(cal.walk("VEVENT"))
 
 
-def test_site_json_marks_lunch_free_and_lists_all_kids(tmp_path):
+def test_site_json_kids_and_schools(tmp_path):
     import json
 
     from sbtical.site import build_site
@@ -378,10 +378,20 @@ def test_site_json_marks_lunch_free_and_lists_all_kids(tmp_path):
     build_site(files, tmp_path, tmp_path / "nofeeds")
     data = json.loads((tmp_path / "schedule.json").read_text())
     kids = {k["initial"]: k for k in data["kids"]}
-    assert sorted(kids) == ["D", "F", "L", "R", "S"]
+    assert sorted(kids) == ["B", "D", "F", "L", "M", "R", "S"]
     l_mon = kids["L"]["days"]["2026-11-16"]["items"]
-    assert ["11:36", "12:11", "Lunch", False] in l_mon
-    assert ["07:45", "08:46", "AP European History", True] in l_mon
+    assert ["11:36", "12:11", "Lunch", False, "brighton"] in l_mon
+    assert ["07:45", "08:46", "AP European History", True, "brighton"] in l_mon
+    # Fynn's items are tagged with the school they happen at.
+    f_tue = kids["F"]["days"]["2026-11-17"]["items"]
+    assert {i[4] for i in f_tue} == {"jordan", "brighton"}
     assert kids["D"]["days"]["2026-11-16"]["notes"] == ["Butler B Day"]
-    assert "2026-11-26" in kids["F"]["days"]  # holiday note present
+    assert ["11:10", "11:50", "Lunch", False, "butler-elementary"] in kids["M"]["days"]["2026-11-16"]["items"]
+
+    schools = {s["id"]: s for s in data["schools"]}
+    assert list(schools) == ["butler-elementary", "butler", "jordan", "ctec", "brighton"]
+    assert schools["jordan"]["days"]["2026-11-17"][:2] == ["regular", "A"]
+    assert schools["brighton"]["days"]["2026-11-13"] == [None, None, "Teacher Professional Day (No Students)"]
+    # The "lunch group unknown" placeholder track is not shown as a school period.
+    assert all(p[4] != "unknown" for p in schools["butler"]["schedules"]["mon_thu"]["periods"])
     assert (tmp_path / "index.html").exists() and (tmp_path / "icon.png").exists()

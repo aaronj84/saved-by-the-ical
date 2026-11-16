@@ -107,7 +107,8 @@ def render_links(files, out: str, base_url: str) -> str:
     kids = []
     for path in schools:
         school = load_school(path)
-        lines += [f"### {school.name}", ""]
+        if school.feeds:
+            lines += [f"### {school.name}", ""]
         for f in school.feeds:
             link(f.name, f.description, f"{base_url}/{out}/{school.id}/{f.id}.ics")
         for s in school.students:
