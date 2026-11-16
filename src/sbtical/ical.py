@@ -69,6 +69,7 @@ def bell_events(
     scope: str,
     include_breaks: bool = False,
     periods: tuple[str, ...] = (),
+    group: str | None = None,
 ):
     for day in days:
         if not day.in_session or not day.schedule:
@@ -77,6 +78,8 @@ def bell_events(
             if p.kind != "class" and not include_breaks:
                 continue
             if periods and p.id not in periods:
+                continue
+            if group and p.group and p.group != group:
                 continue
             desc = day.schedule.name + (f" · {day.rotation} Day" if day.rotation else "")
             yield _event(
@@ -220,12 +223,14 @@ def school_events(school: School, stamp, scope: str, categories: tuple[str, ...]
 def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, days=None) -> Calendar:
     stamp = stamp or default_stamp(school)
     all_days = days if days is not None else resolve_days(school)
-    days = [d for d in all_days if d.rotation in feed.rotation] if feed.rotation else all_days
+    days = [d for d in all_days if feed.includes(d)]
     cal = _new_calendar(school, f"{school.name} · {feed.name}", feed.description)
     scope = feed.id
     for part in feed.include:
         if part == "bells":
-            events = bell_events(school, days, stamp, scope, feed.include_breaks, feed.periods)
+            events = bell_events(
+                school, days, stamp, scope, feed.include_breaks, feed.periods, feed.group
+            )
         elif part == "day_labels":
             events = day_label_events(school, days, stamp, scope)
         elif part == "days":

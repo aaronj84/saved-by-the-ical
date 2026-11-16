@@ -1,8 +1,6 @@
-# SOURCE: iCloud "CTEC" entries; Mon–Thu AM time matches the CTEC website
-# and the 2026-27 district bus schedule (7:30–9:55, Fri 7:30–9:15).
-# Assumes CTEC follows the Canyons district calendar and A/B rotation.
-# Attended on B days (during home-school periods 5-6).
-# TODO: add the PM session if needed (Mon–Thu 11:30–1:55; Friday time unknown).
+# SOURCE: CTEC bell schedule page ("All CTEC students attend either the AM
+# Class or the PM Class every day"). Follows the Canyons K-12 calendar and A/B
+# rotation (same as Jordan).
 extends: ../districts/canyons-2026-27.yaml
 
 school:
@@ -11,20 +9,25 @@ school:
   short_name: CTEC
 
 bell_schedules:
-  am_mon_thu:
-    name: AM Session (Mon–Thu)
+  mon_thu:
+    name: Monday–Thursday
     periods:
-      - { id: am, name: AM Session, start: "07:30", end: "09:55" }
-  am_friday:
-    name: AM Session (Friday)
+      - { id: am, name: AM Class, start: "07:30", end: "09:55" }
+      - { id: pm, name: PM Class, start: "11:30", end: "13:55" }
+  friday:
+    name: Friday Collaboration Schedule
     periods:
-      - { id: am, name: AM Session, start: "07:30", end: "09:15" }
+      - { id: am, name: AM Class, start: "07:30", end: "09:15" }
+      - { id: pm, name: PM Class, start: "10:10", end: "11:55" }
 
-weekly: { mon: am_mon_thu, tue: am_mon_thu, wed: am_mon_thu, thu: am_mon_thu, fri: am_friday }
+weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
 
 feeds:
+  # B days in semester 1 only (semester 2 B-day mornings move to Jordan).
   - id: am-b-days
-    name: AM Session (B Days)
-    description: CTEC AM session, B days only.
+    name: AM Class (B Days, Semester 1)
+    description: CTEC AM class on B days through the end of semester 1.
     include: [bells]
-    rotation: [B]
+    periods: [am]
+    when:
+      - { rotation: [B], term: semester_1 }

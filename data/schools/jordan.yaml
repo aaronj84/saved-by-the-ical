@@ -39,12 +39,16 @@ bell_schedules:
 weekly: { mon: regular, tue: regular, wed: regular, thu: regular, fri: friday }
 
 feeds:
-  - id: periods-1-2
-    name: Periods 1 & 2 (A Days)
-    description: Jordan High Periods 1 and 2, A days only.
+  # Semester 1: Periods 1-2 on A days (B-day mornings are at CTEC).
+  # Semester 2: also Periods 5-6 on B days, same time slots.
+  - id: mornings
+    name: Morning Periods
+    description: "Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days."
     include: [bells]
-    rotation: [A]
     periods: ["1", "2"]
+    when:
+      - { rotation: [A] }
+      - { rotation: [B], term: semester_2 }
   - id: ab-days
     name: A/B Days
     description: All-day A Day / B Day markers (Canyons District rotation).

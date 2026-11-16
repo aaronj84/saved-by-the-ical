@@ -12,6 +12,13 @@ school:
 
 rotation: null  # Brighton is not on the district A/B rotation
 
+# Trimesters replace the district semesters. Starts inferred from the calendar
+# (Nov 13 and Feb 26 are no-student days after each trimester ends).
+terms:
+  trimester_1: { start: 2026-08-17, end: 2026-11-12 }
+  trimester_2: { start: 2026-11-16, end: 2027-02-25 }
+  trimester_3: { start: 2027-03-01, end: 2027-05-27 }
+
 bell_schedules:
   mon_thu:
     name: Monday–Thursday

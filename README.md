@@ -29,6 +29,26 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighto
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/calendar.ics
 ```
 
+### Butler Middle School
+
+**Bell Schedule (A Lunch)** — Butler periods with 1st (A) lunch.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-a-lunch.ics
+```
+
+**Bell Schedule (B Lunch)** — Butler periods with 2nd (B) lunch.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-b-lunch.ics
+```
+
+**Bell Schedule (C Lunch)** — Butler periods with 3rd (C) lunch.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/butler/bell-schedule-c-lunch.ics
+```
+
 ### Canyons School District
 
 **No School Days** — Holidays and breaks for Canyons School District 2026-27.
@@ -39,7 +59,7 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/canyons
 
 ### Canyons Technical Education Center
 
-**AM Session (B Days)** — CTEC AM session, B days only.
+**AM Class (B Days, Semester 1)** — CTEC AM class on B days through the end of semester 1.
 
 ```
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am-b-days.ics
@@ -47,10 +67,10 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/ctec/am
 
 ### Jordan High School
 
-**Periods 1 & 2 (A Days)** — Jordan High Periods 1 and 2, A days only.
+**Morning Periods** — Jordan High morning block: Periods 1–2 on A days; from semester 2 also Periods 5–6 on B days.
 
 ```
-webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/periods-1-2.ics
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/jordan/mornings.ics
 ```
 
 **A/B Days** — All-day A Day / B Day markers (Canyons District rotation).
@@ -70,7 +90,7 @@ refresh (Apple: usually within hours; Google: up to a day).
 
 | file | what's in it |
 |------|--------------|
-| `data/districts/canyons-2026-27.yaml` | first/last day, every day off and the A/B rotation — shared by all Canyons schools |
+| `data/districts/canyons-2026-27.yaml` | first/last day, semesters, every day off and the A/B rotation — shared by all Canyons schools except where a school overrides (Brighton: trimesters, own days) |
 | `data/schools/<school>.yaml` | that school's bell schedules, weekly pattern, A/B rotation and feeds |
 
 A snow day or schedule change goes in the district file (`days:`), once, and
@@ -89,7 +109,10 @@ force a label (`rotation: A`) or hold it (`advance_rotation: false`).
 Feed components (`include:`): `bells` (timed periods), `day_labels` ("A Day"
 all-day markers), `days` (titled holidays/changes), `events`. Filters:
 `rotation: [A]` (only A days), `periods: ["1", "2"]` (only those periods),
-`include_breaks`, `no_school_only`, `categories`. See
+`when:` (day rules combining rotation with a date range or named `terms:`
+entry, e.g. `{ rotation: [B], term: semester_1 }`), `group:` (lunch group for
+schedules whose periods vary by group), `include_breaks`, `no_school_only`,
+`categories`. See
 `examples/example-high.yaml` for every option, including per-student feeds
 that relabel periods with class names.
 

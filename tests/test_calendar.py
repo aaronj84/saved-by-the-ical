@@ -217,12 +217,45 @@ def test_rotation_filter_requires_known_labels():
         base(rotation={"labels": ["A", "B"]}, feeds=[{"id": "f", "include": ["bells"], "rotation": ["C"]}])
 
 
-def test_jordan_and_ctec_alternate_without_overlap():
-    jordan = load_school(DATA / "jordan.yaml")
-    ctec = load_school(DATA / "ctec.yaml")
-    j = {e["DTSTART"].dt.date() for e in build_feed(jordan, jordan.feeds[0]).walk("VEVENT")}
-    c = {e["DTSTART"].dt.date() for e in build_feed(ctec, ctec.feeds[0]).walk("VEVENT")}
-    assert len(j) == 87 and len(c) == 87 and not j & c
+def _feed_dates(school_file, feed_id):
+    s = load_school(DATA / school_file)
+    feed = next(f for f in s.feeds if f.id == feed_id)
+    return {e["DTSTART"].dt.date() for e in build_feed(s, feed).walk("VEVENT")}
+
+
+def test_morning_feeds_cover_each_school_day_exactly_once():
+    """Sem 1: Jordan on A days, CTEC on B days. Sem 2: Jordan on both."""
+    jordan = _feed_dates("jordan.yaml", "mornings")
+    ctec = _feed_dates("ctec.yaml", "am-b-days")
+    school_days = {d.date for d in resolve_days(load_school(DATA / "jordan.yaml")) if d.in_session}
+    assert not jordan & ctec
+    assert jordan | ctec == school_days
+    assert max(ctec) <= dt.date(2027, 1, 14)
+    days = {d.date: d for d in resolve_days(load_school(DATA / "jordan.yaml"))}
+    assert {days[d].rotation for d in ctec} == {"B"}
+    assert {days[d].rotation for d in jordan if d < dt.date(2027, 1, 15)} == {"A"}
+
+
+def test_butler_lunch_group_feeds_have_no_overlaps():
+    s = load_school(DATA / "butler.yaml")
+    for feed in s.feeds:
+        evs = sorted(
+            (e["DTSTART"].dt, e["DTEND"].dt) for e in build_feed(s, feed).walk("VEVENT")
+        )
+        for (a_start, a_end), (b_start, _) in zip(evs, evs[1:]):
+            assert b_start >= a_end, (feed.id, a_start, b_start)
+        per_day = 8 if feed.group == "B" else 7  # 6 periods + lunch; B splits period 4
+        assert len(evs) == 174 * per_day, feed.id
+
+
+def test_groups_only_overlap_across_different_groups():
+    with pytest.raises(CalendarError, match="overlaps"):
+        base(bell_schedules={"reg": {"periods": [
+            {"name": "a", "group": "A", "start": "08:00", "end": "09:00"},
+            {"name": "b", "group": "A", "start": "08:30", "end": "09:30"}]}})
+    base(bell_schedules={"reg": {"periods": [
+        {"name": "a", "group": "A", "start": "08:00", "end": "09:00"},
+        {"name": "b", "group": "B", "start": "08:30", "end": "09:30"}]}})
 
 
 def test_later_override_hides_district_day_off_title():

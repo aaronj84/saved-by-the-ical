@@ -14,6 +14,13 @@ year:
   first_day: 2026-08-17
   last_day: 2027-05-27
 
+# Semesters (Q1+Q2, Q3+Q4). End of Q2 = Jan 14, 2027 per published calendars;
+# Jan 15 and Jan 18 are days off, so semester 2 starts Tue Jan 19.
+# TODO: confirm Jan 14 against the official K-12 calendar.
+terms:
+  semester_1: { start: 2026-08-17, end: 2027-01-14 }
+  semester_2: { start: 2027-01-19, end: 2027-05-27 }
+
 # District A/B rotation (shared by Jordan, CTEC, ...). Alternates every school
 # day and skips days off; reproduces all 174 A/B entries from the old iCloud
 # calendar exactly (tests/fixtures/jordan-ab-2026-27.txt).

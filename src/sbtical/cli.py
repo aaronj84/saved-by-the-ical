@@ -47,7 +47,9 @@ def cmd_day(args) -> int:
         for t in d.titles:
             print(f"  note: {t}")
         for p in d.schedule.periods:
-            print(f"  {p.start:%H:%M}–{p.end:%H:%M}  {p.name_for(d.rotation)}" + ("" if p.kind == "class" else f" ({p.kind})"))
+            print(f"  {p.start:%H:%M}–{p.end:%H:%M}  {p.name_for(d.rotation)}"
+                  + ("" if p.kind == "class" else f" ({p.kind})")
+                  + (f"  [group {p.group}]" if p.group else ""))
         return 0
     print(f"{target} is outside {school.first_day}..{school.last_day}", file=sys.stderr)
     return 1

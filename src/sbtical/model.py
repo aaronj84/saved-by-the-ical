@@ -29,6 +29,7 @@ class Period:
     end: dt.time
     kind: str = "class"  # class | break | passing | other
     names: tuple[tuple[str, str], ...] = ()  # rotation label -> display name
+    group: str | None = None  # e.g. lunch group; only shown to feeds in that group
 
     def name_for(self, rotation: str | None) -> str:
         return dict(self.names).get(rotation or "", self.name)
@@ -88,7 +89,28 @@ class Feed:
     include_breaks: bool = False
     periods: tuple[str, ...] = ()  # restrict bells to these period ids
     rotation: tuple[str, ...] = ()  # only school days with these rotation labels
+    when: tuple["DayRule", ...] = ()  # day included if any rule matches
+    group: str | None = None  # period group (e.g. lunch) this feed follows
     description: str | None = None
+
+    def includes(self, day) -> bool:
+        if self.rotation and day.rotation not in self.rotation:
+            return False
+        return not self.when or any(r.matches(day) for r in self.when)
+
+
+@dataclass(frozen=True)
+class DayRule:
+    rotation: tuple[str, ...] = ()
+    start: dt.date | None = None
+    end: dt.date | None = None
+
+    def matches(self, day) -> bool:
+        if self.rotation and day.rotation not in self.rotation:
+            return False
+        if self.start and day.date < self.start:
+            return False
+        return not (self.end and day.date > self.end)
 
 
 @dataclass(frozen=True)
@@ -118,6 +140,7 @@ class School:
     short_name: str | None
     first_day: dt.date
     last_day: dt.date
+    terms: dict[str, tuple[dt.date, dt.date]]
     bell_schedules: dict[str, BellSchedule]
     weekly: dict[int, str | None]  # weekday index -> schedule id (None = no school)
     rotation: Rotation | None
@@ -236,15 +259,18 @@ def parse_school(raw: dict) -> School:
                     end=end,
                     kind=p.get("kind", "class"),
                     names=tuple((str(k), str(v)) for k, v in (p.get("names") or {}).items()),
+                    group=str(p["group"]) if p.get("group") is not None else None,
                 )
             )
         periods.sort(key=lambda p: p.start)
-        for a, b in zip(periods, periods[1:]):
-            if b.start < a.end:
-                raise CalendarError(
-                    f"bell_schedules.{sid}: '{a.name}' ({a.start}-{a.end}) overlaps "
-                    f"'{b.name}' ({b.start}-{b.end})"
-                )
+        for i, a in enumerate(periods):
+            for b in periods[i + 1 :]:
+                same_track = a.group is None or b.group is None or a.group == b.group
+                if same_track and b.start < a.end:
+                    raise CalendarError(
+                        f"bell_schedules.{sid}: '{a.name}' ({a.start}-{a.end}) overlaps "
+                        f"'{b.name}' ({b.start}-{b.end})"
+                    )
         ids = [p.id for p in periods]
         if len(ids) != len(set(ids)):
             raise CalendarError(f"bell_schedules.{sid}: duplicate period ids {ids}")
@@ -330,8 +356,22 @@ def parse_school(raw: dict) -> School:
             )
         )
 
+    terms: dict[str, tuple[dt.date, dt.date]] = {}
+    for name, t in (raw.get("terms") or {}).items():
+        terms[str(name)] = _date_range(t, f"terms.{name}")
+
     feeds = []
     for f in raw.get("feeds") or []:
+        rules = []
+        for i, r in enumerate(f.get("when") or []):
+            where = f"feeds.{f.get('id')}.when[{i}]"
+            start = _date(r["start"], where) if r.get("start") else None
+            end = _date(r["end"], where) if r.get("end") else None
+            if r.get("term"):
+                if r["term"] not in terms:
+                    raise CalendarError(f"{where}: unknown term {r['term']!r}")
+                start, end = terms[r["term"]]
+            rules.append(DayRule(rotation=_tuple(r.get("rotation")), start=start, end=end))
         include = _tuple(f.get("include"))
         bad = set(include) - {"bells", "days", "day_labels", "events"}
         if bad:
@@ -346,6 +386,8 @@ def parse_school(raw: dict) -> School:
                 include_breaks=bool(f.get("include_breaks", False)),
                 periods=_tuple(f.get("periods")),
                 rotation=_tuple(f.get("rotation")),
+                when=tuple(rules),
+                group=str(f["group"]) if f.get("group") is not None else None,
                 description=f.get("description"),
             )
         )
@@ -376,9 +418,10 @@ def parse_school(raw: dict) -> School:
         )
 
     for f in feeds:
-        if f.rotation and not rotation:
+        used = set(f.rotation).union(*(r.rotation for r in f.when)) if f.when else set(f.rotation)
+        if used and not rotation:
             raise CalendarError(f"feeds.{f.id}: rotation filter needs a rotation: section")
-        bad = set(f.rotation) - set(rotation.labels if rotation else ())
+        bad = used - set(rotation.labels if rotation else ())
         if bad:
             raise CalendarError(f"feeds.{f.id}: unknown rotation labels {sorted(bad)}")
 
@@ -394,6 +437,7 @@ def parse_school(raw: dict) -> School:
         short_name=s.get("short_name"),
         first_day=first_day,
         last_day=last_day,
+        terms=terms,
         bell_schedules=schedules,
         weekly=weekly,
         rotation=rotation,
