@@ -32,9 +32,7 @@ class Rule:
 
     @property
     def summary(self) -> str:
-        who = " & ".join(self.kids)
-        head = f"{self.driver}: " if self.driver else ""
-        return f"{head}{self.title} ({who})"
+        return f"{self.title} ({' & '.join(self.kids)})"
 
 
 @dataclass(frozen=True)

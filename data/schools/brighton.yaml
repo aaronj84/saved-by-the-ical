@@ -105,6 +105,7 @@ feeds:
     include_breaks: true
   - id: calendar
     name: School Calendar
+    calendar_name: Brighton Calendar
     description: Brighton days off, early outs, trimester ends, conferences and graduation.
     include: [days, events]
 
@@ -113,7 +114,7 @@ feeds:
 # printout is APP. Keys: T1/T2/T3 = trimester, "*" or a plain value = all year.
 students:
   - id: class-schedule-l
-    name: Class Schedule L
+    name: L School Calendar
     description: Brighton High School class schedule.
     include_breaks: true
     classes:
@@ -124,7 +125,7 @@ students:
       "5": { T1: AP European History, T2: Chemistry (Honors), T3: English 10 (Honors) }
       app: { T1: APP, T2: APP }
   - id: class-schedule-s
-    name: Class Schedule S
+    name: S School Calendar
     description: Brighton High School class schedule.
     include_breaks: true
     classes:

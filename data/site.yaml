@@ -12,3 +12,19 @@ columns:
   - { title: Carpool, carpool: true }
   - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
   - { title: Brighton, school: brighton, prefix: BHS }
+
+# Main calendars to subscribe to, in this order (paths under feeds/, no .ics).
+# Shown first on the site and in the README; everything else is listed under
+# "More calendars".
+subscribe:
+  - carpool/all
+  - people/class-schedule-f
+  - brighton/calendar
+  - butler/calendar
+  - butler-elementary/calendar
+  - brighton/class-schedule-s
+  - brighton/class-schedule-l
+  - butler/class-schedule-d
+  - butler/class-schedule-r
+  - butler-elementary/class-schedule-m
+  - butler-elementary/class-schedule-b

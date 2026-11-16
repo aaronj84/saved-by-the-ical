@@ -4,7 +4,7 @@ PRODID:-//saved-by-the-ical//sbtical//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC:1st grade at Butler Elementary.
-X-WR-CALNAME:Class Schedule B
+X-WR-CALNAME:B School Calendar
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 X-WR-TIMEZONE:America/Denver

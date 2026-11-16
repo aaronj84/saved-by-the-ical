@@ -237,7 +237,7 @@ def build_feed(school: School, feed: Feed, stamp: dt.datetime | None = None, day
     stamp = stamp or default_stamp(school)
     all_days = days if days is not None else resolve_days(school)
     days = [d for d in all_days if feed.includes(d)]
-    cal = _new_calendar(school, f"{school.name} · {feed.name}", feed.description)
+    cal = _new_calendar(school, feed.calendar_name or f"{school.name} · {feed.name}", feed.description)
     scope = feed.id
     for part in feed.include:
         if part == "bells":

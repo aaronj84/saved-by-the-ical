@@ -98,6 +98,7 @@ class Feed:
     when: tuple["DayRule", ...] = ()  # day included if any rule matches
     group: str | None = None  # period group (e.g. lunch) this feed follows
     description: str | None = None
+    calendar_name: str | None = None  # name shown in calendar apps (default "School · Feed")
 
     def includes(self, day) -> bool:
         if self.rotation and day.rotation not in self.rotation:
@@ -400,6 +401,7 @@ def parse_school(raw: dict) -> School:
                 when=tuple(rules),
                 group=str(f["group"]) if f.get("group") is not None else None,
                 description=f.get("description"),
+                calendar_name=f.get("calendar_name"),
             )
         )
 

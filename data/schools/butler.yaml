@@ -46,6 +46,8 @@ bell_schedules:
 weekly: { mon: mon_thu, tue: mon_thu, wed: mon_thu, thu: mon_thu, fri: friday }
 
 feeds:
+  - { id: calendar, name: School Calendar, calendar_name: Butler Middle Calendar, include: [days, day_labels],
+      description: "Butler Middle days off and A/B day markers." }
   - { id: bell-schedule-a-lunch, name: Bell Schedule (A Lunch), include: [bells], include_breaks: true, group: A,
       description: Butler periods with 1st (A) lunch. }
   - { id: bell-schedule-b-lunch, name: Bell Schedule (B Lunch), include: [bells], include_breaks: true, group: B,
@@ -59,7 +61,7 @@ feeds:
 # lunch as one block).
 students:
   - id: class-schedule-d
-    name: Class Schedule D
+    name: D School Calendar
     description: 7th grade class schedule at Butler Middle School.
     group: C  # 7th grade = C lunch
     include: [bells, days, day_labels]
@@ -72,7 +74,7 @@ students:
       "5": French 3 Honors (DLI)
       "6": { A: Utah Studies 7, B: French DLI Literature & Culture }
   - id: class-schedule-r
-    name: Class Schedule R
+    name: R School Calendar
     description: 6th grade class schedule at Butler Middle School.
     group: B  # 6th grade = B lunch
     include: [bells, days, day_labels]

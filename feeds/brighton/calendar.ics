@@ -5,7 +5,7 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC:Brighton days off, early outs, trimester ends, conferences an
  d graduation.
-X-WR-CALNAME:Brighton High School · School Calendar
+X-WR-CALNAME:Brighton Calendar
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 X-WR-TIMEZONE:America/Denver

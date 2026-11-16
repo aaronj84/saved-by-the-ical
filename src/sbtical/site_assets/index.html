@@ -77,6 +77,7 @@
                   margin: 14px 0 4px; }
   .subscribe a { display: block; padding: 8px 0; color: var(--now); text-decoration: none;
                  border-bottom: 1px solid var(--line); }
+  .subscribe .more > summary { padding: 12px 0 4px; color: var(--muted); font-size: 14px; cursor: pointer; }
   .subscribe a small { display: block; color: var(--muted); font-size: 13px; }
   .note { color: var(--muted); font-size: 13px; margin: 8px 0 14px; }
   .pick { position: relative; }
@@ -385,12 +386,12 @@ function renderGrid(at) {
     for (const col of DATA.columns) {
       if (col.carpool) {
         const rs = rides(viewDate);
-        const drivers = [...new Set(rs.map((r) => r.driver).filter(Boolean))];
+        const drivers = [...new Set(rs.filter((r) => r.s >= 12 * 60).map((r) => r.driver).filter(Boolean))];
         cols.push({
           title: col.title, sub: rs.length ? drivers.join(" & ") : "None", off: !rs.length, closed: !rs.length,
           blocks: rs.map((r) => ({
             s: r.s, e: r.e, c: color("carpool"), car: true,
-            label: `${r.short.replace(/ ·.*/, "")}${r.driver ? " · " + r.driver : ""}`,
+            label: r.driver || r.short,
             tap: () => showRide(r),
           })),
         });
@@ -599,17 +600,23 @@ function render() {
 function renderFeeds() {
   const box = $("feeds");
   const base = location.host ? `webcal://${location.host}${location.pathname.replace(/[^/]*$/, "")}` : "";
-  const add = (name, desc, path) => {
-    const link = el("a", null, name);
-    link.href = base ? base + path : path;
-    if (desc) link.append(el("small", null, desc));
-    box.append(link);
+  const add = (c, into) => {
+    const link = el("a", null, c.name);
+    link.href = (base || "") + `feeds/${c.path}.ics`;
+    if (c.description) link.append(el("small", null, c.description));
+    into.append(link);
   };
-  box.append(el("h3", null, "Class schedules"));
-  for (const k of DATA.kids) add(k.name, k.description, k.feed);
-  for (const g of DATA.feeds) {
-    box.append(el("h3", null, g.school));
-    for (const f of g.feeds) add(f.name, f.description, f.path);
+  box.append(el("h3", null, "Our calendars"));
+  for (const c of DATA.subscribe.main) add(c, box);
+  if (DATA.subscribe.more.length) {
+    const more = el("details", "more");
+    more.append(el("summary", null, "More calendars"));
+    let group = null;
+    for (const c of DATA.subscribe.more) {
+      if (c.group !== group) { group = c.group; more.append(el("h3", null, group)); }
+      add(c, more);
+    }
+    box.append(more);
   }
 }
 

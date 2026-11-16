@@ -5,7 +5,7 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC:Mornings at Jordan (A days) / CTEC (B days, semester 1), Peri
  ods 4–5 at Brighton.
-X-WR-CALNAME:Class Schedule F
+X-WR-CALNAME:F School Calendar
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 X-WR-TIMEZONE:America/Denver
