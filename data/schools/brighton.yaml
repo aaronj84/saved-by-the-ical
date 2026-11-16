@@ -14,10 +14,11 @@ rotation: null  # Brighton is not on the district A/B rotation
 
 # Trimesters replace the district semesters. Starts inferred from the calendar
 # (Nov 13 and Feb 26 are no-student days after each trimester ends).
+# Named T1/T2/T3 to match the "Length" column on student schedules.
 terms:
-  trimester_1: { start: 2026-08-17, end: 2026-11-12 }
-  trimester_2: { start: 2026-11-16, end: 2027-02-25 }
-  trimester_3: { start: 2027-03-01, end: 2027-05-27 }
+  T1: { start: 2026-08-17, end: 2026-11-12 }
+  T2: { start: 2026-11-16, end: 2027-02-25 }
+  T3: { start: 2027-03-01, end: 2027-05-27 }
 
 bell_schedules:
   mon_thu:
@@ -45,7 +46,7 @@ bell_schedules:
     periods:
       - { id: "1", name: 1st Period, start: "07:45", end: "08:40" }
       - { id: "2", name: 2nd Period, start: "08:46", end: "09:41" }
-      - { id: assembly, name: Assembly, start: "09:47", end: "10:47" }
+      - { id: assembly, name: Assembly, kind: other, start: "09:47", end: "10:47" }
       - { id: "3", name: 3rd Period, start: "10:53", end: "11:48" }
       - { id: lunch, name: Lunch, start: "11:48", end: "12:23", kind: break }
       - { id: "4", name: 4th Period, start: "12:29", end: "13:24" }
@@ -56,7 +57,7 @@ bell_schedules:
     name: Auditorium Assembly (Group A)
     periods:
       - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
-      - { id: assembly, name: Assembly, start: "08:48", end: "09:43" }
+      - { id: assembly, name: Assembly, kind: other, start: "08:48", end: "09:43" }
       - { id: "2", name: 2nd Period, start: "09:49", end: "10:44" }
       - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
       - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
@@ -67,7 +68,7 @@ bell_schedules:
     periods:
       - { id: "1", name: 1st Period, start: "07:45", end: "08:42" }
       - { id: "2", name: 2nd Period, start: "08:48", end: "09:43" }
-      - { id: assembly, name: Assembly, start: "09:49", end: "10:44" }
+      - { id: assembly, name: Assembly, kind: other, start: "09:49", end: "10:44" }
       - { id: "3", name: 3rd Period, start: "10:50", end: "11:46" }
       - { id: lunch, name: Lunch, start: "11:46", end: "12:21", kind: break }
       - { id: "4", name: 4th Period, start: "12:27", end: "13:23" }
@@ -106,3 +107,31 @@ feeds:
     name: School Calendar
     description: Brighton days off, early outs, trimester ends, conferences and graduation.
     include: [days, events]
+
+# Per-kid class schedules. Class names only (repo is public): no teachers or
+# rooms. Source: "All Year Schedule" printouts (2026-11-16). Period 06 on the
+# printout is APP. Keys: T1/T2/T3 = trimester, "*" or a plain value = all year.
+students:
+  - id: class-schedule-l
+    name: Class Schedule L
+    description: Brighton High School class schedule.
+    include_breaks: true
+    classes:
+      "1": { T1: Chemistry (Honors), T2: AP European History, T3: AP European History }
+      "2": { T1: Secondary Math 3 Honors, T2: Ceramics 1, T3: French 3117 }
+      "3": { T1: English 10 (Honors), T2: French 3117, T3: Personal Health and Wellness }
+      "4": { T1: Jewelry 1, T2: Secondary Math 3 Honors, T3: Culinary 1 }
+      "5": { T1: AP European History, T2: Chemistry (Honors), T3: English 10 (Honors) }
+      app: { T1: APP, T2: APP }
+  - id: class-schedule-s
+    name: Class Schedule S
+    description: Brighton High School class schedule.
+    include_breaks: true
+    classes:
+      "1": { T1: AP English Language & Composition, T2: AP English Language & Composition, T3: AP US History }
+      "2": { T1: AP US History, T2: AP US History, T3: French 3117 }
+      "3": { T1: Secondary Math 3 Honors, T2: French 3117, T3: Culinary 1 }
+      # Canyons Online is year-long (YT) and fills periods 4-5 in T2.
+      "4": { T1: Business Office Specialist, T2: Canyons Online, T3: AP English Language & Composition }
+      "5": { T1: Girls Soccer, T2: Canyons Online, T3: Secondary Math 3 Honors }
+      app: { T1: APP, T2: APP }

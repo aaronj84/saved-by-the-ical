@@ -93,19 +93,26 @@ def bell_events(
             )
 
 
+def _terms_on(school: School, d: dt.date) -> list[str]:
+    return [name for name, (start, end) in school.terms.items() if start <= d <= end]
+
+
 def student_bell_events(school: School, student: Student, days: Iterable[Day], stamp):
     for day in days:
         if not day.in_session or not day.schedule:
             continue
+        terms = _terms_on(school, day.date)
         for p in day.schedule.periods:
             if p.group and p.group != student.group:
                 continue
             options = student.classes.get(p.class_slot)
             assignment = None
             if options:
-                assignment = options.get(day.rotation or "") or options.get("*")
+                # Most specific first: term, then rotation label, then every day.
+                keys = [*terms, day.rotation or "", "*"]
+                assignment = next((options[k] for k in keys if k in options), None)
             if assignment is None:
-                if p.kind != "class" and student.include_breaks:
+                if p.kind == "other" or (p.kind != "class" and student.include_breaks):
                     summary, location, details = p.name_for(day.rotation), None, []
                 else:
                     continue

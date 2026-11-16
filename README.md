@@ -29,6 +29,18 @@ webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighto
 webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/calendar.ics
 ```
 
+**Class Schedule L** — Brighton High School class schedule.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/class-schedule-l.ics
+```
+
+**Class Schedule S** — Brighton High School class schedule.
+
+```
+webcal://raw.githubusercontent.com/aaronj84/saved-by-the-ical/main/feeds/brighton/class-schedule-s.ics
+```
+
 ### Butler Middle School
 
 **Bell Schedule (A Lunch)** — Butler periods with 1st (A) lunch.

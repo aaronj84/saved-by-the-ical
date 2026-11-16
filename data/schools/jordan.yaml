@@ -30,7 +30,7 @@ bell_schedules:
     name: 60 Minute Assembly
     periods:
       - { id: "1", name: Period 1/5, names: { A: Period 1, B: Period 5 }, start: "07:45", end: "08:55" }
-      - { id: app, name: APP / Assembly, start: "09:00", end: "10:00" }
+      - { id: app, name: APP / Assembly, kind: other, start: "09:00", end: "10:00" }
       - { id: "2", name: Period 2/6, names: { A: Period 2, B: Period 6 }, start: "10:10", end: "11:20" }
       - { id: lunch, name: Lunch, start: "11:20", end: "11:55", kind: break }
       - { id: "3", name: Period 3/7, names: { A: Period 3, B: Period 7 }, start: "12:00", end: "13:10" }

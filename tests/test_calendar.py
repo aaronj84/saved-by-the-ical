@@ -315,3 +315,29 @@ def test_kid_feeds_contain_no_teacher_or_room_details():
         for classes in st.classes.values():
             for a in classes.values():
                 assert a.teacher is None and a.location is None, st.id
+
+
+def test_brighton_classes_switch_by_trimester():
+    s = load_school(DATA / "brighton.yaml")
+    st = next(x for x in s.students if x.id == "class-schedule-l")
+    evs = build_student_feed(s, st).walk("VEVENT")
+
+    def first_period(day):
+        return next(
+            str(e["SUMMARY"]) for e in evs
+            if isinstance(e["DTSTART"].dt, dt.datetime)
+            and e["DTSTART"].dt.date() == day and e["DTSTART"].dt.strftime("%H:%M") == "07:45"
+        )
+
+    assert first_period(dt.date(2026, 11, 12)) == "Chemistry (Honors)"  # last day of T1
+    assert first_period(dt.date(2026, 11, 16)) == "AP European History"  # first day of T2
+    # No APP in T3 on the printout.
+    t3 = [str(e["SUMMARY"]) for e in evs if isinstance(e["DTSTART"].dt, dt.datetime)
+          and e["DTSTART"].dt.date() == dt.date(2027, 3, 2)]
+    assert "APP" not in t3 and "Lunch" in t3
+
+
+def test_student_class_keys_are_validated():
+    with pytest.raises(CalendarError, match="unknown keys"):
+        base(terms={"T1": {"start": "2026-09-07", "end": "2026-09-18"}},
+             students=[{"id": "k", "classes": {"1": {"T9": "Art"}}}])

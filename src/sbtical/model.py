@@ -437,6 +437,16 @@ def parse_school(raw: dict) -> School:
         if bad:
             raise CalendarError(f"feeds.{f.id}: unknown rotation labels {sorted(bad)}")
 
+    for st in students:
+        allowed = {"*"} | set(terms) | set(rotation.labels if rotation else ())
+        for pid, options in st.classes.items():
+            bad = set(options) - allowed
+            if bad:
+                raise CalendarError(
+                    f"students.{st.id}.classes.{pid}: unknown keys {sorted(bad)} "
+                    f"(use a term, a rotation label, or a single value)"
+                )
+
     all_ids = [f.id for f in feeds] + [s.id for s in students]
     dupes = {i for i in all_ids if all_ids.count(i) > 1}
     if dupes:
