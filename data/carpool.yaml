@@ -1,33 +1,33 @@
 # Carpool pickups. Each rule follows its school's calendar (no pickups on days
 # off) and can be limited to weekdays and/or A/B rotation days.
-#   kids: initials, matching the "Class Schedule X" feeds
+#   kids: optional initials; default = every kid with a calendar at that school
 #   driver: optional; drivers get their own feed below
 #   minutes: how long the pickup block lasts (default 10)
 carpool:
   # Mornings: picked up from home by the driving family (initials: other families
   # are not named in this public repo)
   - { title: "C/J Pickup", short: Mid AM, school: schools/butler.yaml, driver: C/J,
-      kids: [D, R], time: "07:20", rotation: [A] }
+      time: "07:20", rotation: [A] }
   - { title: "C/J Pickup (Maker's Club)", short: Mid AM, school: schools/butler.yaml, driver: C/J,
-      kids: [D, R], time: "07:00", rotation: [B] }
+      time: "07:00", rotation: [B] }
   - { title: "VB Pickup", short: Elem AM, school: schools/butler-elementary.yaml, driver: VB,
-      kids: [B, M], time: "07:45", days: [mon, thu] }
+      time: "07:45", days: [mon, thu] }
   - { title: "VB Pickup", short: Elem AM, school: schools/butler-elementary.yaml, driver: VB,
-      kids: [B, M], time: "08:00", days: [tue, wed, fri] }
+      time: "08:00", days: [tue, wed, fri] }
 
   # Afternoons: Jenn Mon/Tue and Fri, Aaron Wed/Thu
   - { title: "Jenn Pickup", short: Elem PM, school: schools/butler-elementary.yaml,
-      kids: [B, M], time: "15:15", days: [mon, tue], driver: Jenn }
+      time: "15:15", days: [mon, tue], driver: Jenn }
   - { title: "Jenn Pickup", short: Mid PM, school: schools/butler.yaml,
-      kids: [D, R], time: "15:25", days: [mon, tue], driver: Jenn }
+      time: "15:25", days: [mon, tue], driver: Jenn }
   - { title: "Jenn Pickup", short: Elem PM, school: schools/butler-elementary.yaml,
-      kids: [B, M], time: "13:25", days: [fri], driver: Jenn }
+      time: "13:25", days: [fri], driver: Jenn }
   - { title: "Jenn Pickup", short: Mid PM, school: schools/butler.yaml,
-      kids: [D, R], time: "13:35", days: [fri], driver: Jenn }
+      time: "13:35", days: [fri], driver: Jenn }
   - { title: "Aaron Pickup", short: Elem PM, school: schools/butler-elementary.yaml,
-      kids: [B, M], time: "15:15", days: [wed, thu], driver: Aaron }
+      time: "15:15", days: [wed, thu], driver: Aaron }
   - { title: "Aaron Pickup", short: Mid PM, school: schools/butler.yaml,
-      kids: [D, R], time: "15:25", days: [wed, thu], driver: Aaron }
+      time: "15:25", days: [wed, thu], driver: Aaron }
 
 feeds:
   - { id: all, name: Carpool Calendar, description: "All carpool pickups for the Butler kids." }

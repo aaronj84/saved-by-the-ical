@@ -54,6 +54,17 @@ def is_carpool_file(path: str | Path) -> bool:
         return "carpool" in (yaml.safe_load(f) or {})
 
 
+def _school_kids(school: School) -> tuple[str, ...]:
+    """Initials of the kids with a published calendar at this school
+    ("D School Calendar" -> D)."""
+    out = []
+    for st in school.students:
+        first = st.name.split()[0]
+        if st.publish and len(first) == 1:
+            out.append(first)
+    return tuple(out)
+
+
 def load_carpool(path: str | Path) -> Carpool:
     path = Path(path)
     raw = yaml.safe_load(path.read_text()) or {}
@@ -77,7 +88,7 @@ def load_carpool(path: str | Path) -> Carpool:
             raise CalendarError(f"{where}: unknown rotation labels {rotation}")
         rules.append(Rule(
             title=r["title"], short=r.get("short", r["title"]), school=school,
-            kids=_tuple(r.get("kids")), time=_time(r["time"], where),
+            kids=_tuple(r.get("kids")) or _school_kids(school), time=_time(r["time"], where),
             minutes=int(r.get("minutes", 10)), days=frozenset(days),
             rotation=rotation, driver=r.get("driver"),
         ))

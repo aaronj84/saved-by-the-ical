@@ -6,13 +6,11 @@ kids: [F, S, L, D, R, M, B]
 #           grades are narrowed to the groups the kids are in)
 #   feeds:  show only the periods in these feeds (school/feed), e.g. the
 #           Jordan/CTEC periods one kid actually attends
-#   carpool: true for the carpool pickups (data/carpool.yaml)
 #   prefix: text before each period name ("Jordan P1"); feed titles already
 #           carry their school's short name
 columns:
   - { title: Butler Elem, school: butler-elementary, prefix: Elem }
   - { title: Butler Mid, school: butler, prefix: Butler }
-  - { title: Carpool, carpool: true }
   - { title: Brighton, school: brighton, prefix: BHS }
   - { title: Jordan / CTEC, feeds: [jordan/mornings, ctec/am-b-days], label_from: jordan }
 
