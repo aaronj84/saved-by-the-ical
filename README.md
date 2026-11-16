@@ -202,6 +202,8 @@ Event IDs are stable, so edits update events in place instead of duplicating
 them. Don't rename a school or feed `id` once people are subscribed: that
 changes the URL.
 
+Ideas and open questions live in [ROADMAP.md](ROADMAP.md).
+
 ## Development
 
 ```sh
