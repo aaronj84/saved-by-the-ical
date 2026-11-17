@@ -29,7 +29,64 @@ timeline as an image, so it reuses the data the site uses.
 - **Offline:** cache the last `schedule.json` in Scriptable's local storage
   so the widget still renders without a connection.
 
-## 2. More calendars: kids' activities, and eventually everything
+## 2. Gated access (passcode in front)
+
+**Goal:** only people with a passcode can see the site and the kids'
+schedules.
+
+**What a passcode screen alone would not do:** on today's setup it would be
+cosmetic. The repo is public, so `data/*.yaml` is readable on GitHub, and
+`schedule.json` and every `.ics` feed can be fetched directly by URL,
+skipping any page in front. Real gating needs all three pieces below.
+
+1. **Make the repo private.** The source data stops being public. GitHub
+   Pages from a private repo needs a paid plan (Pro), and the Pages site
+   itself is still public, so either move hosting (option 2a) or encrypt
+   the data (option 2b).
+2. **Gate the site.** Two workable options:
+   - **a. Host behind a login (recommended).** Cloudflare Pages plus
+     Cloudflare Access (free for small groups): visitors enter their email
+     and a one-time code, or you allow-list specific emails. Nothing is
+     served without passing the gate, `schedule.json` included. Netlify and
+     Vercel offer password protection on paid plans.
+   - **b. Encrypt with the passcode.** Keep a static host, but publish
+     `schedule.json` encrypted with a key derived from the passcode
+     (e.g. AES-GCM via the browser's Web Crypto API). The page asks for the
+     passcode and decrypts in the browser. Works on GitHub Pages; the
+     protection is only as strong as the passcode, and anyone given the
+     passcode has it for good (no per-person revoke).
+3. **Protect the calendar feeds separately.** Calendar apps can't type a
+   passcode into a login page.
+   - **Secret URLs:** publish each feed at an unguessable path
+     (`feeds/k7Q2…/d.ics`) and only share those links. Simple and works in
+     every calendar app; rotating the token means re-subscribing.
+   - **HTTP Basic auth:** Apple Calendar subscriptions accept a username
+     and password, but Google Calendar doesn't, so it can't be the only
+     method.
+
+**Order of work:** do this before #4 (external calendars), since activity
+calendars say where kids are outside school.
+
+## 3. Single-kid week view
+
+**Goal:** tap a kid and see their whole week at a glance.
+
+**Approach:** a new view on the site (e.g. tap a kid's badge, or a "Week"
+option next to Schools | Kids):
+- Five columns, Mon–Fri, on the same time axis as the daily schedule,
+  color-coded by school, with lunches striped and carpool blocks shown.
+- Each day's header shows the date and A/B day, plus anything special
+  (no school, early out, assembly).
+- ‹ › moves by week; the date picker jumps to any week. Today's column is
+  highlighted with the "now" line.
+- Useful for F (Jordan vs CTEC by A/B day, semester change in January) and
+  for spotting trimester/semester switches.
+
+**Data:** already there. `schedule.json` has every kid's items for every
+date, so this is page code only. Later it would also show activities from
+#4 and swaps from #5.
+
+## 4. More calendars: kids' activities, and eventually everything
 
 **Goal:** add other iCal subscription links (sports teams, lessons, clubs,
 work shifts) so each kid's calendar and the site show *all* of their
@@ -54,7 +111,7 @@ through this.
   bell schedule. Options:
   1. Keep source URLs in GitHub Actions **secrets** (never in the repo),
      and publish only coarse info ("Soccer 4–5:30") with no locations.
-  2. Move the site/feeds behind access control. GitHub Pages can't be
+  2. Move the site/feeds behind access control (see #2). GitHub Pages can't be
      made private without GitHub Enterprise. Cloudflare Pages + Access, or
      a small private server, can. This is the right home if this becomes
      the whole family calendar.
@@ -64,7 +121,7 @@ through this.
   correctly when merging. The `icalendar` library plus a recurrence helper
   handles this.
 
-## 3. Driving assignments view
+## 5. Driving assignments view
 
 **Goal:** one page every driver can check to see who's driving what, when.
 
@@ -79,13 +136,13 @@ for Jenn and Aaron.
 - Per-driver feeds for every driver (add C/J and VB), so each family can
   subscribe to only their own runs.
 - **Swaps:** merge the shared iCloud "Carpool Changes" calendar (its public
-  link) using the external-sources work in #2. A swap entered there would
+  link) using the external-sources work in #4. A swap entered there would
   then override the scheduled driver on the site and in the feeds.
   Convention to agree on: an event titled "Aaron for Jenn" or "No carpool"
   on that date.
 - Keep other families as initials (the site is public).
 
-## 4. Smaller items
+## 6. Smaller items
 
 - **Carpool in each kid's own calendar:** currently pickups are only in the
   Carpool Calendar; add an option to include each kid's pickups in their
