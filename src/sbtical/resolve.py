@@ -4,7 +4,7 @@ schedule, and which rotation label (A/B day, etc.)."""
 from __future__ import annotations
 
 import datetime as dt
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 from .model import BellSchedule, DayOverride, School
 
@@ -66,11 +66,16 @@ def resolve_days(school: School) -> list[Day]:
             if advance:
                 rot_index += 1
 
+        schedule = school.bell_schedules[schedule_id] if schedule_id else None
+        if schedule and any(p.rotation for p in schedule.periods):
+            # Periods that only run on some A/B days (e.g. a B-day club).
+            schedule = replace(schedule, periods=tuple(
+                p for p in schedule.periods if not p.rotation or label in p.rotation))
         days.append(
             Day(
                 date=d,
                 in_session=in_session,
-                schedule=school.bell_schedules[schedule_id] if schedule_id else None,
+                schedule=schedule,
                 rotation=label,
                 overrides=matching,
             )

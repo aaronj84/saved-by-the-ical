@@ -31,6 +31,7 @@ class Period:
     names: tuple[tuple[str, str], ...] = ()  # rotation label -> display name
     group: str | None = None  # e.g. lunch group; only shown to feeds in that group
     slot: str | None = None  # class slot for student mapping (defaults to id)
+    rotation: tuple[str, ...] = ()  # only on these A/B days (empty = every day)
     student_title: str | None = None  # e.g. "{class} + Lunch"
 
     @property
@@ -271,6 +272,7 @@ def parse_school(raw: dict) -> School:
                     names=tuple((str(k), str(v)) for k, v in (p.get("names") or {}).items()),
                     group=str(p["group"]) if p.get("group") is not None else None,
                     slot=str(p["slot"]) if p.get("slot") is not None else None,
+                    rotation=_tuple(p.get("rotation")),
                     student_title=p.get("student_title"),
                 )
             )

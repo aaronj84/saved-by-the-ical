@@ -12,6 +12,7 @@ bell_schedules:
   mon_thu:
     name: Monday–Thursday
     periods:
+      - { id: maker, name: Maker Space, rotation: [B], start: "07:20", end: "07:50" }
       - { id: "1", name: Period 1, start: "07:55", end: "08:53" }
       - { id: "2", name: Period 2, start: "08:58", end: "10:00" }
       - { id: "3", name: Period 3, start: "10:05", end: "11:03" }
@@ -29,6 +30,7 @@ bell_schedules:
   friday:
     name: Friday
     periods:
+      - { id: maker, name: Maker Space, rotation: [B], start: "07:20", end: "07:50" }
       - { id: "1", name: Period 1, start: "07:55", end: "08:35" }
       - { id: "2", name: Period 2, start: "08:39", end: "09:19" }
       - { id: "3", name: Period 3, start: "09:23", end: "10:03" }
@@ -67,6 +69,7 @@ students:
     include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:
+      maker: Maker Space
       "1": { A: Concert Band, B: Health 7 }
       "2": English Language Arts 7
       "3": Math 7
@@ -80,6 +83,7 @@ students:
     include: [bells, days, day_labels]
     include_breaks: true  # show Lunch once the group is set
     classes:
+      maker: Maker Space
       "1": Integrated Science 6 STEM
       "2": French 2H Language (DLI)
       "3": French DLI History

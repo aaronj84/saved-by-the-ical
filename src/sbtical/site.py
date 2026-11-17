@@ -107,7 +107,7 @@ def _school(school: School) -> dict | None:
             "name": sched.name,
             "periods": [
                 [p.start.strftime("%H:%M"), p.end.strftime("%H:%M"), p.name, p.kind,
-                 p.group, dict(p.names) or None]
+                 p.group, dict(p.names) or None, list(p.rotation) or None]
                 for p in sched.periods
                 if p.group != "unknown"  # placeholder track for kids with no lunch group yet
             ],
